@@ -8,6 +8,10 @@ OUT_EXT=${4:-"flac"}
 SAMPLE_RATE=48000
 BIT_DEPTH=16
 
+if [ ! -x "$(command -v ffmpeg)" ]; then
+  echo "ffmpeg is not installed. Please install ffmpeg to use this script."
+  exit 1
+fi
 
 mkdir -p "${OUTPUT_DIR}"
 if [ ! -d "${VIDEO_DIR}" ]; then
