@@ -2,7 +2,7 @@
 
 1. Run the search script to find videos with a filter
 ```bash
-uv run scripts/search.py Standing Comedy --output-format json --max-results 50 --min-length 600 --save-file videos.json 
+uv run scripts/search.py StandUp Comedy --output-format json --max-results 50 --min-length 600 --save-file videos.json 
 ```
 
 2. Run the download script to download videos from the search results
