@@ -5,7 +5,7 @@ OUTPUT_DIR=${2:-"./audio_outputs"}
 IN_EXT=${3:-"mkv"}
 OUT_EXT=${4:-"flac"}
 
-SAMPLE_RATE=48000
+SAMPLE_RATE=16000
 BIT_DEPTH=16
 
 if [ ! -x "$(command -v ffmpeg)" ]; then
