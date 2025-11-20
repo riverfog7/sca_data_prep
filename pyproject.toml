@@ -1,0 +1,18 @@
+[project]
+name = "data-prep"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic>=2.12.4",
+    "pytube>=15.0.0",
+    "pytubefix>=10.3.4",
+    "tqdm>=4.67.1",
+    "yt-dlp>=2025.11.12",
+]
+
+[dependency-groups]
+dev = [
+    "notebook>=7.5.0",
+]
