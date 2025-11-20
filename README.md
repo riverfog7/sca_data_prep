@@ -12,7 +12,15 @@ uv run scripts/download.py videos.json --output-path ./video_downloads --shuffle
 
 2.5. Or a one-liner
 ```bash
-uv run scripts/download.py <(uv run scripts/search.py StandUp Comedy --output-format json --max-results 50 --min-length 600) --output-path ./video_downloads --shuffle --download-count 50
+uv run scripts/download.py \
+ <(uv run scripts/search.py \
+   StandUp Comedy \
+   --output-format json \
+   --max-results 50 \
+   --min-length 600) \
+ --output-path ./video_downloads \
+ --shuffle \
+ --download-count 50
 ```
 
 3. Run the transcode script to extract audio from downloaded videos
