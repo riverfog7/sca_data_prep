@@ -28,7 +28,7 @@ for video_file in "${VIDEO_DIR}"/*."${IN_EXT}"; do
   output_file="${OUTPUT_DIR}/${base_name}.${OUT_EXT}"
 
   echo "Transcoding ${video_file} to ${output_file}..."
-  ffmpeg -i "${video_file}" -vn -ar "${SAMPLE_RATE}" -ac 2 -sample_fmt s"${BIT_DEPTH}" "${output_file}"
+  ffmpeg -i "${video_file}" -vn -ar "${SAMPLE_RATE}" -ac 1 -sample_fmt s"${BIT_DEPTH}" "${output_file}"
 
   if [ $? -ne 0 ]; then
     echo "Error transcoding ${video_file}. Skipping."
