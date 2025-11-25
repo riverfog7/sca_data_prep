@@ -1,12 +1,15 @@
 import base64
+import csv
 import io
 import re
 from pathlib import Path
 from typing import Optional, List
 
 import soundfile as sf
+import tensorflow as tf
 
 from models.audio import AudioSlice
+from models.events import ComedianEvent, ComedySession, AudienceEvent
 
 
 def get_video_id(url: str) -> Optional[str]:
@@ -61,3 +64,32 @@ def cut_audio_base64(base_path: Path, slice: AudioSlice, sample_interval: int = 
         segments.append(base64.b64encode(buffered.getvalue()).decode())
 
     return segments
+
+
+def class_names_from_csv(class_map_csv_text):
+    class_names = []
+    with tf.io.gfile.GFile(class_map_csv_text) as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            class_names.append(row['display_name'])
+    return class_names
+
+
+def to_comedian_event(whisper_segment: dict) -> ComedianEvent:
+    return ComedianEvent(
+        event_type="speech",
+        start=whisper_segment["start"],
+        end=whisper_segment["end"],
+        delivery_tag=None,
+        content=whisper_segment['text'],
+    )
+
+
+def build_comedy_session(video_id: str, comedian_events: List[ComedianEvent], audience_events: List[AudienceEvent]) -> ComedySession:
+    timeline = comedian_events + audience_events
+    timeline.sort(key=lambda event: event.start)
+
+    return ComedySession(
+        video_id=video_id,
+        timeline=timeline
+    )
