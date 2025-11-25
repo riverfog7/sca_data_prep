@@ -738,3 +738,4 @@ cython_debug/
 **/*.part
 
 dataset/
+*.tar.gz
