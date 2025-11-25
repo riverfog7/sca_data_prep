@@ -26,7 +26,7 @@
 
 4. Run the transcode script to extract audio from downloaded videos
 ```bash
-./scripts/transcode.sh ./dataset/video_downloads ./dataset/audio_outputs webm wav
+./scripts/transcode.sh ./dataset/video_downloads ./dataset/audio_outputs webm flac
 ```
 
 5. Run the inference code to generate transcripts from audio files
