@@ -13,7 +13,7 @@ def download_video(url: str, output_path: str = ".", only_audio=False) -> None:
     ydl_opts = {
         'outtmpl': f'{output_path}/%(title)s.%(ext)s',
         'format': 'bestaudio/best' if only_audio else 'bestvideo+bestaudio/best',
-        'merge_output_format': 'mkv',
+        'merge_output_format': 'webm' if only_audio else 'mkv',
         'quiet': True,
         'no_warnings': True,
     }

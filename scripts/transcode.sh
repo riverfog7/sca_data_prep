@@ -2,8 +2,8 @@
 
 VIDEO_DIR=${1:-"./video_downloads"}
 OUTPUT_DIR=${2:-"./audio_outputs"}
-IN_EXT=${3:-"mkv"}
-OUT_EXT=${4:-"flac"}
+IN_EXT=${3:-"webm"}
+OUT_EXT=${4:-"wav"}
 
 SAMPLE_RATE=16000
 BIT_DEPTH=16

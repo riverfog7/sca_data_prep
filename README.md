@@ -26,5 +26,5 @@ uv run scripts/download.py \
 
 4. Run the transcode script to extract audio from downloaded videos
 ```bash
-./scripts/transcode.sh ./dataset/video_downloads ./dataset/audio_outputs
+./scripts/transcode.sh ./dataset/video_downloads ./dataset/audio_outputs webm wav
 ```
