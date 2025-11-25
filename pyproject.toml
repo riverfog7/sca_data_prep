@@ -3,19 +3,21 @@ name = "data-prep"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "dotenv>=0.9.9",
     "langchain>=1.0.8",
     "langchain-core>=1.0.7",
     "langchain-openai>=1.0.3",
-    "numpy>=2.3.5",
+    "numpy>=2.0.0",
     "openai-whisper>=20250625",
     "pydantic>=2.12.4",
     "pytube>=15.0.0",
     "pytubefix>=10.3.4",
     "scipy>=1.16.3",
     "soundfile>=0.13.1",
+    "tensorflow==2.18.0",
+    "tensorflow-metal>=1.2.0 ; sys_platform == 'darwin'",
     "torch>=2.9.1",
     "torchaudio>=2.9.1",
     "torchcodec>=0.8.1",
