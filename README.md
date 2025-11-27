@@ -1,5 +1,5 @@
 ## How to use
-First run `uv sync --extra full,cu128` (cuda version depends on your GPU) to install the required dependencies.
+First run `uv sync --extra full,cu128` (cuda version depends on your GPU, for CPU only, use the `cpu` extras) to install the required dependencies.
 
 1. Run the search script to find videos with a filter
 ```bash
@@ -36,9 +36,16 @@ First run `uv sync --extra full,cu128` (cuda version depends on your GPU) to ins
 ./main.py dataset/audio_outputs --save-file ./dataset/inference_outputs.jsonl
 ```
 
+6. (Optional) Run the convert_dataset script to convert the dataset to a huggingface format
+```bash
+./scripts/convert_dataset.py --merge-threshold 0.5
+```
+
 ## Result files
 Inference results are available in the following location:
 
 [Full Dataset Files](https://web.aws.riverfog7.com/files/sca/dataset.tar.xz)
 
 [Inference Output Files Only](https://web.aws.riverfog7.com/files/sca/inference_outputs.jsonl)
+
+[Huggingface Datasets format dataset](https://web.aws.riverfog7.com/files/sca/sca_comedy_dataset.tar.xz)
