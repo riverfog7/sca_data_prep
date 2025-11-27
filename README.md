@@ -48,4 +48,4 @@ Inference results are available in the following location:
 
 [Inference Output Files Only](https://web.aws.riverfog7.com/files/sca/inference_outputs.jsonl)
 
-[Huggingface Datasets format dataset](https://web.aws.riverfog7.com/files/sca/sca_comedy_dataset.tar.xz)
+[Huggingface Datasets format dataset](https://web.aws.riverfog7.com/files/sca/sca_comedy_dataset.tar)
