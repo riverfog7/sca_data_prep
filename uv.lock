@@ -4163,6 +4163,7 @@ dependencies = [
     { name = "numpy", version = "2.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.13' or sys_platform == 'darwin' or (extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu126') or (extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu128') or (extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu130') or (extra == 'extra-8-sca-data-cu126' and extra == 'extra-8-sca-data-cu128') or (extra == 'extra-8-sca-data-cu126' and extra == 'extra-8-sca-data-cu130') or (extra == 'extra-8-sca-data-cu128' and extra == 'extra-8-sca-data-cu130')" },
     { name = "numpy", version = "2.3.5", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.13' and sys_platform != 'darwin') or (python_full_version < '3.13' and extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu126') or (python_full_version < '3.13' and extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu128') or (python_full_version < '3.13' and extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu130') or (python_full_version < '3.13' and extra == 'extra-8-sca-data-cu126' and extra == 'extra-8-sca-data-cu128') or (python_full_version < '3.13' and extra == 'extra-8-sca-data-cu126' and extra == 'extra-8-sca-data-cu130') or (python_full_version < '3.13' and extra == 'extra-8-sca-data-cu128' and extra == 'extra-8-sca-data-cu130') or (sys_platform == 'darwin' and extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu126') or (sys_platform == 'darwin' and extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu128') or (sys_platform == 'darwin' and extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu130') or (sys_platform == 'darwin' and extra == 'extra-8-sca-data-cu126' and extra == 'extra-8-sca-data-cu128') or (sys_platform == 'darwin' and extra == 'extra-8-sca-data-cu126' and extra == 'extra-8-sca-data-cu130') or (sys_platform == 'darwin' and extra == 'extra-8-sca-data-cu128' and extra == 'extra-8-sca-data-cu130')" },
     { name = "pydantic" },
+    { name = "soundfile" },
 ]
 
 [package.optional-dependencies]
@@ -4197,7 +4198,6 @@ full = [
     { name = "pytube" },
     { name = "pytubefix" },
     { name = "scipy" },
-    { name = "soundfile" },
     { name = "tensorflow", version = "2.18.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform == 'darwin' or (extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu126') or (extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu128') or (extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu130') or (extra == 'extra-8-sca-data-cu126' and extra == 'extra-8-sca-data-cu128') or (extra == 'extra-8-sca-data-cu126' and extra == 'extra-8-sca-data-cu130') or (extra == 'extra-8-sca-data-cu128' and extra == 'extra-8-sca-data-cu130')" },
     { name = "tensorflow", version = "2.20.0", source = { registry = "https://pypi.org/simple" }, extra = ["and-cuda"], marker = "sys_platform != 'darwin' or (extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu126') or (extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu128') or (extra == 'extra-8-sca-data-cpu' and extra == 'extra-8-sca-data-cu130') or (extra == 'extra-8-sca-data-cu126' and extra == 'extra-8-sca-data-cu128') or (extra == 'extra-8-sca-data-cu126' and extra == 'extra-8-sca-data-cu130') or (extra == 'extra-8-sca-data-cu128' and extra == 'extra-8-sca-data-cu130')" },
     { name = "tensorflow-hub" },
@@ -4241,7 +4241,7 @@ requires-dist = [
     { name = "pytube", marker = "extra == 'full'", specifier = ">=15.0.0" },
     { name = "pytubefix", marker = "extra == 'full'", specifier = ">=10.3.4" },
     { name = "scipy", marker = "extra == 'full'", specifier = ">=1.16.3" },
-    { name = "soundfile", marker = "extra == 'full'", specifier = ">=0.13.1" },
+    { name = "soundfile", specifier = ">=0.13.1" },
     { name = "tensorflow", marker = "sys_platform == 'darwin' and extra == 'full'", specifier = "==2.18.0" },
     { name = "tensorflow", extras = ["and-cuda"], marker = "sys_platform != 'darwin' and extra == 'full'", specifier = ">=2.18.0" },
     { name = "tensorflow-hub", marker = "extra == 'full'", specifier = ">=0.16.1" },
