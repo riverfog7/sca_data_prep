@@ -1,107 +1,113 @@
 #!/usr/bin/env -S uv run
 
+import argparse
+import sys
 from pathlib import Path
-from typing import Tuple
 
-from datasets import Dataset, Features, Value, Audio, DatasetDict
+from sca_data.dataset_utils import remove_extras, assert_overlap, merge_close_events, to_hf_dataset
+from sca_data.models.events import ComedySession
 
-from sca_data.models.events import AudienceEvent, ComedianEvent, ComedySession, BaseEvent, EnvironmentEvent
-
-DATASET_DIR = Path("./dataset").absolute()
-SAVE_PATH = DATASET_DIR / "sca_comedy_dataset"
-AUDIO_DIR = (DATASET_DIR / "audio_outputs").absolute()
-INFERENCE_OUTPUTS = DATASET_DIR / "inference_outputs.jsonl"
-assert DATASET_DIR.exists(), f"Dataset directory {DATASET_DIR} does not exist."
-assert AUDIO_DIR.exists(), f"Audio directory {AUDIO_DIR} does not exist."
-assert INFERENCE_OUTPUTS.exists(), f"Inference outputs file {INFERENCE_OUTPUTS} does not exist."
-
-with open(INFERENCE_OUTPUTS, "r") as f:
-    inference_outputs = [ComedySession.model_validate_json(line) for line in f.readlines()]
-
-audio_exts = set(file.suffix for file in AUDIO_DIR.glob("*") if file.is_file())
-assert len(audio_exts) == 1, f"Expected all audio files to have the same extension, but found: {audio_exts}"
-audio_ext = audio_exts.pop()
-del audio_exts
+# --- Default Configuration Constants ---
+DEFAULT_DATASET_DIR = Path("./dataset")
+DEFAULT_INPUT_FILE = DEFAULT_DATASET_DIR / "inference_outputs.jsonl"
+DEFAULT_AUDIO_DIR = DEFAULT_DATASET_DIR / "audio_outputs"
+DEFAULT_SAVE_PATH = DEFAULT_DATASET_DIR / "sca_comedy_dataset"
+DEFAULT_MERGE_THRESHOLD = 0.5
 
 
-def remove_extras(session: ComedySession, remove_events: Tuple[BaseEvent] = (AudienceEvent, EnvironmentEvent)) -> ComedySession:
-    filtered = []
-    for event in session.timeline:
-        if not isinstance(event, remove_events):
-            filtered.append(event)
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Process and convert SCA Comedy inference outputs to a Hugging Face Dataset."
+    )
 
-    return ComedySession(timeline=filtered, video_id=session.video_id)
+    parser.add_argument(
+        "-i", "--input-file",
+        type=Path,
+        default=DEFAULT_INPUT_FILE,
+        help=f"Path to the input JSONL file (default: {DEFAULT_INPUT_FILE})"
+    )
+
+    parser.add_argument(
+        "-a", "--audio-dir",
+        type=Path,
+        default=DEFAULT_AUDIO_DIR,
+        help=f"Directory containing source audio files (default: {DEFAULT_AUDIO_DIR})"
+    )
+
+    parser.add_argument(
+        "-o", "--output-dir",
+        type=Path,
+        default=DEFAULT_SAVE_PATH,
+        help=f"Path where the resulting Hugging Face dataset will be saved (default: {DEFAULT_SAVE_PATH})"
+    )
+
+    parser.add_argument(
+        "-t", "--merge-threshold",
+        type=float,
+        default=DEFAULT_MERGE_THRESHOLD,
+        help=f"Time threshold (in seconds) to merge close comedian events (default: {DEFAULT_MERGE_THRESHOLD})"
+    )
+
+    return parser.parse_args()
 
 
-def assert_overlap(session: ComedySession) -> None:
-    overlap_threshold = 0.00001
-    for i, event in enumerate(session.timeline):
-        if len(session.timeline) - 1 == i:
-            break
-        next_event = session.timeline[i + 1]
+def main():
+    args = parse_args()
 
-        assert next_event.start + overlap_threshold >= event.end, f"Events overlap: {event} and {next_event}"
+    input_file = args.input_file.resolve()
+    audio_dir = args.audio_dir.resolve()
+    output_dir = args.output_dir.resolve()
+
+    if not input_file.exists():
+        print(f"Error: Input file does not exist: {input_file}", file=sys.stderr)
+        sys.exit(1)
+
+    if not audio_dir.exists():
+        print(f"Error: Audio directory does not exist: {audio_dir}", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"Processing data from: {input_file}")
+    print(f"Using audio source: {audio_dir}")
+    print(f"Merge threshold: {args.merge_threshold}s")
+
+    processed_sessions = []
+
+    try:
+        with open(input_file, "r") as f:
+            for line_idx, line in enumerate(f):
+                try:
+                    validated = ComedySession.model_validate_json(line)
+                    extras_removed = remove_extras(validated)
+                    merged = merge_close_events(extras_removed, gap_threshold=args.merge_threshold)
+                    assert_overlap(merged)
+                    processed_sessions.append(merged)
+
+                except Exception as e:
+                    print(f"Warning: Failed to process line {line_idx + 1}: {e}", file=sys.stderr)
+                    raise e
+
+    except Exception as e:
+        print(f"Critical Error during processing: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    if not processed_sessions:
+        print("Error: No sessions were processed. Dataset is empty.", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"Successfully processed {len(processed_sessions)} sessions.")
+
+    print("Converting to Hugging Face Dataset format...")
+    try:
+        hf_dataset = to_hf_dataset(processed_sessions, audio_base_path=audio_dir)
+
+        print(f"Saving dataset to: {output_dir}")
+        hf_dataset.save_to_disk(output_dir)
+        print("Done!")
+
+    except Exception as e:
+        print(f"Error creating/saving dataset: {e}", file=sys.stderr)
+        sys.exit(1)
 
 
-inference_outputs = [remove_extras(session) for session in inference_outputs]
-for session in inference_outputs:
-    assert_overlap(session)
-
-
-# event data
-event_rows = []
-unique_sessions = {}
-for session in inference_outputs:
-    audio_path = AUDIO_DIR / f"{session.video_id}{audio_ext}"
-
-    if not audio_path.exists():
-        raise FileNotFoundError(f"Audio file not found for session {session.video_id} at {audio_path}")
-
-    if session.video_id not in unique_sessions:
-        unique_sessions[session.video_id] = str(audio_path)
-
-    for i, event in enumerate(session.timeline):
-        if isinstance(event, ComedianEvent) and event.event_type == 'speech':
-            event_rows.append({
-                "session_id": session.video_id,
-                "start_sec": 0.0,
-                "end_sec": event.start,
-                "target_text": event.content,
-                "event_index": i
-            })
-        else:
-            raise ValueError(f"Unexpected event type in session {session.video_id}: {event}")
-
-# audio data
-audio_rows = []
-for sess_id, path in unique_sessions.items():
-    with open(path, "rb") as f:
-        audio_rows.append({
-            "session_id": sess_id,
-            "audio": {"path": path, "bytes": f.read()}
-        })
-
-audio_features = Features({
-    "session_id": Value("string"),
-    "audio": Audio(decode=False)
-})
-
-ds_audio = Dataset.from_list(audio_rows, features=audio_features)
-
-instruct_features = Features({
-    "session_id": Value("string"),
-    "start_sec": Value("float"),
-    "end_sec": Value("float"),
-    "target_text": Value("string"),
-    "event_index": Value("int32"),
-})
-
-ds_instruct = Dataset.from_list(event_rows, features=instruct_features)
-
-# save in one dataset with datasetdict
-dataset_dict = DatasetDict({
-    "storage": ds_audio,
-    "train": ds_instruct,
-})
-
-dataset_dict.save_to_disk(SAVE_PATH)
+if __name__ == "__main__":
+    main()
