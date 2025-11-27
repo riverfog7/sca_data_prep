@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "data-prep"
 version = "0.1.0"
-description = "Add your description here"
+description = "Data preparation utilities for the SCA project."
 readme = "README.md"
 requires-python = ">=3.12"
 
