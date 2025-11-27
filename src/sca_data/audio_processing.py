@@ -5,7 +5,7 @@ import scipy.signal
 import soundfile as sf
 import torch
 
-from models.audio import SlicedAudioFile, AudioSlice
+from .models.audio import SlicedAudioFile, AudioSlice
 
 
 def get_vad_slices(file_path: Path, slice_min: float = 5.0) -> SlicedAudioFile:

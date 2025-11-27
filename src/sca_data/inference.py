@@ -6,9 +6,9 @@ import numpy as np
 import tensorflow_hub as hub
 import whisper
 
-from constants import YAMNET_TO_REACTION, FRAME_HOP_SEC, WINDOW_SEC, DEVICE, WHISPER_MODEL, WHISPER_CACHE, YAMNET_HUB_URL
-from models.events import ComedianEvent, AudienceEvent, ComedySession
-from utils import class_names_from_csv, to_comedian_event, build_comedy_session
+from .constants import YAMNET_TO_REACTION, FRAME_HOP_SEC, WINDOW_SEC, DEVICE, WHISPER_MODEL, WHISPER_CACHE, YAMNET_HUB_URL
+from .models.events import ComedianEvent, AudienceEvent, ComedySession
+from .utils import class_names_from_csv, to_comedian_event, build_comedy_session
 
 whisper_model = whisper.load_model(WHISPER_MODEL, download_root=WHISPER_CACHE, device=DEVICE)
 

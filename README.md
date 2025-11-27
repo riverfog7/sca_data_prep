@@ -1,4 +1,5 @@
 ## How to use
+First run `uv sync --extra full,cu128` (cuda version depends on your GPU) to install the required dependencies.
 
 1. Run the search script to find videos with a filter
 ```bash

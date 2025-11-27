@@ -6,8 +6,8 @@ from typing import List
 
 from tqdm import tqdm
 
-from constants import PROCESS_EXTS
-from inference import infer_comedy_session
+from sca_data.constants import PROCESS_EXTS
+from sca_data.inference import infer_comedy_session
 
 
 def process_file(file_path: Path) -> str:

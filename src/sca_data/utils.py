@@ -8,8 +8,8 @@ from typing import Optional, List
 import soundfile as sf
 import tensorflow as tf
 
-from models.audio import AudioSlice
-from models.events import ComedianEvent, ComedySession, AudienceEvent
+from .models.audio import AudioSlice
+from .models.events import ComedianEvent, ComedySession, AudienceEvent
 
 
 def get_video_id(url: str) -> Optional[str]:
