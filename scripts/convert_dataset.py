@@ -13,6 +13,8 @@ DEFAULT_INPUT_FILE = DEFAULT_DATASET_DIR / "inference_outputs.jsonl"
 DEFAULT_AUDIO_DIR = DEFAULT_DATASET_DIR / "audio_outputs"
 DEFAULT_SAVE_PATH = DEFAULT_DATASET_DIR / "sca_comedy_dataset"
 DEFAULT_MERGE_THRESHOLD = 0.5
+DEFAULT_MIN_DURATION = 1.0
+DEFAULT_MAX_DURATION = float(3*60*60)
 
 
 def parse_args():
@@ -46,6 +48,20 @@ def parse_args():
         type=float,
         default=DEFAULT_MERGE_THRESHOLD,
         help=f"Time threshold (in seconds) to merge close comedian events (default: {DEFAULT_MERGE_THRESHOLD})"
+    )
+
+    parser.add_argument(
+        "--min-duration",
+        type=float,
+        default=DEFAULT_MIN_DURATION,
+        help=f"Minimum duration (in seconds) for the audio"
+    )
+
+    parser.add_argument(
+        "--max-duration",
+        type=float,
+        default=DEFAULT_MAX_DURATION,
+        help=f"Maximum duration (in seconds) for the audio"
     )
 
     return parser.parse_args()
@@ -98,7 +114,8 @@ def main():
 
     print("Converting to Hugging Face Dataset format...")
     try:
-        hf_dataset = to_hf_dataset(processed_sessions, audio_base_path=audio_dir)
+        hf_dataset = to_hf_dataset(processed_sessions, audio_base_path=audio_dir,
+                                   min_duration=args.min_duration, max_duration=args.max_duration)
 
         print(f"Saving dataset to: {output_dir}")
         hf_dataset.save_to_disk(output_dir)
