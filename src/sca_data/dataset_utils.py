@@ -11,9 +11,10 @@ import soundfile as sf
 from datasets import DatasetDict, Dataset, load_from_disk
 from datasets import Features, Value, Audio
 from tqdm import tqdm
-from .utils import clean_audio_bytes
+
 from .constants import DEFAULT_SYSTEM_PROMPT, DEFAULT_INSTRUCTION_PROMPT
 from .models.events import ComedianEvent, BaseEvent, AudienceEvent, EnvironmentEvent, ComedySession
+from .utils import clean_audio_bytes
 
 
 def remove_extras(session: ComedySession, remove_events: Tuple[BaseEvent] = (AudienceEvent, EnvironmentEvent)) -> ComedySession:
@@ -70,7 +71,6 @@ def to_hf_dataset(sessions: Iterable[ComedySession], audio_base_path: Path, min_
     for session in sessions:
         if session.video_id not in unique_sessions:
             audio_path = list(audio_base_path.glob(f"{session.video_id}.*"))
-            
             if len(audio_path) != 1:
                 raise FileNotFoundError(f"Audio file not found for session {session.video_id} in {audio_base_path}")
             unique_sessions[session.video_id] = str(audio_path[0])
@@ -80,7 +80,6 @@ def to_hf_dataset(sessions: Iterable[ComedySession], audio_base_path: Path, min_
                 # Don't include very short or very long segments
                 if event.start < min_duration or event.start > max_duration:
                     continue
-
                 event_rows.append({
                     "session_id": session.video_id,
                     # (A) Input Context: 0.0 ~ 현재 대사 시작 전 (원본 오디오)
@@ -93,20 +92,10 @@ def to_hf_dataset(sessions: Iterable[ComedySession], audio_base_path: Path, min_
                     "target_text": event.content,
                     "event_index": i
                 })
-
-                
             else:
                 raise ValueError(f"Unexpected event type in session {session.video_id}: {event}")
 
 
-    # def audio_generator():
-    #     for sess_id, paths in unique_sessions.items():
-    #         with open(paths["original"], "rb") as f_orig, open(paths["clean"], "rb") as f_clean:
-    #             yield {
-    #                 "session_id": sess_id,
-    #                 "audio": {"path": paths["original"], "bytes": f_orig.read()},
-    #                 "clean_audio": {"path": paths["clean"], "bytes": f_clean.read()} # 추가됨
-    #             }
     def audio_generator():
         for sess_id, path in tqdm(unique_sessions.items(), desc="Processing Audio"):
             with open(path, "rb") as f:
@@ -217,9 +206,6 @@ def to_chat_format_batch(batch: dict, system_prompt: Optional[str] = None, instr
     return {"messages": messages_list}
 
 
-
-
-
 def easy_load(dataset_path: Optional[Path] = None, cache_dir: Optional[Path] = Path('./dataset'), format: Literal["chat", "raw"] = "chat", system_prompt: Optional[str] = None, instruction_prompt: Optional[str] = None) -> Dataset:
     if dataset_path is None:
         dataset_path = cache_dir / "sca_comedy_dataset"
@@ -259,7 +245,6 @@ def easy_load(dataset_path: Optional[Path] = None, cache_dir: Optional[Path] = P
             tmp_tar_path.unlink(missing_ok=True)
 
     dataset = load_from_disk(dataset_path)
-    #loader = RelationalAudioLoader(dataset["storage"])
     train_ds = dataset["train"]
 
     if format == "chat":
@@ -274,6 +259,7 @@ def easy_load(dataset_path: Optional[Path] = None, cache_dir: Optional[Path] = P
     else:
         raise ValueError(f"Unsupported format: {format}")
     return train_ds
+
 
 class RelationalAudioLoader:
     def __init__(self, audio_dataset):
@@ -323,7 +309,6 @@ class RelationalAudioLoader:
         return batch
 
 
-
 class TalkerAudioLoader(RelationalAudioLoader):
     def __call__(self, batch):
         batch = super().__call__(batch)
@@ -363,4 +348,3 @@ class TalkerAudioLoader(RelationalAudioLoader):
         
         batch["target_audio"] = [{"array": arr, "sampling_rate": sr} for arr, sr in zip(target_arrays, target_srs)]
         return batch
-

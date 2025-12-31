@@ -5,17 +5,14 @@ import re
 from pathlib import Path
 from typing import Optional, List
 
+import numpy as np
 import soundfile as sf
-import tensorflow as tf
+import torch
+import torchaudio
+from clearvoice import ClearVoice
 
 from .models.audio import AudioSlice
 from .models.events import ComedianEvent, ComedySession, AudienceEvent
-
-
-from clearvoice import ClearVoice
-import torch
-import torchaudio
-import numpy as np
 
 # 전역 변수: 모델을 매번 로드하지 않고 캐싱하기 위함
 _CLEARVOICE_MODEL = None
