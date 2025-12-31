@@ -110,8 +110,8 @@ def to_hf_dataset(sessions: Iterable[ComedySession], audio_base_path: Path, min_
                 cleaned_bytes = original_bytes 
             yield {
                 "session_id": sess_id,
-                "audio": {"path": path, "bytes": check_and_resample_audio(original_bytes, target_sr=16000)},    # 원본 (Context용)
-                "clean_audio": {"path": None, "bytes": cleaned_bytes} # AI 처리됨 (Target용)
+                "audio": {"bytes": check_and_resample_audio(original_bytes, target_sr=16000)},    # 원본 (Context용)
+                "clean_audio": {"bytes": cleaned_bytes} # AI 처리됨 (Target용)
             }
 
     
@@ -152,7 +152,7 @@ def to_talker_chat_format_batch(batch: dict, system_prompt: Optional[str] = None
             {
                 "role": "user",
                 "content": [
-                    {"type": "audio", "audio_waveform": input_audio["array"], "sampling_rate": 16000},
+                    {"type": "audio", "audio_waveform": input_audio["array"], "sampling_rate": input_audio["sampling_rate"]},
                     {"type": "text", "text": instruction_prompt or DEFAULT_INSTRUCTION_PROMPT},
                 ]
             },
@@ -160,7 +160,7 @@ def to_talker_chat_format_batch(batch: dict, system_prompt: Optional[str] = None
                 "role": "assistant",
                 "content": [
                     {"type": "text", "text": text.strip()},
-                    {"type": "audio", "audio_waveform": target_audio["array"], "sampling_rate": 24000}
+                    {"type": "audio", "audio_waveform": target_audio["array"], "sampling_rate": target_audio["sampling_rate"]}
                 ]
             }
         ]
@@ -181,7 +181,7 @@ def to_chat_format(row, system_prompt: Optional[str] = None, instruction_prompt:
                 {
                     "type": "audio",
                     "audio_waveform": audio_data,
-                    "sampling_rate": 16000
+                    "sampling_rate": row["audio"]["sampling_rate"]
                 },
                 {"type": "text", "text": instruction_prompt or DEFAULT_INSTRUCTION_PROMPT},
             ]
