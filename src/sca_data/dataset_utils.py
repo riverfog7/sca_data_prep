@@ -159,7 +159,7 @@ def to_talker_chat_format_batch(batch: dict, system_prompt: Optional[str] = None
             {
                 "role": "assistant",
                 "content": [
-                    {"type": "text", "text": text},
+                    {"type": "text", "text": text.strip()},
                     {"type": "audio", "audio_waveform": target_audio["array"], "sampling_rate": 24000}
                 ]
             }
@@ -188,7 +188,7 @@ def to_chat_format(row, system_prompt: Optional[str] = None, instruction_prompt:
         },
         {
             "role": "assistant",
-            "content": row["target_text"]
+            "content": row["target_text"].strip()
         }
     ]
     return {"messages": messages}
