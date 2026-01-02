@@ -3,12 +3,12 @@ First run `uv sync --extra full,cu128` (cuda version depends on your GPU, for CP
 
 1. Run the search script to find videos with a filter
 ```bash
-./scripts/search.py StandUp Comedy English --output-format json --max-results 50 --min-length 600 --max-length 3600 --save-file ./dataset/videos.json 
+./scripts/search.py StandUp Comedy English --output-format json --max-results 100 --min-length 1200 --max-length 2400 --save-file ./dataset/videos.json 
 ```
 
 2. Run the download script to download videos from the search results
 ```bash
-./scripts/download.py ./dataset/videos.json --output-path ./dataset/video_downloads --shuffle --download-count 50 --only-audio
+./scripts/download.py ./dataset/videos.json --output-path ./dataset/video_downloads --shuffle --download-count 100 --only-audio
 ```
 
 3.Or a one-liner
@@ -17,12 +17,12 @@ First run `uv sync --extra full,cu128` (cuda version depends on your GPU, for CP
  <(./scripts/search.py \
    StandUp Comedy English \
    --output-format json \
-   --max-results 50 \
-   --min-length 600 \
-   --max-length 3600) \
+   --max-results 100 \
+   --min-length 1200 \
+   --max-length 2400) \
  --output-path ./dataset/video_downloads \
  --shuffle \
- --download-count 50 \
+ --download-count 100 \
  --only-audio
 ```
 
