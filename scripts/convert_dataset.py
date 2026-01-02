@@ -79,6 +79,13 @@ def parse_args():
         help="Number of events to cut from the end of each audio file"
     )
 
+    parser.add_argument(
+        "--min-speech-duration",
+        type=float,
+        default=5.0,
+        help="Minimum duration (in seconds) of speech segments within the audio"
+    )
+
     return parser.parse_args()
 
 
@@ -131,7 +138,8 @@ def main():
     try:
         hf_dataset = to_hf_dataset(processed_sessions, audio_base_path=audio_dir,
                                    min_duration=args.min_duration, max_duration=args.max_duration,
-                                   cut_start=args.cut_start, cut_end=args.cut_end)
+                                   cut_start=args.cut_start, cut_end=args.cut_end,
+                                   min_speech_duration=args.min_speech_duration)
 
         print(f"Saving dataset to: {output_dir}")
         hf_dataset.save_to_disk(output_dir)
