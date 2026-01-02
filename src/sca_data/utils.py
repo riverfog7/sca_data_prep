@@ -19,10 +19,6 @@ _ECAPA_ENCODER = None
 
 def get_ecapa_encoder():
     """Get cached ECAPA-TDNN speaker encoder from SpeechBrain."""
-    # patch for torchaudio 2.9+ compatibility with speechbrain
-    if not hasattr(torchaudio, 'list_audio_backends'):
-        torchaudio.list_audio_backends = lambda: ['soundfile']
-    
     from speechbrain.inference.speaker import EncoderClassifier
     global _ECAPA_ENCODER
     if _ECAPA_ENCODER is None:
