@@ -15,6 +15,20 @@ from .models.events import ComedianEvent, ComedySession, AudienceEvent
 
 # 전역 변수: 모델을 매번 로드하지 않고 캐싱하기 위함
 _CLEARVOICE_MODEL = None
+_ECAPA_ENCODER = None
+
+def get_ecapa_encoder():
+    """Get cached ECAPA-TDNN speaker encoder from SpeechBrain."""
+    from speechbrain.inference.speaker import EncoderClassifier
+    global _ECAPA_ENCODER
+    if _ECAPA_ENCODER is None:
+        print("[Info] Loading ECAPA-TDNN speaker encoder (speechbrain/spkrec-ecapa-voxceleb)...")
+        _ECAPA_ENCODER = EncoderClassifier.from_hparams(
+            source="speechbrain/spkrec-ecapa-voxceleb",
+            run_opts={"device": "cuda" if torch.cuda.is_available() else "cpu"}
+        )
+    return _ECAPA_ENCODER
+
 def get_clearvoice_model():
     from clearvoice import ClearVoice
     global _CLEARVOICE_MODEL
@@ -22,6 +36,80 @@ def get_clearvoice_model():
         print("[Info] Loading ClearerVoice-Studio model (MossFormer2)...")
         _CLEARVOICE_MODEL = ClearVoice(task='speech_enhancement', model_names=['MossFormer2_SE_48K'])
     return _CLEARVOICE_MODEL
+
+
+# Speaker embedding constants
+SPEAKER_EMBEDDING_DIM = 192
+MIN_VIDEO_DURATION_SECONDS = 600  # 10 minutes minimum
+TRIM_SECONDS = 30.0  # Trim from start and end to avoid intro/outro
+
+
+def extract_speaker_embedding(audio_bytes: bytes, sample_rate: int = 24000) -> np.ndarray:
+    """
+    Extract speaker embedding from audio using ECAPA-TDNN.
+    
+    Trims first/last 30 seconds to avoid intro/outro sounds.
+    Uses the full remaining audio to compute a single averaged embedding.
+    
+    Args:
+        audio_bytes: Audio file bytes (FLAC format from clean_audio_bytes)
+        sample_rate: Expected sample rate of input audio (default: 24000)
+        
+    Returns:
+        Speaker embedding as numpy array of shape [192]
+        
+    Raises:
+        AssertionError: If audio duration is less than 10 minutes
+    """
+    encoder = get_ecapa_encoder()
+    
+    # Load audio from bytes
+    with io.BytesIO(audio_bytes) as bio:
+        wav, sr = torchaudio.load(bio)
+    
+    # Convert to mono if stereo
+    if wav.shape[0] > 1:
+        wav = wav.mean(dim=0, keepdim=True)
+    
+    # Validate sample rate matches expected
+    assert sr == sample_rate, f"Expected sample rate {sample_rate}, got {sr}"
+    
+    # Calculate duration and validate minimum length
+    total_samples = wav.shape[1]
+    duration_seconds = total_samples / sr
+    
+    assert duration_seconds >= MIN_VIDEO_DURATION_SECONDS, (
+        f"Audio duration {duration_seconds:.1f}s is less than minimum "
+        f"{MIN_VIDEO_DURATION_SECONDS}s (10 minutes)"
+    )
+    
+    # Trim first and last 30 seconds
+    trim_samples = int(TRIM_SECONDS * sr)
+    wav_trimmed = wav[:, trim_samples:-trim_samples]
+    
+    # Resample to 16kHz for ECAPA-TDNN (it expects 16kHz input)
+    if sr != 16000:
+        resampler = torchaudio.transforms.Resample(sr, 16000)
+        wav_16k = resampler(wav_trimmed)
+    else:
+        wav_16k = wav_trimmed
+    
+    # ECAPA-TDNN expects [batch, time] tensor
+    # wav_16k is [1, time], squeeze to [time] then add batch dim back
+    wav_input = wav_16k.squeeze(0)  # [time]
+    
+    # Extract embedding
+    with torch.no_grad():
+        embedding = encoder.encode_batch(wav_input.unsqueeze(0))  # [1, 1, 192]
+    
+    # Convert to numpy and squeeze to [192]
+    embedding_np = embedding.squeeze().cpu().numpy()
+    
+    assert embedding_np.shape == (SPEAKER_EMBEDDING_DIM,), (
+        f"Expected embedding shape ({SPEAKER_EMBEDDING_DIM},), got {embedding_np.shape}"
+    )
+    
+    return embedding_np
 
 def clean_audio_bytes(raw_bytes: bytes, target_sr: int = 24000) -> bytes:
     """
@@ -62,31 +150,23 @@ def clean_audio_bytes(raw_bytes: bytes, target_sr: int = 24000) -> bytes:
         
         chunk = input_numpy_full[:, start_idx:end_idx]
         
-        try:
-            enhanced_out = cv_model(input_path=chunk, online_write=False)
-            
-            if isinstance(enhanced_out, dict):
-                res = list(enhanced_out.values())[0]
-            elif isinstance(enhanced_out, list):
-                res = enhanced_out[0]
-            else:
-                res = enhanced_out
-            if res.ndim == 1:
-                res = res[None, :]
-            
-            enhanced_chunks.append(res)
-            
-        except Exception as e:
-            print(f"   Warning: Chunk failed ({start_idx}~{end_idx}). Using original. Error: {e}")
-            enhanced_chunks.append(chunk) # if it fail to process, use original chunk
+        enhanced_out = cv_model(input_path=chunk, online_write=False)
+        
+        if isinstance(enhanced_out, dict):
+            res = list(enhanced_out.values())[0]
+        elif isinstance(enhanced_out, list):
+            res = enhanced_out[0]
+        else:
+            res = enhanced_out
+        if res.ndim == 1:
+            res = res[None, :]
+        
+        enhanced_chunks.append(res)
         
         torch.cuda.empty_cache()
        
-    #Combine Chunks
-    if len(enhanced_chunks) > 0:
-        enhanced_numpy = np.concatenate(enhanced_chunks, axis=1)
-    else:
-        enhanced_numpy = input_numpy_full
+    # Combine Chunks
+    enhanced_numpy = np.concatenate(enhanced_chunks, axis=1)
 
     # Numpy -> Tensor 변환
     enhanced_tensor = torch.from_numpy(enhanced_numpy)

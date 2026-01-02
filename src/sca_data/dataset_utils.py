@@ -9,12 +9,12 @@ import numpy as np
 import requests
 import soundfile as sf
 from datasets import DatasetDict, Dataset, load_from_disk
-from datasets import Features, Value, Audio
+from datasets import Features, Value, Audio, Sequence
 from tqdm import tqdm
 
 from .constants import DEFAULT_SYSTEM_PROMPT, DEFAULT_INSTRUCTION_PROMPT
 from .models.events import ComedianEvent, BaseEvent, AudienceEvent, EnvironmentEvent, ComedySession
-from .utils import clean_audio_bytes, check_and_resample_audio
+from .utils import clean_audio_bytes, check_and_resample_audio, extract_speaker_embedding, SPEAKER_EMBEDDING_DIM
 
 
 def remove_extras(session: ComedySession, remove_events: Tuple[BaseEvent] = (AudienceEvent, EnvironmentEvent)) -> ComedySession:
@@ -101,17 +101,19 @@ def to_hf_dataset(sessions: Iterable[ComedySession], audio_base_path: Path, min_
             with open(path, "rb") as f:
                 original_bytes = f.read()
             
-            try:
-                # Moshi's mimi neural audio codec takes 24kHz input
-                cleaned_bytes = clean_audio_bytes(original_bytes, target_sr=24000)
-                print(f"Cleaned audio for {sess_id} successfully.")
-            except Exception as e:
-                print(f"Warning: Failed to clean audio for {sess_id}, using original. Error: {e}")
-                cleaned_bytes = original_bytes 
+            # Moshi's mimi neural audio codec takes 24kHz input
+            cleaned_bytes = clean_audio_bytes(original_bytes, target_sr=24000)
+            print(f"Cleaned audio for {sess_id} successfully.")
+            
+            # Extract speaker embedding from cleaned audio (trims 30s from start/end)
+            speaker_embedding = extract_speaker_embedding(cleaned_bytes, sample_rate=24000)
+            print(f"Extracted speaker embedding for {sess_id}: shape {speaker_embedding.shape}")
+            
             yield {
                 "session_id": sess_id,
                 "audio": {"bytes": check_and_resample_audio(original_bytes, target_sr=16000)},    # 원본 (Context용)
-                "clean_audio": {"bytes": cleaned_bytes} # AI 처리됨 (Target용)
+                "clean_audio": {"bytes": cleaned_bytes},  # AI 처리됨 (Target용)
+                "speaker_embedding": speaker_embedding,   # [192] ECAPA-TDNN embedding
             }
 
     
@@ -128,7 +130,8 @@ def to_hf_dataset(sessions: Iterable[ComedySession], audio_base_path: Path, min_
     audio_features = Features({
         "session_id": Value("string"),
         "audio": Audio(decode=False),       # 원본
-        "clean_audio": Audio(decode=False)  # Clean 버전 추가
+        "clean_audio": Audio(decode=False),  # Clean 버전 추가
+        "speaker_embedding": Sequence(Value("float32"), length=SPEAKER_EMBEDDING_DIM),  # [192] ECAPA-TDNN
     })
 
     ds_text = Dataset.from_list(event_rows, features=text_features)
@@ -145,8 +148,11 @@ def to_talker_chat_format_batch(batch: dict, system_prompt: Optional[str] = None
     # batch['audio'] -> Input Context (Original)
     # batch['target_audio'] -> Target Speech (Clean)
     # batch['target_text'] -> Target Text
+    # batch['speaker_embedding'] -> Pre-computed speaker embedding [192]
     
-    for input_audio, target_audio, text in zip(batch["audio"], batch["target_audio"], batch["target_text"]):
+    for input_audio, target_audio, text, speaker_emb in zip(
+        batch["audio"], batch["target_audio"], batch["target_text"], batch["speaker_embedding"]
+    ):
         msgs = [
             {"role": "system", "content": system_prompt or DEFAULT_SYSTEM_PROMPT},
             {
@@ -160,7 +166,12 @@ def to_talker_chat_format_batch(batch: dict, system_prompt: Optional[str] = None
                 "role": "assistant",
                 "content": [
                     {"type": "text", "text": text.strip()},
-                    {"type": "audio", "audio_waveform": target_audio["array"], "sampling_rate": target_audio["sampling_rate"]}
+                    {
+                        "type": "audio",
+                        "audio_waveform": target_audio["array"],
+                        "sampling_rate": target_audio["sampling_rate"],
+                        "speaker_embedding": speaker_emb,  # [192] ECAPA-TDNN embedding
+                    }
                 ]
             }
         ]
@@ -316,6 +327,7 @@ class TalkerAudioLoader(RelationalAudioLoader):
         
         target_arrays = []
         target_srs = []
+        speaker_embeddings = []
         
         for session_id, t_start, t_end in zip(batch['session_id'], batch['target_start_sec'], batch['target_end_sec']):
             try:
@@ -333,6 +345,7 @@ class TalkerAudioLoader(RelationalAudioLoader):
                         if frames_to_read <= 0:
                             target_arrays.append(np.array([0.0], dtype=np.float32))
                             target_srs.append(sr)
+                            speaker_embeddings.append(self.audio_dataset[row_idx]["speaker_embedding"])
                             continue
 
                         f.seek(start_frame)
@@ -341,11 +354,17 @@ class TalkerAudioLoader(RelationalAudioLoader):
 
                         target_arrays.append(y)
                         target_srs.append(sr)
+                
+                # Load pre-computed speaker embedding for this session
+                speaker_embeddings.append(self.audio_dataset[row_idx]["speaker_embedding"])
 
             except Exception as e:
                 print(f"Target Audio Error: {e}")
                 target_arrays.append(np.array([0.0], dtype=np.float32))
                 target_srs.append(16000)
+                # Re-raise since we don't have a valid speaker embedding fallback
+                raise e
         
         batch["target_audio"] = [{"array": arr, "sampling_rate": sr} for arr, sr in zip(target_arrays, target_srs)]
+        batch["speaker_embedding"] = speaker_embeddings
         return batch
