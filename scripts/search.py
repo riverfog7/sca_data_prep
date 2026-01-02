@@ -19,6 +19,8 @@ def search_youtube(query: str, max_results: int = 5, filter: Callable[[SearchEnt
             s.get_next_results()
             search_results = s.results
         yt = search_results.pop(0)
+        if yt.watch_url in [r.url for r in results]:
+            continue
         result = SearchEntry(
             url=yt.watch_url,
             title=yt.title,
