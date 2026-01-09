@@ -15,7 +15,7 @@ if src_path not in sys.path:
 
 # 경로 추가 후 import
 try:
-    from sca_data.dataset_utils import duplex_data
+    from sca_data.dataset_utils import duplex_data,easy_load
 except ImportError as e:
     print("\n[Critical Error] sca_data 패키지를 찾을 수 없습니다.")
     print(f"현재 경로: {current_dir}")
@@ -77,18 +77,13 @@ def print_sample_details(idx, sample):
         print(f"{i:<5} | {types[i]:<12} | {mask_val:<4} | {wav_shape_str:<20} | {txt_content}")
 
 def main():
-    # 데이터 폴더 존재 여부 확인
-    if not DATA_DIR.exists():
-        print(f"\n[Error] 데이터 폴더를 찾을 수 없습니다: {DATA_DIR}")
-        print("test.py 코드 상단의 'DATA_DIR' 변수를 실제 폴더 경로로 수정해주세요.\n")
-        return
 
     print(f">>> 데이터셋 로드 시작 (경로: {DATA_DIR})...")
     
     # 1. 데이터셋 로드 함수 호출
     # duplex_data는 Dataset 객체(train split)를 반환해야 합니다.
-    dataset = duplex_data(DATA_DIR)
-    
+    #dataset = duplex_data(DATA_DIR)
+    dataset = easy_load(format="duplex")
     # 2. len() 테스트
     try:
         total_len = len(dataset)

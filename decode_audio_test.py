@@ -6,7 +6,7 @@ from pathlib import Path
 
 # src 경로 추가
 sys.path.append(os.path.join(os.getcwd(), "src"))
-from sca_data.dataset_utils import duplex_data
+from sca_data.dataset_utils import duplex_data,easy_load
 
 # 설정
 OUTPUT_DIR = Path("./test_output")
@@ -18,9 +18,9 @@ DURATION_LIMIT_SEC = 180  # 3분
 def main():
     print(">>> 데이터셋 로드 중...")
     # 캐시가 이미 있다면 data_dir은 None이어도 됨
-    dataset = duplex_data()
+    dataset = easy_load(format="duplex")
     
-    sample_idx = 0
+    sample_idx = 80
     print(f">>> {sample_idx}번 샘플 복원 및 로그 저장 시작...")
     
     sample = dataset[sample_idx]

@@ -1,9 +1,0 @@
-CHANNEL	SPEAKER_ID	GENDER	AGE	REGION,CITY	DEVICE
-C0	ID023	Male	19	United States,California,San Jose	iPhone 11
-C0	ID024	Female	16	United States,California,San Jose	iPhone 12
-C0	ID026	Male	19	United States,California,San Jose	iPhone 12 mini
-C0	ID029	Female	17	United States,California,Los Angeles	iPhone SE
-C0	ID098	Male	21	United States,New York,New York	OPPOOPPO A59st
-C0	ID099	Female	21	United States,New York,New York	HUAWEILYA-L0C
-C0	ID164	Male	22	United States,New York,New York	iPhone 6 Plus
-C0	ID165	Male	30	United States,New York,New York	iPhone 6

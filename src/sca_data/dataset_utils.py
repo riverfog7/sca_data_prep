@@ -1,6 +1,7 @@
 import io
 import shutil
 import tarfile
+import json
 from hashlib import md5
 from pathlib import Path
 from typing import Tuple, Optional, Iterable, Literal
@@ -172,11 +173,14 @@ def create_duplex_dataset(data_dir: Path) -> DatasetDict:
                 with open(user_info["wav_path"], "rb") as f: u_bytes = f.read()
                 with open(target_info["wav_path"], "rb") as f: t_bytes = f.read()
                 
+                events = parse_aligned_script(target_info["txt_path"])
+                events_json_str = json.dumps(events)
+                
                 yield {
                     "session_id": f"{group_key}_{target_info['spk_id']}",
                     "user_audio": {"bytes": u_bytes, "path": None},
                     "target_audio": {"bytes": t_bytes, "path": None},
-                    "txt_path": str(target_info["txt_path"])
+                    "events_json": events_json_str  
                 }
 
     def train_generator():
@@ -202,9 +206,9 @@ def create_duplex_dataset(data_dir: Path) -> DatasetDict:
 
     storage_features = Features({
         "session_id": Value("string"),
-        "user_audio": Audio(decode=False),   
-        "target_audio": Audio(decode=False), 
-        "txt_path": Value("string")
+        "user_audio": Audio(decode=False), 
+        "target_audio": Audio(decode=False),
+        "events_json": Value("string") 
     })
     
     train_features = Features({
@@ -241,6 +245,10 @@ class DuplexTransform:
             u_bytes = store_row["user_audio"]["bytes"]
             t_bytes = store_row["target_audio"]["bytes"]
             
+
+            target_events = json.loads(store_row["events_json"])
+
+
             with sf.SoundFile(io.BytesIO(u_bytes)) as f:
                 f.seek(start)
                 u_seq = f.read(end - start)
@@ -254,7 +262,6 @@ class DuplexTransform:
                 u_seq = np.pad(u_seq, (0, pad)) if u_seq.ndim==1 else np.pad(u_seq, ((0,pad),(0,0)))
                 t_seq = np.pad(t_seq, (0, pad)) if t_seq.ndim==1 else np.pad(t_seq, ((0,pad),(0,0)))
 
-            target_events = parse_aligned_script(Path(store_row["txt_path"]))
             chunk_count = curr_len // self.chunk_samples
             
             seq_types, seq_waves, seq_txts, seq_lbls = [], [], [], []
@@ -608,7 +615,11 @@ def to_chat_format_batch(batch: dict, system_prompt: Optional[str] = None, instr
     return {"messages": messages_list}
 
 
-def easy_load(dataset_path: Optional[Path] = None, cache_dir: Optional[Path] = Path('./dataset'), format: Literal["chat", "raw", "talker_chat"] = "talker_chat", system_prompt: Optional[str] = None, instruction_prompt: Optional[str] = None) -> Dataset:
+def easy_load(dataset_path: Optional[Path] = None, cache_dir: Optional[Path] = Path('./dataset'), format: Literal["chat", "raw", "talker_chat","duplex"] = "talker_chat", system_prompt: Optional[str] = None, instruction_prompt: Optional[str] = None) -> Dataset:
+    if format == "duplex":
+        return duplex_data(dataset_path, cache_dir)
+    
+    
     if dataset_path is None:
         dataset_path = cache_dir / "sca_comedy_dataset"
         dataset_path.parent.mkdir(parents=True, exist_ok=True)
