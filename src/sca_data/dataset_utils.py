@@ -21,15 +21,10 @@ from .utils import clean_audio_bytes, check_and_resample_audio, extract_speaker_
 
 # 설정: 0.16초 청크
 CHUNK_DURATION = 0.16  
-
 # 시퀀스 길이: 15분 (900초)
 SEQUENCE_DURATION = 900 
-
-# 슬라이딩 윈도우 간격 (Stride): 3분 (180초)
-# 0~15분, 3~18분, 6~21분... 순으로 생성 (12분씩 겹침)
-# 이유: 대화의 맥락(Context)을 잃지 않으면서 데이터 양을 증강(Augmentation)하는 효과
+#슬라이딩 윈도우 간격 3분
 SEQUENCE_STRIDE = 180  
-
 SAMPLE_RATE = 16000
 
 def parse_aligned_script(txt_path:Path) -> list[dict]:
@@ -150,8 +145,6 @@ def create_duplex_dataset(data_dir: Path) -> DatasetDict:
         spk_id = parts[-1]
         if group_key not in sessions: sessions[group_key] = []
         sessions[group_key].append({"spk_id": spk_id, "wav_path": wav_file, "txt_path": txt_dir / f"{wav_file.stem}.txt"})
-
-    # [Storage Generator] to_hf_dataset처럼 "bytes" 키를 가진 딕셔너리로 감싸서 yield
     def storage_generator():
         for group_key, speakers in tqdm(sessions.items(), desc="Processing Storage"):
             if len(speakers) < 2: continue
@@ -162,23 +155,13 @@ def create_duplex_dataset(data_dir: Path) -> DatasetDict:
                 with open(user_info["wav_path"], "rb") as f: u_bytes = f.read()
                 with open(target_info["wav_path"], "rb") as f: t_bytes = f.read()
                 
-                # yield {
-                #     "session_id": f"{group_key}_{target_info['spk_id']}",
-                #     # ★ 핵심: to_hf_dataset 구조 그대로 따름 {"bytes": ...}
-                #     "user_audio": {"bytes": u_bytes},
-                #     "target_audio": {"bytes": t_bytes},
-                #     "txt_path": str(target_info["txt_path"])
-                # }
                 yield {
                     "session_id": f"{group_key}_{target_info['spk_id']}",
-                    # ★ 핵심: to_hf_dataset은 'bytes' 키를 가진 딕셔너리를 받습니다.
-                    # 'path': None을 명시해주면 라이브러리가 헷갈려하지 않습니다.
                     "user_audio": {"bytes": u_bytes, "path": None},
                     "target_audio": {"bytes": t_bytes, "path": None},
                     "txt_path": str(target_info["txt_path"])
                 }
 
-    # [Train Generator] 메타데이터
     def train_generator():
         for group_key, speakers in sessions.items():
             if len(speakers) < 2: continue
@@ -200,11 +183,10 @@ def create_duplex_dataset(data_dir: Path) -> DatasetDict:
                         "end_sample": end_sample
                     }
 
-    # [Features] to_hf_dataset과 동일하게 Audio(decode=False) 사용
     storage_features = Features({
         "session_id": Value("string"),
-        "user_audio": Audio(decode=False),   # to_hf_dataset과 동일
-        "target_audio": Audio(decode=False), # to_hf_dataset과 동일
+        "user_audio": Audio(decode=False),   
+        "target_audio": Audio(decode=False), 
         "txt_path": Value("string")
     })
     
@@ -220,9 +202,6 @@ def create_duplex_dataset(data_dir: Path) -> DatasetDict:
     
     return DatasetDict({"storage": ds_storage, "train": ds_train})
 
-# ==============================================================================
-# 3. Loader (Transform)
-# ==============================================================================
 class DuplexTransform:
     def __init__(self, storage_dataset, sample_rate=16000):
         self.storage = storage_dataset
@@ -242,7 +221,6 @@ class DuplexTransform:
             store_idx = self.id_to_idx[sess_id]
             store_row = self.storage[store_idx]
             
-            # 읽어올 때도 딕셔너리 구조 고려: store_row["user_audio"]["bytes"]
             u_bytes = store_row["user_audio"]["bytes"]
             t_bytes = store_row["target_audio"]["bytes"]
             
@@ -253,7 +231,6 @@ class DuplexTransform:
                 f.seek(start)
                 t_seq = f.read(end - start)
             
-            # 패딩 및 Zipper 로직 (기존과 동일)
             curr_len = end - start
             if len(u_seq) < curr_len:
                 pad = curr_len - len(u_seq)
@@ -302,182 +279,95 @@ class DuplexTransform:
         batch["label_mask"] = out_labels
         return batch
 
-def duplex_data(data_dir: Path, cache_dir: str = "./dataset_duplex") -> Dataset:
-    cache_path = Path(cache_dir)
-    if cache_path.exists():
-        print(f">>> Loading dataset from cache: {cache_path}")
-        dataset = load_from_disk(str(cache_path))
-    else:
-        print(f">>> Creating dataset from {data_dir}...")
-        dataset = create_duplex_dataset(data_dir)
-        print(f">>> Saving dataset to cache: {cache_path}")
-        dataset.save_to_disk(str(cache_path))
-    
-    dataset["train"].set_transform(DuplexTransform(dataset["storage"], sample_rate=SAMPLE_RATE))
-    return dataset["train"]
+def duplex_data(data_dir: Optional[Path] = None, cache_dir: Optional[Path] = Path('./dataset_duplex')) -> Dataset:
+    DATASET_URL = "https://huggingface.co/datasets/wjm9765/sca_full_duplex/resolve/main/sca_duplex_cache.tar?download=true" 
 
-# class DuplexLoader:
-    
-#     def __init__(self, sample_rate=16000, chunk_duration=0.16):
-#         self.sample_rate = sample_rate
-#         self.chunk_duration = chunk_duration
-#         self.chunk_samples = int(chunk_duration * sample_rate)
-        
-#     def __call__(self, batch):
-#         batch_size = len(batch["session_id"])
-        
-#         out_types = []
-#         out_waveforms = []
-#         out_texts = []
-#         out_labels = []
-        
-#         for i in range(batch_size):
-#             wav_path_u = batch["wav_path_u"][i]
-#             wav_path_t = batch["wav_path_t"][i]
-#             txt_path_t = batch["txt_path_t"][i]
-#             start_sample = batch["start_sample"][i]
-#             end_sample = batch["end_sample"][i]
-            
-#             # 1. 텍스트 스크립트 로드
-#             target_events = parse_aligned_script(Path(txt_path_t))
-            
-#             with sf.SoundFile(wav_path_u) as f_u, sf.SoundFile(wav_path_t) as f_t:
-#                 #f_u mean user input, f_t mean target (clean) audio
-#                 sr = f_u.samplerate
-                
-#                 f_u.seek(start_sample)
-#                 f_t.seek(start_sample)
-                
-#                 curr_len = end_sample - start_sample
-#                 u_seq_audio = f_u.read(curr_len)
-#                 t_seq_audio = f_t.read(curr_len)
-                
-#                 # Padding Logic
-#                 if len(u_seq_audio) < curr_len:
-#                     pad = curr_len - len(u_seq_audio)
-#                     if u_seq_audio.ndim > 1:
-#                         u_seq_audio = np.pad(u_seq_audio, ((0, pad), (0, 0)))
-#                         t_seq_audio = np.pad(t_seq_audio, ((0, pad), (0, 0)))
-#                     else:
-#                         u_seq_audio = np.pad(u_seq_audio, (0, pad))
-#                         t_seq_audio = np.pad(t_seq_audio, (0, pad))
+    dataset_path = cache_dir  # easy_load의 dataset_path와 동일한 역할
+    dataset_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp_tar_path = dataset_path.parent / "temp_cache.tar"
 
-#             # 3. 청크 단위 처리 (Zipper)
-#             chunk_count = curr_len // self.chunk_samples
-            
-#             # 단일 시퀀스(15분)에 대한 리스트
-#             seq_types = []
-#             seq_waveforms = []
-#             seq_texts = []
-#             seq_labels = []
-            
-#             for c in range(chunk_count):
-#                 chunk_start_sec = (start_sample / sr) + (c * self.chunk_duration)
-#                 chunk_end_sec = chunk_start_sec + self.chunk_duration
-                
-#                 idx_s = c * self.chunk_samples
-#                 idx_e = idx_s + self.chunk_samples
-                
-#                 u_chunk = u_seq_audio[idx_s:idx_e]
-#                 t_chunk = t_seq_audio[idx_s:idx_e]
-                
-#                 u_chunk = ensure_mono_and_length(u_chunk, self.chunk_samples)
-#                 t_chunk = ensure_mono_and_length(t_chunk, self.chunk_samples)
-                
-#                 is_speech, text_slice = get_sliced_text(chunk_start_sec, chunk_end_sec, target_events)
-                
-#                 # Zipper Construction
-#                 # A. User Audio
-#                 seq_types.append("user_audio")
-#                 seq_waveforms.append(u_chunk)
-#                 seq_texts.append("")
-#                 seq_labels.append(-100)
-                
-#                 # B. Text
-#                 if text_slice:
-#                     seq_types.append("text")
-#                     dummy = np.zeros(self.chunk_samples, dtype=np.float32)
-#                     seq_waveforms.append(dummy)
-#                     seq_texts.append(text_slice)
-#                     seq_labels.append(1)
-                
-#                 # C. Target Audio
-#                 seq_types.append("target_audio")
-#                 seq_waveforms.append(t_chunk)
-#                 seq_texts.append("")
-#                 seq_labels.append(1)
-            
-#             out_types.append(seq_types)
-#             out_waveforms.append(seq_waveforms)
-#             out_texts.append(seq_texts)
-#             out_labels.append(seq_labels)
-            
-#         batch["types"] = out_types
-#         batch["waveforms"] = out_waveforms
-#         batch["texts"] = out_texts
-#         batch["label_mask"] = out_labels
+    if not dataset_path.exists():
         
-#         return batch
+        if DATASET_URL:
+            print(f">>> Downloading dataset from {DATASET_URL}...")
+            
+            try:
+                with requests.get(DATASET_URL, stream=True) as r:
+                    r.raise_for_status()
+                    total_size = int(r.headers.get('content-length', 0))
+                    
+                    with open(tmp_tar_path, "wb") as f, tqdm(
+                            desc="Downloading dataset",
+                            total=total_size,
+                            unit='B',
+                            unit_scale=True,
+                            unit_divisor=1024,
+                    ) as bar:
+                        for chunk in r.iter_content(chunk_size=8192):
+                            f.write(chunk)
+                            bar.update(len(chunk))
 
-# def duplex_data(data_dir: Path, sample_rate: int = 16000) -> Dataset:
-#     """
-#     easy_load 처럼 호출
-#     """
-#     wav_dir = data_dir / "WAV"
-#     txt_dir = data_dir / "TXT"
-    
-#     sessions = {}
-#     wav_files = list(wav_dir.glob("*.wav"))
-    
-#     for wav_file in wav_files:
-#         parts = wav_file.stem.split('_')
-#         if len(parts) < 2: continue
-#         group_key = "_".join(parts[:-1])
-#         spk_id = parts[-1]
-        
-#         if group_key not in sessions:
-#             sessions[group_key] = []
-#         sessions[group_key].append({
-#             "spk_id": spk_id,
-#             "wav_path": str(wav_file),
-#             "txt_path": str(txt_dir / f"{wav_file.stem}.txt")
-#         })
+                print(f">>> Extracting to {dataset_path.parent}...")
+                with tarfile.open(tmp_tar_path, "r") as tar:
+                    tar.extractall(path=dataset_path.parent)
+                
+            except Exception as e:
+                print(f"[Error] Download failed: {e}")
+                if tmp_tar_path.exists(): tmp_tar_path.unlink()
+                if dataset_path.exists(): shutil.rmtree(dataset_path)
+                raise e
+            finally:
+                if tmp_tar_path.exists():
+                    tmp_tar_path.unlink()
 
-#     # 1. 메타데이터 리스트 생성
-#     metadata_rows = []
-    
-#     for group_key, speakers in sessions.items():
-#         if len(speakers) < 2: continue
+        elif data_dir is not None and data_dir.exists():
+            print(f">>> Cache not found. Creating from raw data at {data_dir}...")
+            dataset = create_duplex_dataset(data_dir)
+            dataset.save_to_disk(str(dataset_path))
         
-#         pairs = [(speakers[0], speakers[1]), (speakers[1], speakers[0])]
-        
-#         for user_info, target_info in pairs:
-#             with sf.SoundFile(user_info["wav_path"]) as f:
-#                 max_len = len(f) 
-#                 sr = f.samplerate
-            
-#             samples_per_seq = int(SEQUENCE_DURATION * sr)
-#             stride_samples = int(SEQUENCE_STRIDE * sr)
-#             start_samples_list = range(0, max_len, stride_samples)
-            
-#             for seq_idx, start_sample in enumerate(start_samples_list):
-#                 end_sample = min(start_sample + samples_per_seq, max_len)
-#                 if end_sample <= start_sample: break
-                
-#                 metadata_rows.append({
-#                     "session_id": f"{group_key}_{target_info['spk_id']}_seq{seq_idx}",
-#                     "wav_path_u": user_info["wav_path"],
-#                     "wav_path_t": target_info["wav_path"],
-#                     "txt_path_t": target_info["txt_path"],
-#                     "start_sample": start_sample,
-#                     "end_sample": end_sample
-#                 })
-                
-   
-#     ds = Dataset.from_list(metadata_rows)
-#     ds.set_transform(DuplexLoader(sample_rate=sample_rate, chunk_duration=CHUNK_DURATION))
+        else:
+            raise FileNotFoundError(f"Dataset not found at {dataset_path} and no URL/RawData provided.")
+
+    print(f">>> Loading dataset from disk: {dataset_path}")
+    dataset = load_from_disk(str(dataset_path))
+    train_ds = dataset["train"]
     
-#     return ds
+    print(">>> Setting up DuplexTransform...")
+    train_ds.set_transform(DuplexTransform(dataset["storage"], sample_rate=SAMPLE_RATE))
+    
+    return train_ds
+
+
+# def duplex_data(data_dir: Path=None, cache_dir: str = "./dataset_duplex") -> Dataset:
+#     cache_path = Path(cache_dir)
+
+#     # 1. 캐시가 없으면 다운로드 시도
+#     if not cache_path.exists():
+#         print(f">>> Cache not found at {cache_path}")
+        
+#         # [수정 필요] ★ 여기에 아까 복사한 Hugging Face 다운로드 링크를 넣으세요! ★
+#         CACHE_URL = "https://huggingface.co/datasets/YOUR_ID/REPO_NAME/resolve/main/sca_duplex_cache.tar"
+        
+#         try:
+#             # data_dir이 제공되지 않았으면 다운로드 모드로 진입
+#             download_and_extract(CACHE_URL, cache_path)
+#         except Exception as e:
+#             print(f">>> Auto-download failed: {e}")
+#             if data_dir is not None and data_dir.exists():
+#                 print(f">>> Trying to create from raw data at {data_dir}...")
+#                 dataset = create_duplex_dataset(data_dir)
+#                 dataset.save_to_disk(str(cache_path))
+#             else:
+#                 raise FileNotFoundError("No cache found and no raw data_dir provided.")
+
+#     # 2. 로드
+#     print(f">>> Loading dataset from cache: {cache_path}")
+#     dataset = load_from_disk(str(cache_path))
+    
+#     # 3. Transform 설정
+#     dataset["train"].set_transform(DuplexTransform(dataset["storage"], sample_rate=SAMPLE_RATE))
+    
+#     return dataset["train"]
 
 
 
