@@ -1,80 +1,112 @@
 import sys
 import os
-
-# src 폴더를 파이썬 경로에 추가 (sca_data 패키지를 찾기 위함)
-sys.path.append(os.path.join(os.getcwd(), "src"))
-
 import numpy as np
 from pathlib import Path
 
-# ★ 수정된 부분: 패키지 전체 경로로 임포트
-from sca_data.dataset_utils import duplex_data
-# 1. 데이터셋 경로 설정 (사용자 환경에 맞게 수정 필요)
-# 예: 현재 폴더에 'dataset' 폴더가 있고 그 안에 'WAV', 'TXT' 폴더가 있다고 가정
+# -------------------------------------------------------------------------
+# 1. 경로 설정 (src 폴더를 파이썬 라이브러리 경로에 추가)
+# -------------------------------------------------------------------------
+# 현재 실행 위치(getcwd) 기준으로 src 폴더를 찾습니다.
+current_dir = os.getcwd()
+src_path = os.path.join(current_dir, "src")
+
+if src_path not in sys.path:
+    sys.path.append(src_path)
+
+# 경로 추가 후 import
+try:
+    from sca_data.dataset_utils import duplex_data
+except ImportError as e:
+    print("\n[Critical Error] sca_data 패키지를 찾을 수 없습니다.")
+    print(f"현재 경로: {current_dir}")
+    print(f"예상되는 src 경로: {src_path}")
+    print("dataset_utils.py 파일이 ./src/sca_data/ 폴더 안에 있는지 확인해주세요.\n")
+    raise e
+
+# -------------------------------------------------------------------------
+# 2. 데이터 경로 설정
+# -------------------------------------------------------------------------
+# 실제 데이터가 위치한 폴더명으로 수정해주세요.
 DATA_DIR = Path("./Multi-stream Spontaneous Conversation Training Dataset")
 
 def print_sample_details(idx, sample):
+    """
+    단일 샘플(딕셔너리)을 받아서 내부 구조를 보기 좋게 출력하는 함수
+    """
     print(f"\n{'='*20} Sample [{idx}] {'='*20}")
-    print(f"Session ID: {sample['session_id']}")
     
-    # 기본 길이 정보
-    num_chunks = len(sample['types'])
+    # Transform을 거치면 session_id 컬럼이 사라질 수 있으므로 .get() 사용
+    sess_id = sample.get('session_id', 'Unknown (Transformed)')
+    print(f"Session ID: {sess_id}")
+    
+    # 1. 전체 청크 개수 확인
+    # sample['types']는 리스트 형태여야 합니다.
+    types = sample['types']
+    num_chunks = len(types)
     print(f"Total Chunks: {num_chunks}")
     
-    # 데이터 내용 미리보기 (앞부분 10개만 출력)
-    print("\n--- [Preview: First 10 Items] ---")
-    
-    types = sample['types'][:10]
-    texts = sample['texts'][:10]
-    masks = sample['label_mask'][:10]
-    waveforms = sample['waveforms'][:10]
-    
-    for i in range(len(types)):
-        # Waveform 정보 (Shape 및 0인지 아닌지)
-        wav_arr = np.array(waveforms[i])
-        wav_info = f"Shape={wav_arr.shape}, Max={np.max(np.abs(wav_arr)):.4f}"
-        if np.all(wav_arr == 0):
-            wav_info += " (Silence/Dummy)"
-            
-        # 텍스트 정보 (있으면 출력)
-        txt_info = f'"{texts[i]}"' if texts[i] else "-"
-        
-        # 출력 포맷
-        # Type | Mask | Text | Audio Info
-        print(f"[{i}] Type: {types[i]:<12} | Mask: {masks[i]:<4} | Text: {txt_info:<15} | Audio: {wav_info}")
-
-    # 통계 정보
-    total_user = sample['types'].count('user_audio')
-    total_target = sample['types'].count('target_audio')
-    total_text = sample['types'].count('text')
-    
+    # 2. 통계 정보 출력
     print(f"\n--- [Statistics] ---")
-    print(f"User Audio Chunks: {total_user}")
-    print(f"Target Audio Chunks: {total_target}")
-    print(f"Text Chunks (Think): {total_text}")
-    print(f"Label Mask (-100): {sample['label_mask'].count(-100)}")
-    print(f"Label Mask (1):    {sample['label_mask'].count(1)}")
+    print(f"User Audio:   {types.count('user_audio')}")
+    print(f"Target Audio: {types.count('target_audio')}")
+    print(f"Text (Think): {types.count('text')}")
+    
+    # 3. 앞부분 데이터 미리보기 (최대 10개)
+    print("\n--- [Preview: First 10 Steps] ---")
+    
+    texts = sample['texts']
+    masks = sample['label_mask']
+    waveforms = sample['waveforms']
+    
+    preview_len = min(10, num_chunks)
+    
+    print(f"{'Index':<5} | {'Type':<12} | {'Mask':<4} | {'Audio Shape':<20} | {'Text / Content'}")
+    print("-" * 80)
+    
+    for i in range(preview_len):
+        # 오디오 정보 확인
+        wav_arr = np.array(waveforms[i])
+        wav_shape_str = str(wav_arr.shape)
+        
+        # 텍스트 정보 확인
+        txt_content = f'"{texts[i]}"' if texts[i] else ""
+        
+        # 마스크 정보
+        mask_val = masks[i]
+        
+        print(f"{i:<5} | {types[i]:<12} | {mask_val:<4} | {wav_shape_str:<20} | {txt_content}")
 
 def main():
-    # 데이터 폴더 확인
+    # 데이터 폴더 존재 여부 확인
     if not DATA_DIR.exists():
-        print(f"Error: 데이터 폴더를 찾을 수 없습니다: {DATA_DIR}")
-        print("test.py 파일 안의 'DATA_DIR' 변수를 실제 데이터 경로로 수정해주세요.")
+        print(f"\n[Error] 데이터 폴더를 찾을 수 없습니다: {DATA_DIR}")
+        print("test.py 코드 상단의 'DATA_DIR' 변수를 실제 폴더 경로로 수정해주세요.\n")
         return
 
-    print(">>> 데이터셋 생성 중... (WAV/TXT 로딩)")
-    # sample_rate는 코드상의 기본값(16000) 사용
+    print(f">>> 데이터셋 로드 시작 (경로: {DATA_DIR})...")
+    
+    # 1. 데이터셋 로드 함수 호출
+    # duplex_data는 Dataset 객체(train split)를 반환해야 합니다.
     dataset = duplex_data(DATA_DIR)
     
-    print(f">>> 데이터셋 로드 완료! 총 시퀀스 개수: {len(dataset)}")
+    # 2. len() 테스트
+    try:
+        total_len = len(dataset)
+        print(f">>> [성공] 데이터셋 로드 완료! 총 시퀀스 개수: {total_len}")
+    except TypeError as e:
+        print(f">>> [오류] len() 호출 실패. dataset 객체가 리스트나 제너레이터인지 확인하세요.")
+        print(f"반환된 타입: {type(dataset)}")
+        raise e
     
-    # 0~5번 샘플 출력
-    # 데이터셋이 적을 경우를 대비해 min 처리
-    max_idx = min(6, len(dataset))
+    # 3. 데이터 접근 테스트 (인덱싱)
+    print("\n>>> 샘플 데이터 조회 테스트 (0번 ~ 2번)...")
     
-    for i in range(max_idx):
-        sample = dataset[i]
-        #print(sample)
+    # 데이터가 적을 경우를 대비해 min 사용
+    test_count = min(10, total_len)
+    
+    for i in range(test_count):
+        # 여기서 Transform이 실행됩니다 (__call__)
+        sample = dataset[i] 
         print_sample_details(i, sample)
 
 if __name__ == "__main__":

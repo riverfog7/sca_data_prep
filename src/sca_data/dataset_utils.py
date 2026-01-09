@@ -162,11 +162,19 @@ def create_duplex_dataset(data_dir: Path) -> DatasetDict:
                 with open(user_info["wav_path"], "rb") as f: u_bytes = f.read()
                 with open(target_info["wav_path"], "rb") as f: t_bytes = f.read()
                 
+                # yield {
+                #     "session_id": f"{group_key}_{target_info['spk_id']}",
+                #     # ★ 핵심: to_hf_dataset 구조 그대로 따름 {"bytes": ...}
+                #     "user_audio": {"bytes": u_bytes},
+                #     "target_audio": {"bytes": t_bytes},
+                #     "txt_path": str(target_info["txt_path"])
+                # }
                 yield {
                     "session_id": f"{group_key}_{target_info['spk_id']}",
-                    # ★ 핵심: to_hf_dataset 구조 그대로 따름 {"bytes": ...}
-                    "user_audio": {"bytes": u_bytes},
-                    "target_audio": {"bytes": t_bytes},
+                    # ★ 핵심: to_hf_dataset은 'bytes' 키를 가진 딕셔너리를 받습니다.
+                    # 'path': None을 명시해주면 라이브러리가 헷갈려하지 않습니다.
+                    "user_audio": {"bytes": u_bytes, "path": None},
+                    "target_audio": {"bytes": t_bytes, "path": None},
                     "txt_path": str(target_info["txt_path"])
                 }
 
@@ -294,7 +302,7 @@ class DuplexTransform:
         batch["label_mask"] = out_labels
         return batch
 
-def duplex_data(data_dir: Path, cache_dir: str = "./dataset_cache") -> Dataset:
+def duplex_data(data_dir: Path, cache_dir: str = "./dataset_duplex") -> Dataset:
     cache_path = Path(cache_dir)
     if cache_path.exists():
         print(f">>> Loading dataset from cache: {cache_path}")
@@ -305,8 +313,8 @@ def duplex_data(data_dir: Path, cache_dir: str = "./dataset_cache") -> Dataset:
         print(f">>> Saving dataset to cache: {cache_path}")
         dataset.save_to_disk(str(cache_path))
     
-    #dataset["train"].set_transform(DuplexTransform(dataset["storage"], sample_rate=SAMPLE_RATE))
-    #return dataset["train"]
+    dataset["train"].set_transform(DuplexTransform(dataset["storage"], sample_rate=SAMPLE_RATE))
+    return dataset["train"]
 
 # class DuplexLoader:
     

@@ -738,5 +738,5 @@ cython_debug/
 **/*.part
 
 dataset/
-dataset_test/
+dataset_duplex/
 *.tar.*
