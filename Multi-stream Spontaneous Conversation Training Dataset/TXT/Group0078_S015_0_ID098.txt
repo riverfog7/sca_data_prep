@@ -1,0 +1,279 @@
+[2.330,3.400]	ID098	male	hello hello.
+[8.810,12.220]	ID098	male	okay so what ah what type of career are you aiming for?
+[37.040,37.690]	0	none	[*]
+[57.020,57.910]	ID098	male	that be nice.
+[73.940,74.530]	0	none	[*]
+[80.270,83.350]	ID098	male	well you know me I'm still trying to be a songwriter but you know.
+[83.480,84.661]	ID098	male	I can tell take time.
+[84.770,85.510]	ID098	male	and luck.
+[85.730,89.080]	ID098	male	um but now I'm trying out you know different things um.
+[89.450,91.240]	ID098	male	ah, I'm in an internship.
+[91.460,93.160]	ID098	male	at a publishing house.
+[93.548,95.770]	ID098	male	um you know on the south shore.
+[95.870,101.263]	ID098	male	it's a shoreline publishing it was originally based in the west island but now i- it's moved to.
+[101.263,101.975]	0	none	[*]
+[102.410,104.620]	ID098	male	I don't know if you know whe- wher- where that is.
+[105.590,106.540]	ID098	male	um it's.
+[107.750,111.610]	ID098	male	yeah, it's like a small town in in Quebec and then you know the editor life there.
+[111.770,112.390]	ID098	male	so I'm.
+[112.550,115.990]	ID098	male	and an internship with her and I'm trying to publish a chapbook.
+[116.570,118.690]	ID098	male	a poetry collection that her husband wrote.
+[119.030,122.320]	ID098	male	so that's one of the things I'm trying to do and then the other thing um.
+[122.810,129.131]	ID098	male	uh, this one is kind of strange um I'm a field staffer for the liberal party in South Surrey White Rock.
+[129.560,130.419]	ID098	male	in D C.
+[133.040,137.322]	ID098	male	yeah and B C's so it's kind of weird okay, ah at first I am.
+[137.780,143.020]	ID098	male	I joined this thing called um the young liberous academy it was organized by a person.
+[143.180,144.520]	ID098	male	ah named Gary.
+[144.890,150.370]	ID098	male	so this academy um you know aim perform liberal leaders, I just joined in for fun you know.
+[150.500,154.870]	ID098	male	and then I met you know some people from from you know our old secondary school.
+[154.970,156.130]	ID098	male	just one girl.
+[156.350,157.090]	0	none	[*]
+[157.160,161.230]	ID098	male	yeah and then the program was nice know I got to meet a lot of people.
+[161.330,163.510]	ID098	male	and then I I I form some friendships.
+[163.640,164.410]	0	none	[*]
+[164.570,166.240]	ID098	male	and then Gary you know um.
+[166.460,169.930]	ID098	male	ah at the end of the program he just ask me hey would you like to.
+[170.030,175.350]	ID098	male	you know joined this um this other thing we have going on in D C it was ah.
+[175.520,179.159]	ID098	male	yeah, it's going to before you know the election the federal election coming up.
+[179.510,184.150]	ID098	male	um and then um yeah so I just ended up uh working as a field staffer for.
+[184.310,187.810]	ID098	male	you know this liberal is in D C, um so am a phone banker.
+[188.060,191.440]	ID098	male	um, I just call people and asked them, hey are you gonna vote liberal?
+[192.020,193.390]	ID098	male	so that's kind of the deal.
+[196.520,200.110]	ID098	male	yeah so so um I've got my feet in the you know different.
+[201.140,204.650]	ID098	male	I don't know the how the expression goes in different lakes in different buckets.
+[204.650,206.062]	0	none	[LAUGHTER]
+[207.800,209.174]	ID098	male	in different waters right.
+[209.174,210.110]	0	none	[LAUGHTER]
+[210.110,211.780]	ID098	male	yeah, so so that's.
+[212.360,213.878]	ID098	male	in different buckets.
+[213.878,214.858]	0	none	[LAUGHTER]
+[216.710,218.433]	ID098	male	yeah so that's how.
+[225.050,230.620]	ID098	male	yes, I'm trying out a lot of different things um just ah you know see what's going to work.
+[230.767,234.351]	ID098	male	and then what's funny abou-, you know there's something that's really funny about publishing.
+[234.440,235.240]	ID098	male	okay so.
+[235.490,236.980]	ID098	male	um, I'm actually working for.
+[237.440,242.054]	ID098	male	okay yeah, I'm actually working for two publishing houses you know um theoretically.
+[242.390,247.240]	ID098	male	um on one hand I'm working for shoreline right so so this is an unpaid internship.
+[247.430,248.440]	ID098	male	so I'm just you know.
+[248.810,253.600]	ID098	male	and then they offer classes too, so I'm joining the classes and I'm doing my staff you know.
+[253.820,255.490]	ID098	male	um or a kind of ah.
+[255.602,261.190]	ID098	male	or the business and and on the other hand I'm working for a this other publishing house called Linda leaf.
+[261.680,263.290]	ID098	male	yeah, Linda Leaf publishing.
+[263.510,268.150]	ID098	male	um, it's based in Montreal and then I help her proofread two books already.
+[268.670,269.290]	ID098	male	and then.
+[269.450,271.690]	ID098	male	um did this one is paid.
+[271.970,278.860]	ID098	male	but you know the the tasks are rather sporadic so I can't really count on them for a sustainable source of income.
+[279.261,285.620]	ID098	male	um but the thing is that the two publishing houses have complete different stories right so on one hand shoreline says.
+[285.620,289.270]	ID098	male	oh, we're really poor you know we depend on governmental grants.
+[289.730,294.460]	ID098	male	so you know they can't even survive on their own they have to depend on grants and stuff like that.
+[294.590,297.730]	ID098	male	and an old saying oh this cost too much no this is expensive.
+[297.770,300.610]	ID098	male	and on the other hand, you know this publishing house can afford to pay me.
+[300.808,301.392]	0	none	[*]
+[302.048,305.051]	ID098	male	yeah, can afford to pay me something for what I do so.
+[305.198,307.250]	ID098	male	and and it's not you know a small amount so.
+[307.380,308.719]	ID098	male	I I just don't know who to trust.
+[308.820,309.320]	ID098	male	right.
+[310.327,311.872]	ID098	male	so yeah it's really strange.
+[327.450,332.191]	ID098	male	what what there are a lot of jobs um for starters when you start with a manuscript you have um.
+[332.677,333.220]	ID098	male	of.
+[333.720,339.020]	ID098	male	oh, I forgot the official terms but you have like three types of editors right so so the first editor.
+[339.307,340.905]	ID098	male	um uh you know.
+[340.905,341.465]	0	none	[SONANT]
+[341.465,344.533]	ID098	male	the responsibility is to you know reorganized manuscript.
+[344.777,348.292]	ID098	male	or you know just to examine the manuscript to see if you know the structure works.
+[348.568,350.485]	ID098	male	and then if everything works out.
+[350.670,351.170]	ID098	male	no.
+[351.328,352.790]	ID098	male	and if there you know ah.
+[352.890,353.662]	ID098	male	if there bugs.
+[354.066,354.929]	ID098	male	you know uh.
+[355.207,358.790]	ID098	male	the responsibility of this editor is to you know reorganize the whole thing.
+[359.116,361.413]	ID098	male	and then you know to give some structure to um.
+[361.798,362.630]	ID098	male	any manuscript.
+[362.820,366.351]	ID098	male	and then um down the line ah it goes you know um.
+[367.237,368.191]	ID098	male	it's like a.
+[368.685,369.565]	0	none	[*]
+[369.712,370.214]	0	none	[SONANT]
+[370.214,371.840]	ID098	male	what's the term in english.
+[371.990,372.513]	0	none	[*]
+[372.513,373.362]	0	none	[*]
+[373.362,374.271]	ID098	male	as a set.
+[375.330,376.490]	0	none	[*]
+[376.738,378.440]	ID098	male	a funnel write a funnel hot then.
+[378.578,379.460]	ID098	male	yeah, a funnel.
+[379.590,380.180]	0	none	[*]
+[380.457,385.633]	ID098	male	yeah so uh at the end of the funnel you know you have a proofreaders like me so we're just.
+[385.978,387.702]	ID098	male	reading through the whole manuscript.
+[387.937,393.531]	ID098	male	and we're looking for you know um typos and stuff like that which may still exist in the.
+[393.839,394.550]	ID098	male	in the whole thing.
+[394.956,398.382]	ID098	male	so after that, after you know several sets of eyes.
+[398.648,399.333]	0	none	[*]
+[399.546,402.869]	ID098	male	have examined you know the manuscript you know it's ready for publishing.
+[411.848,412.490]	0	none	[*]
+[412.680,413.210]	0	none	[*]
+[414.300,415.100]	ID098	male	and.
+[450.750,451.280]	0	none	[SONANT]
+[473.239,473.942]	0	none	[*]
+[493.440,493.970]	0	none	[*]
+[505.830,506.330]	0	none	[*]
+[514.950,515.630]	ID098	male	though.
+[541.723,542.344]	0	none	[ENS]
+[552.960,553.520]	0	none	[*]
+[572.790,573.470]	0	none	[NPS]
+[600.810,601.670]	ID098	male	a what?
+[602.307,603.110]	ID098	male	what?
+[611.967,613.063]	ID098	male	no way.
+[619.207,620.233]	ID098	male	oh my god.
+[635.760,636.890]	ID098	male	why?
+[637.404,637.966]	0	none	[LAUGHTER]
+[639.013,639.663]	0	none	[LAUGHTER]
+[655.187,656.030]	ID098	male	so yeah.
+[659.317,666.752]	ID098	male	oh my god yeah you you you know what you you you aren't gonna believe this but I have you know similar experiences in my field.
+[667.194,668.000]	ID098	male	so you know.
+[668.399,670.721]	ID098	male	yeah you you-you're not gonna believe this so.
+[671.068,671.862]	0	none	[*]
+[672.660,675.830]	ID098	male	oh oh okay it's not actually my field but you know i've done their work.
+[676.246,677.293]	ID098	male	you know um.
+[677.656,678.710]	ID098	male	there were kind of.
+[679.080,680.353]	ID098	male	just personal things.
+[680.586,682.201]	ID098	male	I've helped people you know correct them.
+[682.470,686.900]	ID098	male	um their essays and you know there um even their research propositions.
+[687.240,689.662]	ID098	male	we-well there were only two times that I did this you know.
+[689.880,690.981]	ID098	male	um so.
+[691.320,691.984]	ID098	male	once.
+[692.307,695.105]	ID098	male	yeah so these people they may be bright but.
+[695.310,696.890]	ID098	male	they can write you know.
+[697.126,698.660]	ID098	male	they can write with a damn you know.
+[698.875,699.740]	ID098	male	so um.
+[700.080,702.290]	ID098	male	i just read through their text and then I was like.
+[702.630,709.550]	ID098	male	what is this like you know I'm so I'm just trying to fix everything that I can to make make it as logically sound as possible.
+[709.866,710.600]	0	none	[*]
+[710.757,713.330]	ID098	male	so I I I really understand what you're saying here.
+[713.550,715.572]	ID098	male	um you know and in um
+[715.673,718.802]	ID098	male	Ayune right my roommate was ah a .
+[719.268,721.310]	ID098	male	E E major electrical engineering.
+[721.488,722.210]	ID098	male	major right.
+[722.417,723.350]	ID098	male	so uh.
+[723.427,727.033]	ID098	male	he he yeah he was certainly bright I I'm not gonna doubt that but.
+[727.033,727.589]	0	none	[SONANT]
+[727.589,730.520]	ID098	male	um, once I look through you know some of his essays and.
+[730.708,731.782]	ID098	male	I was like oh my god.
+[732.096,734.660]	ID098	male	how how how did these people survive you know they.
+[734.970,738.110]	ID098	male	they can write for worth of damn so like you know.
+[738.249,738.800]	ID098	male	ah.
+[739.356,742.880]	ID098	male	the text were filled of you know grammatical mistakes and then just like you said.
+[743.128,746.803]	ID098	male	no verbs you know sentence of with with no verbs and then you know um.
+[747.030,749.953]	ID098	male	things that don't make any sort of sense whatsoever.
+[750.246,751.100]	ID098	male	so you know.
+[752.034,756.530]	ID098	male	I've I uh I originally I I thought that was only me who you know
+[756.787,759.583]	ID098	male	ah encountered these um things but now I'm.
+[759.870,763.040]	ID098	male	I'm saying that other people have similar experiences too so.
+[763.290,764.090]	ID098	male	it's kind of shocking.
+[784.328,785.731]	ID098	male	the books aren't even well written.
+[785.968,788.481]	ID098	male	the the books aren't even well written I can tell you.
+[788.640,789.320]	ID098	male	like like.
+[789.498,793.640]	ID098	male	yeah li-li-like this first book I I uh proof read a proof read.
+[794.280,795.033]	ID098	male	it was bad.
+[795.217,797.090]	ID098	male	I gotta tell you like the-there was no.
+[797.897,799.902]	ID098	male	i'm not gonna say there was no story but.
+[800.106,804.103]	ID098	male	the plot sucked I don't even know why you know they chose to publish it.
+[804.239,804.770]	ID098	male	so.
+[804.960,805.460]	ID098	male	you know.
+[813.240,815.743]	ID098	male	exactly there were there wasn't much substance to it.
+[815.910,816.410]	ID098	male	it was.
+[816.717,819.551]	ID098	male	it was bad it was just bad I I didn't like it at all.
+[819.908,820.783]	ID098	male	you know 'cause um.
+[820.992,821.555]	0	none	[SONANT]
+[821.555,824.642]	ID098	male	yeah yeah maybe I'm too strict about you know books 'cause ah.
+[825.346,829.040]	ID098	male	I read a lot of them so I know what I'm you know encountering a.
+[829.456,830.930]	ID098	male	a good novel you know.
+[831.150,831.890]	ID098	male	um.
+[835.500,842.472]	ID098	male	yeah maybe ah I'm not sure maybe I'm just you know to ah maybe I'm just to ah I don't know to.
+[842.977,844.340]	ID098	male	take it ah what's the word.
+[844.999,845.688]	ID098	male	demanding.
+[845.783,847.243]	ID098	male	yeah maybe i'm just too demanding.
+[847.626,848.540]	ID098	male	but um.
+[848.886,850.012]	ID098	male	it was bad you know.
+[850.140,850.820]	ID098	male	there was no.
+[851.118,857.450]	ID098	male	well yeah the the plot was muddled and in the end, was unclear and then there was just no real conflict necessary so it was bad.
+[857.760,858.440]	ID098	male	so yeah.
+[862.590,863.360]	ID098	male	it was just like.
+[864.180,865.730]	ID098	male	yeah it was just a bland.
+[866.190,866.750]	0	none	[*]
+[878.520,879.650]	ID098	male	but no.
+[879.990,880.640]	ID098	male	who's that.
+[883.881,884.934]	ID098	male	yeah Kuman.
+[885.257,886.940]	ID098	male	I I know that and ah yeah
+[890.752,891.451]	0	none	[LAUGHTER]
+[915.733,917.042]	0	none	[SYSTEM]
+[944.460,944.962]	0	none	[*]
+[951.383,951.935]	0	none	[SONANT]
+[955.607,956.180]	0	none	[*]
+[959.580,960.140]	0	none	[*]
+[974.430,976.100]	0	none	[LAUGHTER]
+[990.688,991.430]	ID098	male	why?
+[999.210,999.860]	0	none	[*]
+[1000.066,1001.572]	0	none	[LAUGHTER]
+[1002.759,1004.214]	0	none	[LAUGHTER]
+[1008.300,1008.860]	0	none	[*]
+[1031.424,1032.209]	0	none	[LAUGHTER]
+[1035.321,1037.300]	0	none	[LAUGHTER]
+[1049.400,1049.990]	0	none	[*]
+[1052.070,1052.630]	0	none	[*]
+[1083.248,1085.870]	0	none	[LAUGHTER]
+[1089.208,1090.250]	0	none	[LAUGHTER]
+[1093.110,1093.670]	0	none	[*]
+[1107.006,1107.590]	0	none	[*]
+[1122.330,1129.133]	ID098	male	yow it's crazy i-it's crazy cause you know since the beginning of quarantine I've been working as a tutor as well and then I've.
+[1129.657,1130.161]	0	none	[*]
+[1130.448,1137.043]	ID098	male	I've tutor this kid right eh um he emigrated from china and and now he went back to China 'cause you know his mom was.
+[1137.346,1142.000]	ID098	male	worried about his schooling doing quarantine 'cause you know if you have to do online it in China you can do in person.
+[1142.280,1144.970]	ID098	male	um, so I've been doing long-distance tutoring for him.
+[1145.186,1149.442]	ID098	male	and then his exactly like the kid you you just describe like she doesn't remember anything in it.
+[1149.746,1152.373]	ID098	male	you know what are the what are the querks he has.
+[1152.637,1153.433]	ID098	male	like um.
+[1154.017,1157.960]	ID098	male	he he would just you know for example for reading text right and then ah they're like.
+[1158.286,1159.451]	ID098	male	five lines for example.
+[1159.648,1161.172]	ID098	male	and then he would just start on the first line.
+[1161.416,1165.422]	ID098	male	and in second-line, he will be fine and then third line he'll be fine and then he was skipped over to fourth. one
+[1165.739,1166.990]	ID098	male	he would just go to the fifth.
+[1168.248,1169.840]	ID098	male	ah does your kid do that?
+[1171.698,1174.580]	ID098	male	ah oh no not every single time but but like does her.
+[1174.888,1177.220]	ID098	male	does it happen with you know the kid your tutoring?
+[1187.700,1188.380]	0	none	[*]
+[1191.167,1192.673]	ID098	male	yeah yeah um.
+[1199.430,1200.050]	0	none	[*]
+[1222.800,1223.420]	0	none	[SONANT]
+[1225.200,1225.792]	0	none	[*]
+[1226.100,1226.660]	0	none	[*]
+[1227.450,1228.010]	0	none	[*]
+[1232.911,1233.551]	0	none	[LAUGHTER]
+[1241.856,1242.966]	0	none	[SONANT]
+[1243.896,1249.804]	ID098	male	yo kids these days like there so similar what i can't even believe it.
+[1250.557,1251.470]	ID098	male	yow.
+[1254.907,1257.486]	ID098	male	a-a-and for some reason i feel like we're parents.
+[1257.690,1260.080]	ID098	male	and then like we're just talking about oh my god.
+[1268.850,1269.530]	0	none	[*]
+[1281.347,1283.599]	0	none	[*]
+[1286.880,1289.150]	ID098	male	ah yeah sometimes you can't get close to cause too bizarre.
+[1290.537,1291.183]	ID098	male	I guess.
+[1291.680,1294.820]	ID098	male	I don't even remember maybe maybe not.
+[1296.810,1298.510]	ID098	male	I I don't know man yeah.
+[1305.720,1306.850]	ID098	male	yeah I I I try.
+[1309.110,1310.423]	ID098	male	it's crazy.
+[1310.550,1311.050]	ID098	male	it's.
+[1311.840,1314.140]	ID098	male	it-it's crazy it's crazy like i can.
+[1314.450,1318.310]	ID098	male	ah we're we're we like this we were a kid I I don't even remember.
+[1318.486,1320.410]	ID098	male	wha-what was I like just as it on.
+[1320.648,1321.700]	ID098	male	I hope not.
+[1321.956,1325.322]	ID098	male	like I had tutors when I was young to I hope I wasn't annoying too.
+[1325.460,1325.960]	ID098	male	there.
+[1327.290,1330.322]	ID098	male	because it's difficult you know making some bucks.
+[1330.705,1333.700]	ID098	male	you know working day and night ah not day and night but like you know working.
+[1334.700,1335.830]	ID098	male	okay well.
+[1337.100,1338.050]	ID098	male	it's crazy.
+[1338.870,1339.817]	ID098	male	and the cards.
+[1339.817,1340.313]	0	none	[LAUGHTER]
+[1340.313,1341.580]	ID098	male	all right well uh uh.
+[1343.160,1344.458]	0	none	[*]
+[1344.872,1345.640]	0	none	[LAUGHTER]
+[1346.190,1347.050]	ID098	male	it's crazy.

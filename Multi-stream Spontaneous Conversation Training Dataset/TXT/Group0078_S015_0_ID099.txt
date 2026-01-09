@@ -1,0 +1,342 @@
+[0.710,1.810]	ID099	female	hello hello.
+[4.340,7.450]	ID099	female	so career wise what do you want to talk about?
+[13.130,20.960]	ID099	female	um okay well right now I'm sitting in law right so I mean the idea is you know it's gonna be the typical like oh I'm gonna be a lawyer.
+[21.110,22.060]	ID099	female	but um.
+[22.730,26.530]	ID099	female	you know I don't have any specific idea of what kind of lawyer I wanna be.
+[26.960,29.590]	ID099	female	um but I'm you know I'm thinking um.
+[30.170,36.430]	ID099	female	you know something like the- there classic is like a litigation floor right someone who shows up in court and says i object and all that.
+[36.830,37.360]	ID099	female	the first.
+[38.900,40.360]	ID099	female	doing that um.
+[40.520,43.060]	ID099	female	I am I think more like counseling or like giving like.
+[43.160,43.900]	ID099	female	you know like.
+[44.240,47.560]	ID099	female	um legal advi- legal advice like for like ah.
+[48.170,53.440]	ID099	female	situations that takes place outside of course that's what I'm aiming for though I don't have a specific domain like.
+[53.930,54.880]	ID099	female	um.
+[55.040,56.170]	ID099	female	decided yet.
+[56.360,57.970]	ID099	female	um but yeah so.
+[58.100,60.160]	ID099	female	so yeah right now I'm going around like um.
+[60.740,62.620]	ID099	female	I'm trying as much as possible to um.
+[62.900,65.349]	ID099	female	to like apply to different types of ah.
+[65.720,66.550]	0	none	[*]
+[67.010,72.730]	ID099	female	you know like legal related um internships sort like li- small jobs till I get a feel of the vibe.
+[73.190,76.090]	ID099	female	but um yeah that's that's where I'm at currently.
+[76.100,78.760]	ID099	female	how about you what are you looking to do in the future?
+[82.910,83.620]	0	none	[*]
+[96.260,96.850]	0	none	[*]
+[105.260,107.350]	ID099	female	not quite I'll try I'll be honest.
+[119.030,119.800]	ID099	female	oh.
+[125.210,125.710]	0	none	[*]
+[131.420,132.490]	ID099	female	and B C.
+[148.970,149.680]	ID099	female	yeah.
+[155.210,156.040]	0	none	[*]
+[179.600,180.190]	0	none	[*]
+[193.670,195.820]	ID099	female	oh my god wow.
+[203.780,207.490]	ID099	female	is it in different waters I think I think that's how it goes in different waters.
+[210.500,212.200]	0	none	[LAUGHTER]
+[214.670,216.010]	ID099	female	oh my god.
+[217.310,222.310]	ID099	female	oh that's that's sounds cool though like to have like a dessert the diversified like um.
+[222.590,224.680]	ID099	female	I mean like work experience that's cool.
+[231.080,231.790]	0	none	[*]
+[235.160,235.780]	ID099	female	yeah.
+[247.730,248.410]	0	none	[*]
+[263.960,264.790]	ID099	female	okay.
+[268.820,269.650]	ID099	female	oh.
+[272.540,273.760]	ID099	female	no.
+[279.500,280.300]	ID099	female	oh.
+[293.630,294.400]	0	none	[*]
+[305.810,306.510]	0	none	[*]
+[308.400,309.620]	ID099	female	oh wow.
+[314.400,317.510]	ID099	female	wha- what kind of what kind of books do you pref- well hm.
+[318.090,324.230]	ID099	female	a curious 'cause um what kind of job do you do? like a public decision house, are you just like, you just, review for like um.
+[324.990,327.200]	ID099	female	for life mistakes or?
+[342.030,342.739]	0	none	[SYSTEM]
+[359.460,360.200]	ID099	female	mhm.
+[373.049,374.090]	0	none	[LAUGHTER]
+[375.270,376.160]	ID099	female	a funnel.
+[377.040,377.930]	ID099	female	a funnel.
+[392.250,393.170]	ID099	female	um.
+[404.730,407.900]	ID099	female	ah okay that's so, that's so, cool about um.
+[408.540,411.440]	ID099	female	that you're like part of this whole process that's really cool.
+[413.790,418.250]	ID099	female	like um similarly um right now I'm, I'm doing an internship.
+[418.799,419.750]	ID099	female	um.
+[419.940,422.330]	ID099	female	where um it's for it's for um.
+[422.670,428.060]	ID099	female	it's pretty it's for university ah you will not a university the university um.
+[428.730,432.260]	ID099	female	journal, um journal blog what, right? um.
+[432.780,435.527]	ID099	female	so um yeah basically I'm part of the.
+[436.050,436.880]	ID099	female	ah.
+[437.189,440.330]	ID099	female	oh okay. technically I'm a member of the reduction team.
+[440.550,442.190]	ID099	female	but honestly um.
+[442.980,448.160]	ID099	female	honestly I just I I I appropriate like you're like you say um I I read for.
+[448.440,452.180]	ID099	female	I look over, I'm sorry, I read the text and look for.
+[452.370,455.660]	ID099	female	um you know like grant grammatical errors or or what not.
+[455.880,457.370]	ID099	female	but also um.
+[457.440,459.379]	ID099	female	you know if if the sentence is like.
+[460.229,465.289]	ID099	female	if if if if there are certain elements that are unclear about the content.
+[465.330,466.220]	ID099	female	I always like.
+[466.288,467.538]	ID099	female	and the comments right.
+[467.550,471.410]	ID099	female	then it's up to the author whether or not they want to change their contents to reflect.
+[471.660,472.788]	ID099	female	to reflect at all.
+[473.340,475.099]	ID099	female	to reflect the comments um.
+[475.620,477.288]	ID099	female	I I left but um.
+[477.420,479.240]	ID099	female	one thing I realized out of the job.
+[479.340,485.000]	ID099	female	I I mean I'm sure it's it's it's gotta be wildly different for you for your it from your experience but um.
+[485.280,489.020]	ID099	female	because the articles I'm proofreading our articles written by him.
+[489.480,490.310]	ID099	female	um.
+[490.410,492.020]	ID099	female	the doctoral students.
+[492.539,493.610]	ID099	female	alright um.
+[493.980,494.690]	ID099	female	ah.
+[494.850,497.240]	ID099	female	it's um it's articles that.
+[498.000,502.399]	ID099	female	you know that introduce their their their the project that it did for the doctor ah.
+[502.860,505.430]	ID099	female	I I can't pronounce the well but there are doctorate right?
+[506.550,507.560]	ID099	female	um so.
+[508.500,510.710]	ID099	female	I end up reading a lot of text.
+[511.380,513.890]	ID099	female	doesn't have that make no grammatical sense.
+[514.350,515.690]	ID099	female	because like um.
+[516.180,519.919]	ID099	female	'cause 'cause eng- sorry, french is not necessarily their main language.
+[520.020,525.770]	ID099	female	and like they really like more concentrated on like the research aspect and like the concept of myself sort of presentation aspect.
+[525.870,527.240]	ID099	female	might be like lacking.
+[527.610,531.620]	ID099	female	but I remember the first week I got my first my first text.
+[532.290,535.610]	ID099	female	um well I got two texts the first week to read over.
+[536.490,537.799]	ID099	female	and the first one I read.
+[538.020,539.299]	ID099	female	and I just have.
+[539.520,542.840]	ID099	female	so much trouble understanding and you know like normal like.
+[542.910,544.938]	ID099	female	scientific research papers is.
+[545.189,547.760]	ID099	female	um there there are some words that are like.
+[547.979,552.710]	ID099	female	fairy um fuel specific that was a search up you know what the rest of the sentence means right.
+[553.049,556.040]	ID099	female	but in this case you I understood every single word.
+[556.290,560.960]	ID099	female	and yet couldn't understand what percentage meant like it was that kind of reading and it was so.
+[561.630,564.020]	ID099	female	it was so tired because a lot of these sentences were just.
+[564.299,566.630]	ID099	female	you know like incomplete like you know like verbs.
+[566.760,572.720]	ID099	female	or like you know like you know like when french when you try to write fancy you just run on really long sentences.
+[574.080,576.800]	ID099	female	but yeah this personal of grew like trying to do that but like.
+[578.309,580.910]	ID099	female	it was just really hard to read hard to understand.
+[581.220,584.240]	ID099	female	and then when I read to my when it comes to my second and like.
+[584.400,587.900]	ID099	female	and it's really well written it's really fluent I'm like wow this is a great texts.
+[588.150,591.650]	ID099	female	and when I showed these to text to my superior supervisor.
+[591.930,592.639]	ID099	female	um.
+[593.220,596.090]	ID099	female	she she she re- she she goes have both of them and.
+[596.160,598.520]	ID099	female	he just sees the text that iPhone was really good.
+[598.590,600.530]	ID099	female	and she's like oh no this garbage.
+[600.540,601.970]	ID099	female	like we can't publish this.
+[602.100,603.260]	ID099	female	because in.
+[603.480,604.070]	ID099	female	'cause.
+[604.499,606.710]	ID099	female	the content wise it goes against.
+[607.530,611.660]	ID099	female	it goes against like the methodology that was awaited of of the of the author.
+[611.850,612.949]	ID099	female	from what I understand.
+[613.079,618.889]	ID099	female	but that really surprised me because I'm like okay but that's the text that like though 'cause like I can actually understand what is talking about.
+[619.170,621.110]	ID099	female	um but yeah because ah.
+[621.240,624.020]	ID099	female	the whole thing if it's it's also like a class for them right.
+[624.030,625.520]	ID099	female	she gave a seminar.
+[625.710,629.360]	ID099	female	so she's like clearly dispersants the understand my seminar at all.
+[629.460,630.110]	ID099	female	and I was like.
+[630.329,635.630]	ID099	female	okay, how about this other text then she's like oh this person she's such a genius I.
+[635.669,637.070]	ID099	female	love her I love her work.
+[637.110,638.780]	ID099	female	she so bright minded.
+[638.879,640.010]	ID099	female	so I'm just here I'm like.
+[640.110,643.580]	ID099	female	okay so clearly it's just because I I don't know what I'm like.
+[643.680,646.490]	ID099	female	clearly I'm here to kill it correct that um.
+[646.889,649.040]	ID099	female	the language because content wise like.
+[649.410,654.020]	ID099	female	you know I'm gonna I'm gonna trust the professor when she says that it's a good text or and a good research work.
+[654.210,654.770]	ID099	female	right?
+[655.110,659.930]	ID099	female	but um for a relation wife it was it was kind of rough life.
+[666.630,668.179]	ID099	female	oh my God for real?
+[676.680,677.390]	ID099	female	mhm.
+[687.450,688.130]	ID099	female	mhm.
+[699.298,699.764]	ID099	female	mhm.
+[699.764,700.497]	0	none	[LAUGHTER]
+[714.120,714.920]	ID099	female	mhm.
+[721.949,722.660]	ID099	female	ah.
+[746.580,747.330]	0	none	[SONANT]
+[747.330,748.460]	ID099	female	oh my God.
+[762.210,763.130]	ID099	female	oh yeah.
+[764.940,768.528]	ID099	female	yeah because when you said you had similar experiences also surprised because like.
+[768.660,769.490]	ID099	female	I mean like.
+[769.528,774.110]	ID099	female	and now that you explain in which context and make sense but I thought you meant like when you were working with the.
+[774.150,775.100]	ID099	female	with the publishers.
+[775.230,775.880]	ID099	female	and I was like.
+[775.950,777.020]	ID099	female	wait but like.
+[777.180,783.499]	ID099	female	doesn't go through an editor before you and also like aren't the people were like read these books like supposed to be like at least well written.
+[783.990,786.230]	ID099	female	but not now I understand, now I understand what you mean.
+[786.869,787.580]	ID099	female	o- oh.
+[788.339,790.160]	ID099	female	oh shade! oh my God, ah.
+[802.230,803.840]	ID099	female	okay okay.
+[805.830,807.230]	ID099	female	so like um.
+[808.290,813.050]	ID099	female	like the writing might not be atrocious but there wasn't much substance to it is that what you're saying.
+[815.940,817.250]	ID099	female	um.
+[820.350,821.689]	ID099	female	no no.
+[827.069,827.960]	ID099	female	mhm.
+[831.300,834.289]	ID099	female	yeah you have like you have like higher tastes in the more experience.
+[835.020,835.610]	ID099	female	right?
+[846.480,847.310]	ID099	female	ah.
+[858.360,861.710]	ID099	female	oh wow! okay, okay. I see, I see.
+[862.590,864.110]	ID099	female	oh that's that's that's.
+[865.020,865.610]	ID099	female	yeah.
+[866.549,867.380]	ID099	female	um.
+[868.799,870.379]	ID099	female	oh my God you know um.
+[871.049,874.760]	ID099	female	I mean sorry it's unrelated but I totally lost it on my memory which is like weird.
+[874.920,876.200]	ID099	female	and career wise.
+[876.360,877.819]	ID099	female	I forgot, do you know, kumon?
+[880.350,883.250]	ID099	female	oh kumon, okay, it's it's it's it's a learning um.
+[883.890,885.440]	ID099	female	it's a learning center right.
+[885.690,886.669]	ID099	female	yeah yeah yeah.
+[886.920,890.570]	ID099	female	yeah the the the one that like all the ancients kid isn't kids go to.
+[891.000,891.710]	ID099	female	um.
+[892.560,893.270]	ID099	female	I.
+[893.640,894.530]	ID099	female	um.
+[894.930,896.870]	ID099	female	I I went to kuman when I was a kid.
+[896.880,897.410]	ID099	female	right.
+[897.660,898.430]	ID099	female	and then.
+[898.500,901.880]	ID099	female	later on in like um when I was like about seventeen.
+[902.100,906.470]	ID099	female	I was like oh um I just started looking for job you know to occupy my summers.
+[906.891,909.114]	0	none	[*]
+[909.114,911.210]	ID099	female	sorry I apply to kumon near my house.
+[911.848,912.590]	ID099	female	um.
+[912.660,913.940]	ID099	female	I'm gonna start working there.
+[914.130,914.660]	ID099	female	right.
+[914.910,917.870]	ID099	female	um, I stopped a bit. I stopped a bit, um.
+[918.090,921.140]	ID099	female	the year before university because I wanted to ah.
+[921.448,922.759]	ID099	female	concentrate on my studies.
+[923.340,928.130]	ID099	female	but recently that my boss reached out to me to ask me to work for for her at kumon again.
+[928.440,930.140]	ID099	female	and I can't believe um.
+[930.959,933.530]	ID099	female	you know like when this topic of careers came up.
+[933.720,937.280]	ID099	female	I just completely forgot that he was I'm currently working with kumon.
+[937.470,941.090]	ID099	female	but oh my God I have so many I mean I don't have so many experiences but.
+[942.060,944.090]	ID099	female	because I'm working with like younger kids.
+[945.690,946.940]	ID099	female	and um.
+[947.669,951.020]	ID099	female	you know so so this is just really not easy.
+[951.090,953.720]	ID099	female	oh well right now we've got we're doing it um.
+[953.820,955.160]	ID099	female	and the online format.
+[955.620,957.260]	ID099	female	so like a zoom.
+[957.420,959.180]	ID099	female	and it's a brother and sister right?
+[959.250,963.620]	ID099	female	so first on what the brother for fifteen minutes and then the sister for fifteen minutes and basically.
+[963.630,965.540]	ID099	female	I have like the answer book in my hand.
+[965.790,967.730]	ID099	female	and um they have their homework.
+[968.009,968.719]	ID099	female	um.
+[969.150,974.180]	ID099	female	oh yeah so yeah so you know kumon like we give extra homework and we're done with school work right.
+[974.459,976.850]	ID099	female	so um they just read out loud for me.
+[976.920,978.590]	ID099	female	and I correct them if they're wrong.
+[979.049,982.610]	ID099	female	but um the kid the the brother his his his smaller.
+[982.860,983.540]	ID099	female	um.
+[984.210,985.910]	ID099	female	he he doesn't reads.
+[986.130,988.070]	ID099	female	he sees the first letter.
+[988.290,990.260]	ID099	female	and he just get the rest of the word.
+[990.569,991.490]	ID099	female	and have to be like.
+[992.070,993.319]	ID099	female	yeah 'cause um.
+[993.750,995.420]	ID099	female	like um let's say ah.
+[996.479,997.340]	ID099	female	um.
+[997.470,998.600]	ID099	female	the word is deep.
+[998.910,1000.490]	ID099	female	right like the deep river.
+[1000.590,1001.270]	ID099	female	and he's like.
+[1001.519,1002.290]	ID099	female	damp.
+[1002.450,1003.909]	ID099	female	or like um.
+[1004.370,1008.440]	ID099	female	um we are we were reading about the the myth of Hades and Persephone right.
+[1008.510,1010.269]	ID099	female	and Hades and Persephone like.
+[1010.310,1013.900]	ID099	female	you know it's not english so I understand that he has like trouble of pronouncing that.
+[1014.060,1014.799]	ID099	female	um.
+[1015.410,1017.140]	ID099	female	but um just get like.
+[1017.150,1018.460]	ID099	female	he just like, he also like.
+[1018.860,1019.930]	ID099	female	doesn't remember.
+[1020.179,1021.100]	ID099	female	so like you like.
+[1021.740,1026.620]	ID099	female	ah he he's root of Hades and he stops and I was like Hades he was like Hades.
+[1026.900,1028.480]	ID099	female	and then that's same we reaches Hades.
+[1028.490,1029.710]	ID099	female	he stopped again and it's like.
+[1030.170,1030.970]	ID099	female	hands.
+[1031.190,1031.750]	ID099	female	and I'm like.
+[1032.060,1035.590]	ID099	female	hands there's no end in Hades how did you get the word hands?
+[1035.870,1036.700]	ID099	female	um.
+[1037.310,1039.280]	ID099	female	unlike unlike the sentence is um.
+[1039.290,1040.150]	ID099	female	the question.
+[1040.220,1040.810]	ID099	female	is.
+[1040.849,1041.798]	ID099	female	where did.
+[1041.869,1043.510]	ID099	female	Hades take Persephone?
+[1043.640,1045.820]	ID099	female	and the answer was um.
+[1045.950,1048.430]	ID099	female	Hades took Persephone to his chariot.
+[1048.440,1049.000]	ID099	female	right.
+[1049.040,1051.790]	ID099	female	and there's even like a little drawing next to it so that you know.
+[1052.130,1053.380]	ID099	female	and um.
+[1053.810,1058.570]	ID099	female	and my my friend overheard me 'cause um yeah like they overheard on this call.
+[1058.730,1059.500]	ID099	female	um.
+[1059.930,1060.669]	ID099	female	ah.
+[1060.830,1062.950]	ID099	female	I spent like five minutes being with the kid like.
+[1063.140,1065.080]	ID099	female	where did Hades take Persephone?
+[1065.240,1068.440]	ID099	female	like read through the text, look at the drawings where do you, where did.
+[1068.510,1070.778]	ID099	female	where did, per- Hades take Persephone and he's like.
+[1070.910,1071.830]	ID099	female	Hades.
+[1071.870,1072.490]	ID099	female	to.
+[1072.770,1073.960]	ID099	female	Persephone.
+[1074.240,1075.580]	ID099	female	on into.
+[1076.130,1082.058]	ID099	female	and then he's like oh I don't know and I'm like look, look at the small drawing, what is it? and he was like, oh! I know. and then yeah what? and he's like.
+[1082.100,1082.930]	ID099	female	love!
+[1083.030,1083.620]	ID099	female	and I'm like.
+[1083.930,1084.550]	ID099	female	what?
+[1085.040,1087.490]	ID099	female	Hades took Persephone to love? are you?
+[1087.650,1088.330]	ID099	female	I mean like.
+[1089.330,1092.800]	ID099	female	like of course I'm studying I'm like playing this up for like comedy.
+[1092.869,1094.840]	ID099	female	right 'cause like the kids learning.
+[1094.910,1096.550]	ID099	female	but sometimes it really.
+[1097.055,1099.309]	ID099	female	it's it's kinda it's kinda frustrating.
+[1099.349,1100.480]	ID099	female	especially when like.
+[1100.730,1101.470]	ID099	female	um.
+[1102.020,1110.680]	ID099	female	he doesn't he doesn't like make an effort to like remember what I'm saying to him right he just drugs it off or a lot of the times when he's reading I correct of the he says wrong.
+[1110.930,1115.899]	ID099	female	and it keeps reading like he doesn't even stop a beach to like acknowledge that I corrected him.
+[1115.999,1118.360]	ID099	female	which like I'm here I'm here sitting like.
+[1118.490,1121.990]	ID099	female	would you even if you're not gonna listen to my corrections.
+[1122.510,1123.370]	ID099	female	um.
+[1140.180,1140.710]	ID099	female	mhm.
+[1142.730,1143.260]	ID099	female	yeah.
+[1148.520,1149.560]	ID099	female	oh my God.
+[1166.550,1167.949]	ID099	female	oh my God.
+[1169.760,1171.056]	ID099	female	every single time?
+[1178.040,1178.690]	ID099	female	um.
+[1178.910,1181.000]	ID099	female	personally know but that's just because like.
+[1181.280,1187.509]	ID099	female	um I don't know about your eyes but a mind like he he struggled a lot with the floor with every single where every to the two words.
+[1188.209,1190.329]	ID099	female	so he's really taking his time to like read through.
+[1191.930,1194.078]	ID099	female	oh but what what um.
+[1194.720,1197.019]	ID099	female	what annoys me sometimes it's um.
+[1197.150,1199.210]	ID099	female	'cause it's him and and his sister right.
+[1199.340,1201.759]	ID099	female	so it's fifty minutes fifty minutes but it's the same call.
+[1202.130,1202.810]	ID099	female	so.
+[1203.450,1204.280]	ID099	female	sometimes.
+[1204.500,1208.240]	ID099	female	sometimes like before we've even done he'll be like so we're done right I'll go get my sister.
+[1208.700,1210.849]	ID099	female	and I might know we still have three minutes.
+[1210.920,1212.829]	ID099	female	and there's like what but like we started late.
+[1212.930,1215.500]	ID099	female	and I'm like exactly we started a bit later.
+[1215.720,1218.800]	ID099	female	so I gotta make up for a time like you know I'm just gonna like.
+[1219.350,1220.180]	ID099	female	um.
+[1220.790,1223.150]	ID099	female	I'm not gonna cut down on your time I'm just gonna like.
+[1223.220,1225.730]	ID099	female	move at all a few minutes like you know.
+[1225.950,1227.079]	ID099	female	like that's the logic, right?
+[1227.210,1230.440]	ID099	female	and then he spent like two minutes debating me on whether or not and like.
+[1231.230,1232.832]	ID099	female	we're wasting time, like.
+[1232.832,1233.320]	0	none	[*]
+[1233.390,1235.960]	ID099	female	why are you why you so how bent on this is like.
+[1236.180,1238.750]	ID099	female	his eye all but my clocks as it's already like.
+[1238.760,1241.270]	ID099	female	thirty and I'm like well mine doesn't.
+[1241.340,1244.720]	ID099	female	so I were going with my time I'm like this.
+[1245.480,1246.340]	ID099	female	this kid.
+[1247.610,1248.445]	ID099	female	yeah.
+[1251.030,1251.769]	ID099	female	it's.
+[1251.900,1254.320]	ID099	female	it's insane yeah oh my God.
+[1255.200,1256.060]	ID099	female	and like.
+[1259.909,1260.500]	ID099	female	right.
+[1260.930,1261.550]	ID099	female	like.
+[1261.829,1268.630]	ID099	female	yeah it's like usually when you talk to kids that are not yours like it's fun right because you have done of the responsibility and it's just like playing with them.
+[1268.880,1269.800]	ID099	female	but like.
+[1270.560,1276.940]	ID099	female	these are just make me doubt my ability of a lot of apparent 'cause I'm like well I just like my temper in the middle if they're like.
+[1277.099,1277.600]	ID099	female	'cause.
+[1277.820,1278.530]	ID099	female	um.
+[1278.630,1280.900]	ID099	female	yeah I don't know like a lot of temper with a kid.
+[1282.560,1286.329]	ID099	female	but sometimes but but sometimes I'm like really really really annoyed.
+[1287.780,1288.880]	ID099	female	have you lost your temper?
+[1294.709,1296.230]	ID099	female	oh my god.
+[1297.140,1300.940]	ID099	female	I mean in general I just don't move my temper though so that's the that so.
+[1301.100,1304.030]	ID099	female	um I don't I don't like losing my temper 'cause it gets nasty.
+[1304.459,1305.409]	ID099	female	but yeah.
+[1305.930,1310.149]	ID099	female	well I can't believe that we we have we have such similar experiences I thought I thought it was just a kid.
+[1310.220,1311.410]	ID099	female	I thought it was just him.
+[1319.040,1320.500]	ID099	female	oh my god I hope no!
+[1326.210,1327.009]	ID099	female	mhm.
+[1336.200,1336.700]	ID099	female	hi.
+[1337.130,1340.390]	ID099	female	and comes to say. yeah oh my God. this was.
+[1340.397,1343.220]	0	none	[LAUGHTER]
+[1343.220,1346.314]	ID099	female	but yeah I'll see from the sun but honestly yeah it's crazy.

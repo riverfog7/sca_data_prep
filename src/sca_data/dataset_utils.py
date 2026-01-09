@@ -11,10 +11,261 @@ import soundfile as sf
 from datasets import DatasetDict, Dataset, load_from_disk
 from datasets import Features, Value, Audio, Sequence
 from tqdm import tqdm
+import re 
+import math
 
 from .constants import DEFAULT_SYSTEM_PROMPT, DEFAULT_INSTRUCTION_PROMPT
 from .models.events import ComedianEvent, BaseEvent, AudienceEvent, EnvironmentEvent, ComedySession
 from .utils import clean_audio_bytes, check_and_resample_audio, extract_speaker_embedding, SPEAKER_EMBEDDING_DIM
+
+
+# 설정: 0.16초 청크
+CHUNK_DURATION = 0.16  
+
+# 시퀀스 길이: 15분 (900초)
+SEQUENCE_DURATION = 900 
+
+# 슬라이딩 윈도우 간격 (Stride): 3분 (180초)
+# 0~15분, 3~18분, 6~21분... 순으로 생성 (12분씩 겹침)
+# 이유: 대화의 맥락(Context)을 잃지 않으면서 데이터 양을 증강(Augmentation)하는 효과
+SEQUENCE_STRIDE = 180  
+
+SAMPLE_RATE = 16000
+
+def parse_aligned_script(txt_path:Path) -> list[dict]:
+    events=[]
+
+    pattern = re.compile(r'\[(\d+\.\d+),\s*(\d+\.\d+)\]\s+\S+\s+\S+\s+(.*)')
+    
+    if not txt_path.exists():
+        return []
+
+
+    with open(txt_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            match = pattern.search(line)
+            if match:
+                start, end, content = match.groups()
+                start_t = float(start)
+                end_t = float(end)
+                content = content.strip()
+                
+                #단어를 쪼갬 (why? 0.16초 후 5초 분량의 텍스트를 예측해야 한다면 지연시간 증가)
+                words = content.split()
+                
+                events.append({
+                    "start": start_t,
+                    "end": end_t,
+                    "text": content,
+                    "words": words,               
+                    "duration": end_t - start_t   
+                })
+    
+    """
+    {
+        "start": 0.315,
+        "end": 0.867,
+        "text": "[SONANT]"
+        "words": [],
+        "duration": 0.552
+    },
+    {
+        "start": 3.200,
+        "end": 5.320,
+        "text": "ah hello J P how are you today?",
+        "words": ["ah", "hello", "J", "P", "how", "are", "you", "today?"],
+        "duration": 2.12
+    },
+    {
+        "start": 9.920,
+        "end": 10.900,
+        "text": "yeah um."
+        .......
+    """
+    return sorted(events, key=lambda x: x["start"])
+
+
+def get_sliced_text(chunk_start: float, chunk_end: float, events: list[dict]):
+    """
+    0.16초라는 매우 짧은 청크 시간 동안 말해야 할 텍스트를 배분합니다.
+    비율: 오디오 진행률에 비례하여 단어를 할당 (Time-based Slicing)
+    """
+    sliced_text = ""
+    is_speech = False
+    
+    for evt in events:
+        # 1. 오디오 오버랩 체크 (Speech 구간인지)
+        overlap_start = max(chunk_start, evt["start"])
+        overlap_end = min(chunk_end, evt["end"])
+        
+        if overlap_end > overlap_start:
+            is_speech = True
+            
+            # 2. 텍스트 배분 (4토큰/0.16초 비율에 맞춰 단어 Slicing)
+            if evt["duration"] > 0 and evt["words"]:
+                # 현재 청크가 전체 대사 구간에서 차지하는 비율 계산
+                rel_start = (overlap_start - evt["start"]) / evt["duration"]
+                rel_end = (overlap_end - evt["start"]) / evt["duration"]
+                
+                n_words = len(evt["words"])
+                
+                # 인덱스 계산 (소수점 처리를 통해 자연스럽게 배분)
+                w_start = int(rel_start * n_words)
+                w_end = int(math.ceil(rel_end * n_words)) 
+                
+                # 인덱스 범위 제한
+                w_start = max(0, w_start)
+                w_end = min(n_words, w_end)
+                
+                # 해당 구간의 단어 추출
+                current_words = evt["words"][w_start:w_end]
+                if current_words:
+                    sliced_text = " ".join(current_words)
+                    
+            # 0.16초는 매우 짧으므로, 한 이벤트 안에 여러 청크가 들어감.
+            # 루프는 계속 돌되, 현재 청크 범위를 벗어난 이벤트는 볼 필요 없음
+        
+        if evt["start"] > chunk_end:
+            break
+            
+    return is_speech, sliced_text
+
+
+def duplex_data(data_dir: Path, sample_rate: int = 16000) -> Dataset:
+    wav_dir = data_dir / "WAV"
+    txt_dir = data_dir / "TXT"
+    
+    sessions = {}
+    # WAV 파일 목록 로드 및 세션 그룹화
+    for wav_file in wav_dir.glob("*.wav"):
+        parts = wav_file.stem.split('_')
+        group_key = "_".join(parts[:-1]) # 예: Group0006_S001_0
+        spk_id = parts[-1]               # 예: ID164
+        
+        if group_key not in sessions:
+            sessions[group_key] = []
+        sessions[group_key].append({
+            "spk_id": spk_id,
+            "wav_path": str(wav_file),
+            "txt_path": txt_dir / f"{wav_file.stem}.txt"
+        })
+
+    def generator():
+        for group_key, speakers in sessions.items():
+            if len(speakers) < 2: 
+                continue
+            
+            # Role Reversal: (A에게 B가 말함), (B에게 A가 말함)
+            pairs = [(speakers[0], speakers[1]), (speakers[1], speakers[0])]
+            
+            for user_info, target_info in pairs:
+                target_events = parse_aligned_script(Path(target_info["txt_path"]))
+                
+                # 두 오디오 파일 스트리밍 오픈
+                with sf.SoundFile(user_info["wav_path"]) as f_u, sf.SoundFile(target_info["wav_path"]) as f_t:
+                    sr = f_u.samplerate
+                    max_len = max(len(f_u), len(f_t))
+                    
+                    # -------------------------------------------------------------
+                    # Sliding Window 로직 적용
+                    # -------------------------------------------------------------
+                    samples_per_seq = int(SEQUENCE_DURATION * sr)  # 15분
+                    stride_samples = int(SEQUENCE_STRIDE * sr)     # 3분
+                    
+                    # 0부터 시작해서 3분씩 이동하며 15분씩 자름
+                    # max_len을 넘어가더라도 마지막 자투리를 위해 루프 실행
+                    start_samples_list = range(0, max_len, stride_samples)
+                    
+                    for seq_idx, start_sample in enumerate(start_samples_list):
+                        end_sample = min(start_sample + samples_per_seq, max_len)
+                        
+                        # 남은 길이가 너무 짧으면(예: 1초 미만) 스킵할 수도 있음. 여기서는 다 포함.
+                        if end_sample <= start_sample:
+                            break
+
+                        # 시퀀스 데이터 컨테이너
+                        seq_types = []
+                        seq_waveforms = []
+                        seq_texts = []
+                        seq_labels = []
+
+                        # 오디오 읽기 (Seek & Read)
+                        f_u.seek(start_sample)
+                        f_t.seek(start_sample)
+                        
+                        curr_len = end_sample - start_sample
+                        u_seq_audio = f_u.read(curr_len)
+                        t_seq_audio = f_t.read(curr_len)
+                        
+                        # 15분보다 짧은 경우(마지막 구간) 패딩
+                        if len(u_seq_audio) < curr_len: # read가 덜 되었을 경우 대비
+                             pad = curr_len - len(u_seq_audio)
+                             u_seq_audio = np.pad(u_seq_audio, (0, pad))
+                             t_seq_audio = np.pad(t_seq_audio, (0, pad))
+
+                        # 청크 단위 처리 (0.16초 단위)
+                        samples_per_chunk = int(CHUNK_DURATION * sr)
+                        chunk_count = curr_len // samples_per_chunk
+
+                        for i in range(chunk_count):
+                            chunk_start_sec = (start_sample / sr) + (i * CHUNK_DURATION)
+                            chunk_end_sec = chunk_start_sec + CHUNK_DURATION
+                            
+                            idx_s = i * samples_per_chunk
+                            idx_e = idx_s + samples_per_chunk
+                            
+                            u_chunk = u_seq_audio[idx_s:idx_e].astype(np.float32)
+                            t_chunk = t_seq_audio[idx_s:idx_e].astype(np.float32)
+                            
+                            # 텍스트 슬라이싱 (0.16초 분량)
+                            is_speech, text_slice = get_sliced_text(chunk_start_sec, chunk_end_sec, target_events)
+                            
+                            # =====================================================
+                            # Zipper 구조 생성
+                            # =====================================================
+                            
+                            # 1. User Audio (Context) -> 마스킹(-100)
+                            seq_types.append("user_audio")
+                            seq_waveforms.append({"array": u_chunk, "sampling_rate": sr})
+                            seq_texts.append("")
+                            seq_labels.append(-100)
+                            
+                            # 2. Text (Think) -> 있다면 삽입 (0.16초 분량의 단어)
+                            if text_slice:
+                                seq_types.append("text")
+                                # 텍스트용 더미 오디오
+                                dummy_audio = np.zeros(samples_per_chunk, dtype=np.float32)
+                                seq_waveforms.append({"array": dummy_audio, "sampling_rate": sr})
+
+                                seq_texts.append(text_slice)
+                                seq_labels.append(1) # 학습
+                            
+                            # 3. Target Audio (Response) -> 학습 (Silence 포함)
+                            seq_types.append("target_audio")
+                            seq_waveforms.append({"array": t_chunk, "sampling_rate": sr})
+                            seq_texts.append("")
+                            seq_labels.append(1) # 학습
+
+                        yield {
+                            "session_id": f"{group_key}_{target_info['spk_id']}_seq{seq_idx}_start{start_sample}",
+                            "types": seq_types,
+                            "waveforms": seq_waveforms,
+                            "texts": seq_texts,
+                            "label_mask": seq_labels
+                        }
+
+    # Features 정의
+    chunk_samples = int(CHUNK_DURATION * sample_rate)
+    
+    features = Features({
+        "session_id": Value("string"),
+        "types": Sequence(Value("string")),
+        "waveforms": Sequence(Audio(sampling_rate=sample_rate)),
+        "texts": Sequence(Value("string")),
+        "label_mask": Sequence(Value("int32"))
+    })
+    
+    return Dataset.from_generator(generator, features=features)
 
 
 def remove_extras(session: ComedySession, remove_events: Tuple[BaseEvent] = (AudienceEvent, EnvironmentEvent)) -> ComedySession:
@@ -98,6 +349,8 @@ def to_hf_dataset(sessions: Iterable[ComedySession], audio_base_path: Path, min_
                 })
             else:
                 raise ValueError(f"Unexpected event type in session {session.video_id}: {event}")
+
+
 
 
     def audio_generator():

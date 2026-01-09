@@ -1,0 +1,243 @@
+[0.080,0.910]	0	none	[*]
+[4.573,5.350]	ID029	female	so.
+[5.390,7.300]	ID029	female	what do you spend your money on?
+[12.410,14.400]	ID029	female	you expected, don't you're parents do that?
+[20.030,20.886]	ID029	female	oh they do?
+[21.250,21.774]	ID029	female	oh.
+[25.430,27.100]	ID029	female	no that wasn't what I mean like.
+[27.260,29.010]	ID029	female	ah no you- you know what, you're right.
+[29.010,29.840]	0	none	[LAUGHTER]
+[29.840,30.430]	ID029	female	um.
+[30.860,31.750]	ID029	female	yeah close.
+[32.024,33.160]	ID029	female	what kind of um.
+[34.340,36.252]	ID029	female	what's your favorite kind of food?
+[36.410,37.060]	ID029	female	I guess.
+[45.980,46.750]	ID029	female	I don't.
+[47.090,49.063]	ID029	female	have you spent you've spent.
+[49.063,49.826]	0	none	[*]
+[51.710,52.600]	ID029	female	makes me.
+[55.640,56.140]	ID029	female	hold on.
+[56.180,56.740]	0	none	[SYSTEM]
+[58.790,59.470]	ID029	female	yeah.
+[59.810,60.490]	ID029	female	um.
+[61.496,62.185]	ID029	female	for reason I've.
+[62.349,64.540]	ID029	female	really like hamburgers lately like.
+[65.239,68.170]	ID029	female	will go to anywhere and I will eat a hamburger.
+[68.300,69.880]	ID029	female	no matter what of all sudden which.
+[70.760,74.060]	ID029	female	we don't eat out much so it's not like my diet is entirely hamburgers.
+[74.630,75.537]	0	none	[LAUGHTER]
+[75.980,76.840]	ID029	female	I don't know why.
+[82.190,83.050]	ID029	female	um.
+[83.750,84.640]	ID029	female	I had a.
+[86.000,90.190]	ID029	female	I had an old burger because In-N-Out was closed 'cause there's a power outage.
+[91.151,92.179]	0	none	[*]
+[92.420,93.310]	ID029	female	not McDonald.
+[93.770,94.420]	ID029	female	yeah I know.
+[94.565,101.361]	ID029	female	the reason our power went out too was just like we're trying to go to In-N-Out but they they can't give us anything 'cause their power is out too.
+[101.870,103.990]	ID029	female	and they were in entirely different area.
+[104.780,105.490]	ID029	female	um.
+[105.710,107.080]	ID029	female	McDonald's for better.
+[110.210,112.851]	ID029	female	I don't know I feel like they're just connected to the normal.
+[112.851,113.373]	0	none	[*]
+[116.120,116.770]	ID029	female	anyway.
+[117.530,118.120]	ID029	female	um.
+[118.640,122.770]	ID029	female	speaking of spending money on travel which we weren't or on our burgers actually.
+[122.810,125.350]	ID029	female	we went to Monterey yesterday. we drove there.
+[128.270,129.639]	ID029	female	it was pretty um.
+[129.650,131.050]	ID029	female	yeah it wasn't we walk on the beach.
+[131.540,132.250]	ID029	female	there were.
+[132.590,135.280]	ID029	female	I saw squirrels on the beach.
+[135.590,138.670]	ID029	female	and they were hiding it rocks I can send you a picture of this later.
+[138.950,139.840]	ID029	female	that's really weird.
+[140.840,143.350]	ID029	female	it was so weird 'cause there's no nut there.
+[149.840,150.340]	ID029	female	no.
+[156.080,158.080]	ID029	female	what classes are you taking currently?
+[160.340,161.950]	ID029	female	oh, geometry sucks.
+[162.260,162.940]	ID029	female	and.
+[163.580,164.410]	ID029	female	you know it sucks.
+[167.933,171.790]	ID029	female	do you spend money on like tutoring and stuff less consumption right.
+[186.920,187.540]	ID029	female	no.
+[188.360,189.760]	ID029	female	ah shady.
+[196.730,197.320]	ID029	female	but no.
+[210.080,211.270]	ID029	female	with her, I mean.
+[215.000,215.650]	ID029	female	mhm.
+[216.590,217.510]	ID029	female	thought I'd jump.
+[218.390,219.100]	ID029	female	yeah
+[219.860,220.390]	ID029	female	how.
+[222.560,225.070]	ID029	female	oh hey that's olives that taste our hearts.
+[225.980,226.960]	ID029	female	how oft-
+[227.060,228.640]	ID029	female	pen do you guys eat out?
+[234.290,234.970]	ID029	female	oh.
+[243.680,244.420]	ID029	female	wow.
+[245.180,247.960]	ID029	female	that's cool we l- like rarely.
+[255.170,255.850]	ID029	female	it's cool.
+[255.980,257.110]	ID029	female	my parent's like.
+[257.510,258.040]	0	none	[*]
+[281.810,282.370]	ID029	female	mhm.
+[289.190,291.420]	ID029	female	there's a lot of restaurant in your background.
+[302.540,303.130]	ID029	female	yeah.
+[306.000,307.010]	ID029	female	uh , Jennifer.
+[307.140,308.513]	ID029	female	there's a lot of rustling here.
+[308.541,309.443]	0	none	[*]
+[310.560,311.060]	ID029	female	so.
+[311.633,312.958]	ID029	female	stop, what you're doing.
+[312.960,314.750]	ID029	female	I don't know, there was like paper songs.
+[317.433,317.849]	ID029	female	what?
+[318.090,318.858]	ID029	female	that's weird.
+[319.200,319.917]	ID029	female	um.
+[319.982,322.037]	ID029	female	I mean it was before, but whatever.
+[322.830,323.450]	ID029	female	um.
+[326.670,327.200]	ID029	female	ah.
+[327.210,330.740]	ID029	female	I feel like we never eat out much, because my parents really like familiarity.
+[330.870,334.130]	ID029	female	like we, we will there's one restaurant that we go to sometimes.
+[334.290,335.487]	ID029	female	it's just a fireplace.
+[337.530,338.150]	ID029	female	for.
+[339.540,340.337]	ID029	female	oh say.
+[340.343,341.536]	0	none	[*]
+[341.880,342.530]	ID029	female	I guess.
+[343.410,344.390]	ID029	female	and what it's called.
+[346.770,347.690]	ID029	female	yeah they serve.
+[348.690,351.260]	ID029	female	no, they serve really quickly.
+[358.980,360.050]	ID029	female	and that's chicken bosom.
+[404.850,406.026]	ID029	female	oh no.
+[415.710,416.510]	ID029	female	hey.
+[416.580,417.200]	ID029	female	nice.
+[418.230,418.790]	ID029	female	so.
+[419.844,422.741]	ID029	female	do you like like spend money on clothes after?
+[438.600,442.130]	ID029	female	yeah, yeah same I guess my mom likes getting close from garage sale.
+[442.860,447.718]	ID029	female	and sometimes they're absolutely insane, but in a good way and sometimes they're insane in a bad way.
+[448.650,449.270]	ID029	female	there.
+[449.370,450.290]	ID029	female	nice I guess.
+[451.694,453.440]	ID029	female	do you go through a shopping over?
+[460.470,461.090]	ID029	female	no.
+[465.510,466.760]	ID029	female	I won't go for.
+[474.990,475.640]	ID029	female	oh.
+[476.430,477.050]	ID029	female	fun.
+[480.330,481.070]	0	none	[SONANT]
+[484.493,487.316]	ID029	female	ah yeah, want to go through shopping sometime.
+[487.560,488.975]	ID029	female	sounds fun to like.
+[490.350,491.313]	ID029	female	'cause they're like.
+[491.370,494.186]	ID029	female	good to clothes and sometimes they're weird and, that's good.
+[495.000,495.650]	ID029	female	no.
+[499.650,501.320]	ID029	female	do you spend money on video games?
+[537.090,537.890]	ID029	female	yeah.
+[542.280,542.990]	ID029	female	hello.
+[556.907,557.690]	ID029	female	oh yeah.
+[559.890,561.440]	ID029	female	me too, I have them.
+[561.880,562.481]	0	none	[SONANT]
+[562.830,563.600]	ID029	female	oh yeah.
+[563.880,564.589]	ID029	female	um.
+[565.170,566.690]	ID029	female	I feel like this month, I spent.
+[566.790,568.490]	ID029	female	for on video games, than I.
+[568.967,570.446]	ID029	female	probably share, like I bought.
+[570.446,571.487]	0	none	[*]
+[571.487,572.573]	ID029	female	fall out new Vegas.
+[572.573,573.270]	0	none	[SONANT]
+[573.270,574.242]	ID029	female	good game.
+[574.620,575.120]	ID029	female	yeah.
+[579.472,581.097]	ID029	female	this goal easy was worth it.
+[581.340,583.818]	ID029	female	but, I haven't really played to fall into biggest hit.
+[585.210,585.710]	ID029	female	mhm.
+[589.620,590.210]	ID029	female	yeah.
+[598.170,598.850]	ID029	female	yah.
+[599.340,600.650]	ID029	female	and also bought like.
+[601.410,603.178]	ID029	female	about some, I bought a lot new sketch book.
+[603.450,604.820]	ID029	female	and it was really big nice
+[612.210,614.450]	ID029	female	oh I wish my friends would give me sketchbooks
+[614.850,615.380]	ID029	female	that would
+[615.420,616.580]	ID029	female	make me so happy
+[617.430,619.790]	ID029	female	can you give me one of your seven thousand sketchbooks
+[621.240,623.750]	ID029	female	that was a joke it okay you don't have to but
+[623.940,625.100]	ID029	female	yeah that'll be cool
+[625.950,626.600]	ID029	female	um
+[627.630,631.190]	ID029	female	oh I recently bought one that was like a different sketchbook now I have
+[631.380,632.450]	ID029	female	two sketchbooks
+[632.730,636.410]	ID029	female	um that was it's called my eight hundred page sketchbook because it's
+[637.080,638.420]	ID029	female	eight hundred pages
+[639.330,639.920]	ID029	female	of
+[642.990,644.120]	ID029	female	big and this for
+[644.190,646.520]	ID029	female	drawing like daily doodle I guess
+[647.340,647.900]	ID029	female	and that
+[648.120,652.730]	ID029	female	my other more expensive sketchbook was better quality papers for actual things
+[658.620,659.150]	ID029	female	hopefully
+[666.150,666.710]	ID029	female	yeah
+[667.410,670.460]	ID029	female	yeah and I I don't like the they they have the pages numbered
+[670.560,675.110]	ID029	female	which I guess it's kind of the feature of an eight hundred page sketchbook is to flex your patience
+[675.360,675.860]	ID029	female	but
+[676.080,677.930]	ID029	female	it's like I kind of wish they were blank
+[681.570,685.640]	ID029	female	they they um like at the bottom they just like one two three four
+[687.450,688.760]	ID029	female	I know it could be worse but
+[690.420,691.370]	ID029	female	yeah but
+[691.710,692.330]	0	none	[*]
+[695.040,696.650]	ID029	female	what have you spent money on lately
+[701.370,702.590]	ID029	female	oh it looks good
+[709.530,710.150]	0	none	[SYSTEM]
+[715.560,717.620]	ID029	female	oh what did you get your for your mom
+[722.760,723.920]	ID029	female	hey that's nice
+[731.982,732.978]	ID029	female	that's good
+[733.770,734.930]	ID029	female	yeah I
+[740.310,743.150]	ID029	female	I think it was on the eight hundred page sketchbook
+[744.330,744.890]	ID029	female	yup
+[746.400,747.410]	ID029	female	on Amazon
+[749.070,749.660]	ID029	female	no
+[750.540,752.480]	ID029	female	he's a funny thing it um
+[752.610,756.110]	ID029	female	it came like a week later than it was supposed to
+[756.870,760.220]	ID029	female	because it I don't know what happened they got it lost or something
+[760.260,761.690]	ID029	female	but they found it and it was good
+[763.470,764.000]	ID029	female	yeah
+[765.510,766.010]	ID029	female	do you
+[766.350,767.000]	ID029	female	um
+[767.340,767.900]	ID029	female	okay
+[768.090,769.010]	ID029	female	this is off topic
+[769.680,770.390]	ID029	female	um
+[773.130,774.050]	ID029	female	um
+[774.810,776.930]	ID029	female	what kind of clothes do you like
+[778.050,779.270]	ID029	female	when you buy them
+[779.460,780.650]	ID029	female	when your mom pass them
+[781.230,781.760]	ID029	female	yeah like
+[781.770,782.420]	ID029	female	I'll
+[792.660,793.250]	ID029	female	yeah
+[794.640,795.170]	ID029	female	and
+[798.930,801.500]	ID029	female	I mean yeah when I think of your style I just like
+[801.660,802.550]	ID029	female	hoodie
+[803.520,804.020]	ID029	female	pimp
+[806.820,807.440]	ID029	female	you
+[809.223,809.960]	ID029	female	that's fun
+[810.150,811.970]	ID029	female	like lately I have to be
+[813.180,814.550]	ID029	female	my style is just
+[815.070,817.490]	ID029	female	make people confused about gender
+[817.770,818.540]	ID029	female	right now
+[819.180,820.880]	ID029	female	that's what I that's what I going for
+[821.100,822.620]	ID029	female	um like on
+[823.020,826.970]	ID029	female	I I usually just dress like how you do usually like just hoodies
+[827.310,828.230]	ID029	female	and pounds
+[828.630,829.280]	ID029	female	on
+[829.410,832.220]	ID029	female	yeah for the English drama speech I mentioned earlier
+[832.290,835.160]	ID029	female	I wore like a low cut dress with a
+[835.410,837.830]	ID029	female	black jacket which was really fun
+[838.470,839.030]	ID029	female	yeah
+[839.940,840.470]	ID029	female	yeah
+[841.860,842.630]	ID029	female	you good
+[842.910,843.500]	ID029	female	the times
+[853.560,854.060]	ID029	female	yeah
+[855.097,855.950]	ID029	female	ah I like it
+[856.290,857.330]	ID029	female	I like hear about it
+[857.490,858.050]	ID029	female	um
+[862.770,863.390]	ID029	female	yeah
+[863.880,864.380]	ID029	female	and
+[865.470,867.740]	ID029	female	before Covid did you guys travel a lot
+[873.390,874.100]	ID029	female	where
+[879.210,881.210]	ID029	female	why are you tapping what's happening
+[883.620,884.540]	ID029	female	it's okay
+[895.320,896.060]	ID029	female	oh
+[903.210,903.740]	ID029	female	oh
+[908.608,909.620]	ID029	female	hey that's good
+[913.710,915.200]	ID029	female	hey that's awe- that's awesome
+[927.180,928.160]	ID029	female	that's really cool
+[939.030,939.590]	0	none	[*]
+[939.960,941.300]	ID029	female	the flower necklaces
+[943.565,944.540]	ID029	female	okay
+[944.760,945.350]	ID029	female	oh
+[945.540,946.460]	ID029	female	we are done
+[946.680,947.420]	ID029	female	fifteen minutes
+[947.976,948.980]	ID029	female	hoo bye bye

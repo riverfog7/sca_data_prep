@@ -1,0 +1,304 @@
+[0.950,1.840]	ID098	male	hello.
+[7.610,12.762]	ID098	male	okay sure so so ah what do you consume on the daily basis?
+[28.610,29.560]	0	none	[*]
+[41.180,41.980]	0	none	[*]
+[42.020,42.640]	ID098	male	same.
+[45.920,46.705]	0	none	[SONANT]
+[47.150,48.190]	0	none	[LAUGHTER]
+[49.310,50.890]	ID098	male	wait, I thought that was twenty twenty?
+[50.990,52.060]	ID098	male	it's still going on.
+[57.230,59.560]	ID098	male	oh that's nice that that's nice.
+[67.310,68.410]	ID098	male	right exactly.
+[73.100,74.770]	ID098	male	oh, that's something new.
+[74.990,75.790]	ID098	male	that's nice.
+[76.310,77.230]	0	none	[*]
+[77.360,78.730]	ID098	male	well well, let's see
+[79.280,79.900]	ID098	male	so.
+[80.150,84.040]	ID098	male	you're trying to eat more healthy, so what are your ideas about eating more healthy?
+[121.580,122.380]	ID098	male	yeah.
+[133.250,133.840]	0	none	[*]
+[140.630,141.850]	ID098	male	yeah yeah cause.
+[145.220,152.021]	ID098	male	we're, right uh well I was gonna say I, for I kind of have a sweet tooth too, you know, I I like pastries and.
+[152.300,153.340]	ID098	male	I like, you know.
+[153.590,158.040]	ID098	male	okay it's me, ah yeah okay well I I like visiting um, a pastry shops.
+[158.180,160.601]	ID098	male	and all that and then last time you know I went to.
+[160.790,161.680]	ID098	male	Quebec city.
+[161.810,163.990]	ID098	male	um and then I found a.
+[164.120,167.110]	ID098	male	wait, is it called Mister Smith, yeah oh my god like.
+[167.330,172.030]	ID098	male	you know every time I go to pastry, the first thing that I buy, the first things that I buy is a.
+[172.430,174.610]	ID098	male	what do you call this, uh.
+[175.040,177.550]	ID098	male	what is in English, so like an apple tart.
+[181.940,183.850]	ID098	male	ah, apple pie exactly.
+[184.730,188.170]	ID098	male	yeah, exactly and I buy chocolate and, tho-those are like the.
+[188.930,191.170]	ID098	male	apple turnover, yeah apple turnover yeah.
+[191.210,197.380]	ID098	male	and uh, and then I also buy uh, a sugar lesson so those are the like the standard things that I buy at a pastry shop just to.
+[197.540,200.860]	ID098	male	ah, just ah you know test, you know their, uh.
+[202.970,204.850]	ID098	male	a control measure, yes.
+[205.220,207.730]	ID098	male	oh my god, all the scientific term sir yeah.
+[207.890,213.400]	ID098	male	so so so yeah that's what I do and then, oh my god there were so good, yeah like, like you got to try them.
+[213.440,218.080]	ID098	male	and then in Montreal, um there are several spots that seldom that I like to for example.
+[218.346,219.471]	0	none	[*]
+[219.471,220.645]	ID098	male	but that's kind of ah.
+[221.960,224.710]	ID098	male	yeah, um that's a place that you could find ah.
+[226.550,227.230]	ID098	male	what?
+[231.650,236.920]	ID098	male	yeah, I I think it's a franchise, I I think you can find those ah across Quebec.
+[237.170,237.700]	0	none	[*]
+[238.040,238.840]	0	none	[*]
+[243.410,246.040]	ID098	male	oh yeah, so so it's definitely a franchise.
+[252.320,253.803]	ID098	male	no, no no no no.
+[253.803,255.508]	0	none	[LAUGHTER]
+[256.519,257.680]	ID098	male	yeah well.
+[262.880,267.550]	ID098	male	mhm, and if you go in like, those are two uh, those are two items that.
+[267.740,272.440]	ID098	male	you could try, those are pretty good controls to show, you know how good a pastry shop is.
+[272.870,274.870]	ID098	male	ah I've try them in china to unite and that's it.
+[275.300,276.520]	ID098	male	yeah and and and you know.
+[276.710,280.787]	ID098	male	it's it's a funny thing like in china there's this store called a.
+[280.970,283.870]	0	none	[*]
+[283.970,290.803]	ID098	male	something like that but like it yeah it's like, a Chinese old store okay, so it it it has no connection with.
+[290.990,292.870]	ID098	male	either France or Quebec.
+[292.970,293.500]	ID098	male	or.
+[293.660,295.180]	ID098	male	any part of a French world.
+[295.370,296.200]	ID098	male	yeah but.
+[296.480,301.950]	ID098	male	they are pretty good, like there was one close to you know close to campus and I used to go there like every other week.
+[302.441,305.180]	ID098	male	um and then the thing is that in China, you know um.
+[306.029,306.655]	0	none	[PII]
+[306.909,309.068]	ID098	male	you know they're really like sugary.
+[309.576,313.380]	ID098	male	so tha- that makes them like really good an- and they also have this glaze over it.
+[313.733,316.909]	ID098	male	but here like you know the Qua Sung they can be you know salty.
+[317.087,317.578]	ID098	male	get on with.
+[317.850,320.957]	ID098	male	well well they have a good taste but it's not as um.
+[321.191,322.967]	ID098	male	as pronounced let's say you know.
+[325.954,330.275]	ID098	male	exactly supposed to be pair with something and in China, a Qua Sung is almost like a.
+[330.523,332.166]	ID098	male	it cake on his own, you know.
+[332.539,333.336]	ID098	male	like an item.
+[333.450,333.760]	ID098	male	yeah
+[334.445,337.219]	ID098	male	it- it's own thing right so so that was kind of different.
+[337.746,338.690]	ID098	male	um.
+[338.959,339.547]	ID098	male	yeah.
+[339.600,340.512]	0	none	[ENS]
+[342.394,342.890]	ID098	male	yeah.
+[350.584,354.673]	ID098	male	I'm almost sure that there's uh there are some in Korea 'cause yeah it- it's.
+[354.895,355.292]	ID098	male	ah.
+[355.547,359.025]	ID098	male	it may be a chain, it maybe a franchise in Asia.
+[359.196,360.733]	ID098	male	it's very possible, I'm not sure.
+[370.487,371.090]	ID098	male	yeah.
+[375.203,376.022]	ID098	male	yeah.
+[376.414,377.956]	ID098	male	a- and there's this other store called.
+[377.956,378.588]	0	none	[PII]
+[378.958,380.090]	ID098	male	another French name.
+[380.333,381.163]	ID098	male	um.
+[381.566,384.276]	ID098	male	yeah. it was kind of good too I guess I guess isn't it?
+[385.116,387.002]	ID098	male	I won't I won't say too much about it it's good.
+[387.364,389.438]	ID098	male	and then you know here's a funny thing like.
+[389.818,393.212]	ID098	male	Australian products right? you can find a lot of them in China but.
+[393.499,394.973]	ID098	male	you know they're kind of a rare here.
+[395.299,395.983]	ID098	male	Montreal.
+[396.274,397.110]	ID098	male	ah for example.
+[397.177,398.456]	ID098	male	you know thin camps.
+[405.006,408.739]	ID098	male	they are as good as people say and then you know who sells them in Montreal?
+[410.661,411.334]	ID098	male	take a guess.
+[417.311,418.391]	ID098	male	no I G A.
+[418.504,419.413]	ID098	male	I G A sells them.
+[421.487,423.840]	ID098	male	yeah, crazy right? I I didn't know that.
+[424.380,426.889]	ID098	male	ah at first I went to uh you know this place called.
+[427.432,428.169]	0	none	[PII]
+[428.206,429.205]	ID098	male	P A pies
+[429.277,430.248]	ID098	male	on park avenue.
+[435.563,437.518]	ID098	male	yeah i- it it's on park um.
+[437.914,440.803]	ID098	male	ah it's really fun place you could check it out.
+[440.985,443.546]	ID098	male	ah they sell like you know Australian um.
+[444.411,446.563]	ID098	male	Australian and um, yeah pies.
+[446.820,449.069]	ID098	male	um and then they also sell liked thin tops.
+[449.125,449.603]	ID098	male	but like.
+[449.854,455.390]	ID098	male	their prices like five dollars for you know a whole package but and add it like three ninety-nine so it's better right.
+[455.841,457.086]	ID098	male	ah this piece of the thing.
+[457.288,457.646]	ID098	male	yeah
+[458.237,461.448]	ID098	male	and then uh there are also bestowed us I don't know if you know the Wendeburg?
+[462.317,463.098]	ID098	male	it's kind of it.
+[464.463,470.368]	ID098	male	yeah it's it's a really specific brand um they're becoming like small a glass bottles you can find them like.
+[470.584,472.382]	ID098	male	pretty much anywhere in any.
+[472.669,474.096]	ID098	male	fancy supermarket in China.
+[474.398,477.765]	ID098	male	um but here it's really rare and and you could only find them um.
+[478.163,478.759]	ID098	male	ah at.
+[478.950,483.499]	ID098	male	Popeye and the prices the same so they're good so I I I was really happy when I found them.
+[486.195,488.736]	ID098	male	yeah fruity sodas yeah you could find.
+[488.868,489.230]	ID098	male	no
+[489.857,492.816]	ID098	male	um kinds and all flavors you can also have you know
+[492.964,493.999]	ID098	male	oh root beer
+[494.271,497.143]	ID098	male	ah ginger ale like that so ginger ale.
+[502.598,503.120]	ID098	male	at
+[507.131,508.956]	ID098	male	yeah i- it's definitely a brand on.
+[508.972,511.903]	ID098	male	mhm you know few Canadians know, I think.
+[513.707,514.459]	ID098	male	so that's fun
+[537.161,539.486]	ID098	male	oh those yeah yeah those.
+[540.274,541.177]	ID098	male	um.
+[547.131,548.342]	ID098	male	yeah, I agree.
+[568.418,568.922]	0	none	[ENS]
+[569.027,569.749]	ID098	male	is to with.
+[569.843,570.401]	ID098	male	it does.
+[570.436,570.969]	0	none	[ENS]
+[579.482,579.950]	ID098	male	mhm.
+[581.194,581.667]	ID098	male	nice.
+[586.474,587.053]	ID098	male	mhm.
+[607.155,607.670]	ID098	male	right.
+[608.280,608.870]	ID098	male	yeah.
+[609.180,609.890]	ID098	male	yeah, yeah.
+[616.380,617.390]	ID098	male	exactly, yeah.
+[628.680,629.390]	ID098	male	mhm.
+[629.550,630.110]	ID098	male	yeah.
+[630.810,634.490]	ID098	male	kind of the same thing in China there you know you you gotta like street sit down.
+[634.920,635.840]	ID098	male	you know it's like.
+[636.210,637.370]	ID098	male	hawkers and.
+[637.560,638.630]	ID098	male	you know stands.
+[639.030,639.769]	ID098	male	here and there.
+[640.019,644.840]	ID098	male	and then they're all so good I I used to go there like, yeah, yeah, I used to go there and.
+[645.330,648.260]	ID098	male	in the wintertime, it will be like so you know, ah.
+[648.660,652.490]	ID098	male	heartwarming to get you know hobble is not stand on the side of the.
+[652.590,653.600]	ID098	male	road and then just.
+[653.730,654.350]	ID098	male	eating at.
+[654.540,655.520]	ID098	male	yeah, it's kind of cool.
+[655.890,659.510]	ID098	male	I think that we should definitely work on expanding Chinatown here.
+[660.180,661.640]	ID098	male	it's something that should be done.
+[662.400,662.960]	ID098	male	yeah.
+[662.970,664.760]	ID098	male	or or like you know.
+[665.160,665.810]	ID098	male	yeah, go ahead.
+[666.930,667.670]	ID098	male	oh, well, ah.
+[667.980,673.550]	ID098	male	yeah, ah, I think that we could like do as they did in New York we could build another Chinatown somewhere else.
+[673.860,675.170]	ID098	male	it it it could work.
+[675.750,676.310]	ID098	male	yeah.
+[696.450,697.010]	ID098	male	yep.
+[701.100,701.810]	ID098	male	exactly.
+[727.260,727.760]	ID098	male	yes.
+[734.700,737.270]	ID098	male	downtown um I think I've heard of them yeah,
+[741.180,742.040]	ID098	male	hm, yes.
+[743.820,744.350]	ID098	male	yeah.
+[751.950,752.600]	ID098	male	hmm.
+[770.070,771.770]	ID098	male	yeah, that's kind of a shame.
+[773.550,777.410]	ID098	male	maybe it's a menu that's got to evolve you know and so.
+[777.750,778.850]	ID098	male	be more like.
+[779.370,783.320]	ID098	male	I guess take out friendly you know something that you can eat while you're walking.
+[783.540,784.910]	ID098	male	something like a corn dog.
+[785.010,785.630]	ID098	male	I think.
+[785.790,787.550]	ID098	male	it's got to evolve definitely like.
+[801.900,802.550]	ID098	male	hmm.
+[802.890,803.690]	ID098	male	yeah.
+[818.160,819.800]	ID098	male	yeah, the fish balls.
+[819.900,825.650]	ID098	male	um, I had them once in Hong Kong and in Hong Kong, it was kind of extensive cause everything is expensive there.
+[825.780,826.970]	ID098	male	but, yeah, I I.
+[827.070,828.530]	ID098	male	ah, yeah, what you're saying?
+[829.350,831.350]	ID098	male	yeah, it's fun to have something you already know.
+[831.390,833.150]	ID098	male	that you can eat while walking.
+[833.400,834.320]	ID098	male	go to somewhere.
+[835.350,843.110]	ID098	male	yes, um, you're speaking of a street food I've read a book once it's called a sweet being.
+[843.540,846.350]	ID098	male	so it's a it's a book that talks about the, um.
+[846.540,849.110]	ID098	male	street vendor that sells, ah, Durian seed.
+[851.520,852.260]	ID098	male	yeah.
+[852.390,852.890]	ID098	male	yeah.
+[852.960,854.060]	ID098	male	um.
+[854.310,858.260]	ID098	male	that it's a book like Durian Sukegawa I don't know if you know the author.
+[862.050,862.550]	ID098	male	oh.
+[862.740,864.590]	ID098	male	um, so it's really.
+[864.840,866.210]	ID098	male	nice book and then.
+[866.429,867.200]	ID098	male	I think like.
+[867.270,868.249]	ID098	male	you know, uh, uh.
+[868.350,869.870]	ID098	male	what when will, ah, start?
+[870.150,872.720]	ID098	male	when she started talking about you know the fishball Thai I.
+[872.970,876.050]	ID098	male	ah, it made me think if you know this book and then you know.
+[876.360,877.730]	ID098	male	um, it's setting.
+[878.730,882.260]	ID098	male	yeah, it's not a big operation so it's just like a one, um.
+[882.540,884.840]	ID098	male	a, ah, small shop you know this like.
+[885.180,886.340]	ID098	male	two tables I guess.
+[886.350,887.990]	ID098	male	and then students would go there.
+[888.060,890.870]	ID098	male	and then you know, um, they would sell the sweet and.
+[890.910,891.470]	ID098	male	yeah.
+[891.780,892.730]	ID098	male	so that was the story.
+[934.980,935.950]	ID098	male	yeah, let's go.
+[936.930,937.760]	0	none	[*]
+[938.670,939.860]	ID098	male	that's bomb.
+[939.900,942.650]	ID098	male	exactly that's it those are so good.
+[943.530,944.450]	ID098	male	oh my gosh.
+[945.060,946.880]	ID098	male	you know what I'm like.
+[947.640,955.010]	ID098	male	it's something I'm I'm speaking of steaks something on my bucket list is to have you know an A five wagyu I I've yet to go try one.
+[965.160,966.050]	ID098	male	oh yes.
+[968.940,969.710]	0	none	[*]
+[972.270,973.370]	ID098	male	that is so tasty.
+[986.400,986.930]	0	none	[SONANT]
+[987.409,988.824]	0	none	[NPS]
+[989.700,993.080]	ID098	male	sounds tasty and I'm kind of hungry too wow.
+[1004.640,1005.140]	ID098	male	yeah.
+[1007.610,1008.200]	ID098	male	mhm.
+[1025.580,1026.320]	ID098	male	go.
+[1029.120,1029.980]	ID098	male	i- it's fine.
+[1033.680,1034.870]	ID098	male	seen it on TikTok.
+[1052.572,1053.086]	0	none	[SONANT]
+[1059.750,1060.340]	ID098	male	sound.
+[1060.560,1061.810]	ID098	male	sounds like a put in.
+[1062.000,1062.590]	0	none	[*]
+[1063.710,1066.458]	ID098	male	it sounds like a place that I went to in L A like.
+[1066.530,1069.670]	ID098	male	um uh I don't know if you know it's it's it's in Korea town.
+[1070.365,1071.559]	0	none	[*]
+[1071.559,1072.880]	ID098	male	something we- wait it is that would.
+[1073.130,1074.620]	ID098	male	I don't even know the name but.
+[1075.200,1076.000]	0	none	[*]
+[1092.150,1093.550]	ID098	male	yeah L A is genuine.
+[1093.680,1095.830]	ID098	male	L A is definitely genuine like you could get.
+[1096.290,1103.518]	ID098	male	um look look for uh for starters there's a little kor- there's a Korea town and then there's a little Tokyo and then there's little Bangladesh like if you get.
+[1103.518,1104.672]	ID098	male	anything in L A.
+[1104.870,1107.200]	ID098	male	and then y- you have these you know Pakistan.
+[1107.780,1110.170]	ID098	male	across the city and you have like um.
+[1110.540,1111.160]	ID098	male	you have this.
+[1111.320,1112.240]	ID098	male	tacodillas.
+[1112.250,1114.066]	ID098	male	for tacos and then you have um.
+[1114.066,1115.390]	0	none	[*]
+[1115.390,1116.428]	ID098	male	for you know mexican food.
+[1116.510,1117.940]	ID098	male	like anything literally.
+[1118.310,1119.290]	ID098	male	yeah there.
+[1119.390,1122.920]	ID098	male	full ah ah yeah the cities full of them and then so nice.
+[1143.240,1144.250]	ID098	male	yeah.
+[1144.710,1147.430]	ID098	male	the closest thing is in Toronto unfortunately.
+[1161.930,1162.700]	0	none	[*]
+[1163.070,1169.450]	ID098	male	I guess in Montreal it's more for french food but uh french food after a while it gets old you know it's always the same thing.
+[1170.300,1171.310]	ID098	male	and in wha- wo-
+[1183.350,1185.500]	ID098	male	the the what the the kind of the Canada bar.
+[1186.530,1187.060]	ID098	male	is that.
+[1189.110,1190.540]	ID098	male	yeah I I've heard of it yeah.
+[1201.290,1201.970]	ID098	male	mhm.
+[1212.930,1213.580]	0	none	[*]
+[1231.560,1232.210]	ID098	male	I see.
+[1239.180,1240.070]	ID098	male	oh.
+[1251.690,1252.370]	ID098	male	okay.
+[1273.440,1274.690]	ID098	male	yeah exactly.
+[1282.500,1289.221]	ID098	male	but the funny thing is that were a uh major metropolis so I don't know what's going on you know we should be getting all of these good stuff.
+[1289.221,1290.822]	ID098	male	but I don't know for some reason.
+[1291.230,1292.270]	ID098	male	we don't have them.
+[1298.310,1298.900]	ID098	male	yeah.
+[1312.620,1317.230]	ID098	male	it's the same thing since you know since we were children it it hasn't changed.
+[1321.470,1322.930]	ID098	male	exactly but and it.
+[1330.245,1330.953]	0	none	[ENS]
+[1333.950,1335.260]	ID098	male	say yes.
+[1335.360,1336.730]	ID098	male	um and.
+[1337.700,1341.590]	ID098	male	speaking about downtown all those construction projects they did just like.
+[1342.440,1343.270]	0	none	[*]
+[1343.370,1347.620]	ID098	male	put you opt to move to go there you know if you have to drive and then you have find parking.
+[1347.960,1349.120]	ID098	male	kind of a downer.
+[1363.740,1364.600]	ID098	male	exit.
+[1366.590,1367.540]	ID098	male	oh yeah.
+[1374.000,1379.960]	ID098	male	exactly and then if no wa- when there was walking by then who's gonna go in like that's simple logic right and then.
+[1381.657,1382.123]	ID098	male	except.
+[1382.123,1383.936]	0	none	[*]
+[1383.936,1385.904]	ID098	male	you know the bike paths their nice but.
+[1386.870,1387.490]	ID098	male	you know.
+[1387.920,1390.250]	ID098	male	it's kind of restricting the flow of traffic.
+[1390.740,1392.140]	ID098	male	and then um.
+[1392.600,1393.550]	ID098	male	I don't know man.
+[1393.950,1395.230]	ID098	male	like mobile on ad ad.
+[1395.540,1397.900]	ID098	male	to start with wasn't a very you know large.
+[1398.600,1400.270]	ID098	male	a boulevard or avenue right.
+[1400.370,1401.020]	ID098	male	but like.
+[1401.750,1403.330]	ID098	male	now it's even ah.
+[1403.460,1405.340]	ID098	male	it's even narrower so it's kind of.
+[1405.800,1406.450]	ID098	male	yeah.
+[1408.260,1410.440]	ID098	male	there are less parking spots and all that oh yeah.
+[1410.510,1411.730]	ID098	male	okay then.
+[1414.500,1415.270]	ID098	male	thank you.
+[1419.480,1421.330]	ID098	male	it was nice talking to you.

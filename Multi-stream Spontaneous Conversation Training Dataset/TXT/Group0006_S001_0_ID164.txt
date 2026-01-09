@@ -1,0 +1,244 @@
+[0.315,0.867]	0	none	[SONANT]
+[3.200,5.320]	ID164	male	ah hello J P how are you today?
+[9.920,10.900]	ID164	male	yeah um.
+[10.910,11.857]	ID164	male	I got some questions.
+[11.857,12.368]	0	none	[*]
+[12.626,15.070]	ID164	male	talk to you about you I know you very informative.
+[15.406,17.260]	ID164	male	about the whole cryptocurrency thing.
+[23.420,25.450]	ID164	male	well first off I have no clue.
+[25.550,26.483]	ID164	male	about it at all.
+[26.483,27.137]	ID164	male	so how does this.
+[27.440,32.110]	ID164	male	does it really take over the market when it comes to the U S dollars or the R and B.
+[32.330,33.610]	ID164	male	or um.
+[33.650,36.940]	ID164	male	any other you know it's it's institutionalized.
+[36.980,38.500]	ID164	male	ah finance money.
+[86.597,87.101]	0	none	[SYSTEM]
+[88.130,89.710]	ID164	male	yes I understand I'm listening.
+[135.080,135.797]	ID164	male	yeah.
+[135.830,137.380]	ID164	male	yeah I know a little bit about that.
+[164.570,168.220]	ID164	male	yes Lee I heard it before it not but also in the states.
+[168.380,172.420]	ID164	male	we have something that's called like the federal reserve, so the federal reserve.
+[172.640,174.070]	ID164	male	I know they are.
+[174.140,176.290]	ID164	male	um they say they are connected to.
+[176.300,178.838]	ID164	male	the finance system of America but.
+[178.838,179.739]	0	none	[*]
+[180.050,183.070]	ID164	male	come to believe it's just another banking system.
+[183.230,184.240]	ID164	male	controlling.
+[184.460,186.490]	ID164	male	the finance system in America.
+[186.620,190.600]	ID164	male	so I know right now you just spoke about gold silver.
+[190.790,194.500]	ID164	male	ah minerals or li- like natural things that that people are trading.
+[194.720,195.430]	ID164	male	um.
+[195.500,198.700]	ID164	male	but is even that even needed anymore.
+[198.700,200.206]	ID164	male	like what's the value in gold?
+[200.206,201.001]	ID164	male	and silver.
+[201.080,202.021]	ID164	male	'cause it's not.
+[202.021,202.560]	0	none	[SYSTEM]
+[202.760,205.150]	ID164	male	currently like the many more times, you don't need.
+[205.160,206.110]	ID164	male	to make.
+[206.120,209.650]	ID164	male	I don't need a silver to make a sword I don't need to go hunt my food.
+[209.840,212.500]	ID164	male	I can just hire somebody to do it. I don't need gold.
+[212.750,216.700]	ID164	male	'cause gold is out of fashion who wants to wear gaudy go jewelries.
+[216.740,219.190]	ID164	male	ugly disgusting just like much of yellow.
+[219.350,220.330]	ID164	male	on your shirt.
+[220.550,221.350]	ID164	male	so.
+[221.750,222.543]	ID164	male	what I'm tryna.
+[222.543,222.898]	0	none	[*]
+[223.100,223.840]	ID164	male	how does.
+[224.150,226.540]	ID164	male	bitcoin and all these cryptocurrencies.
+[226.700,231.430]	ID164	male	obtain value, is it just because people imagine it hard enough like let's imagine.
+[232.010,236.310]	ID164	male	ah like faith or belief if you believe in enough it becomes valuable.
+[236.310,237.018]	ID164	male	is this the.
+[237.018,237.909]	ID164	male	the case in.
+[238.190,240.370]	ID164	male	cryptocurrency could there be some, me too.
+[240.440,242.500]	ID164	male	how I'm gonna put my actual money.
+[242.690,246.220]	ID164	male	invest it into a bitcoin or cryptocurrency.
+[246.560,247.450]	ID164	male	and.
+[247.850,248.800]	ID164	male	it's like.
+[249.110,252.520]	ID164	male	gambling or playing in master game money.
+[252.770,254.350]	ID164	male	where I get no feedback.
+[254.480,255.460]	ID164	male	I get no.
+[255.470,258.430]	ID164	male	money, so I'll make money back in cryptocurrency.
+[258.620,262.720]	ID164	male	but what can I actually buy? can buy a house with cryptocurrency with bitcoin what.
+[262.970,264.220]	ID164	male	like how does it.
+[264.350,265.333]	ID164	male	is there a bank?
+[265.420,266.050]	ID164	male	I go to.
+[266.120,266.980]	ID164	male	like whoa.
+[266.990,269.440]	ID164	male	let me exchange just amount of crypto.
+[269.480,272.500]	ID164	male	for U S dollars or for R and B.
+[272.570,274.360]	ID164	male	or wherever what have you.
+[274.430,276.160]	ID164	male	or rupees you know.
+[393.500,394.330]	ID164	male	I think.
+[394.372,394.896]	0	none	[SYSTEM]
+[395.321,395.844]	0	none	[SYSTEM]
+[414.775,415.366]	0	none	[SYSTEM]
+[420.840,421.430]	0	none	[SYSTEM]
+[444.030,444.530]	ID164	male	oh.
+[444.624,445.187]	0	none	[SYSTEM]
+[447.900,448.550]	ID164	male	well I.
+[448.800,453.050]	ID164	male	well I understand your point of view, that what you're coming up with this but also.
+[453.150,455.270]	ID164	male	um what i'm trying to figure out.
+[455.370,456.050]	ID164	male	is.
+[456.540,460.310]	ID164	male	how do I change or even get into the business of.
+[460.710,462.740]	ID164	male	Bitcoin or Crypto Currency.
+[462.840,467.300]	ID164	male	cause I see this going on everywhere places with Podcast with what not.
+[467.460,474.978]	ID164	male	and people are talking about, ah Bitcoin is failing, there's a new Cryptocurrency out now, ah, I don't know what the name of it is but.
+[475.620,476.900]	ID164	male	how does one.
+[477.471,479.750]	ID164	male	ah, get into that type of field.
+[479.850,482.000]	ID164	male	is there like a broker is there like a.
+[482.100,484.364]	ID164	male	a loan shark, is there an.
+[484.590,486.200]	ID164	male	I know a lot of people going to internet.
+[486.360,487.958]	ID164	male	but also my big thing is.
+[488.031,490.010]	ID164	male	I don't feel safe with these website.
+[490.050,490.940]	ID164	male	so these.
+[491.310,498.669]	ID164	male	ah so i'm investing my money into a shady website that say's they're gonna transfer money into Bitcoin and give me back my investment.
+[498.810,499.400]	ID164	male	but.
+[499.461,502.856]	ID164	male	isn't that just now the former gambling like legal gambling.
+[502.890,503.540]	ID164	male	that.
+[503.670,504.332]	ID164	male	its.
+[504.450,507.290]	ID164	male	this is why I feel very skeptic about this.
+[507.420,508.610]	ID164	male	very skeptic.
+[511.389,512.349]	0	none	[SYSTEM]
+[567.840,568.580]	ID164	male	so now.
+[568.710,571.340]	ID164	male	so if I interrupt let me ask you this so.
+[571.470,572.150]	ID164	male	these.
+[572.250,573.770]	ID164	male	security systems.
+[573.930,574.670]	ID164	male	um.
+[574.740,578.138]	ID164	male	say somebody like me that's a Mac user that uses a Mac.
+[578.310,584.750]	ID164	male	that i'm not protected by the anti-virus of virus software that protects my information it comes in the Mac.
+[585.090,587.786]	ID164	male	as, as it is but so un used in a P C.
+[587.910,591.851]	ID164	male	this is also noticing, I don't feel kinda put on my, information in.
+[591.990,594.680]	ID164	male	into a computer or let's say.
+[595.020,596.960]	ID164	male	I would like to find someone that.
+[597.240,602.485]	ID164	male	I would say a middle man and you say or, as when you go to bank you find a Bank Teller.
+[602.670,607.438]	ID164	male	and the Bank Teller handles as all your process in a new paperwork and what not and.
+[607.620,608.780]	ID164	male	and whose what.
+[608.910,611.180]	ID164	male	is there anything like this.
+[611.280,614.480]	ID164	male	cruelly go on the market cause I think only when this happens.
+[614.610,617.510]	ID164	male	can this type of finance can really lift off.
+[617.700,620.000]	ID164	male	because as right now I say yes this.
+[620.010,622.520]	ID164	male	a lot of people with a lot of money the want to invest.
+[622.710,623.750]	ID164	male	do new things.
+[623.790,627.080]	ID164	male	I feel with this situation is not very stable yet.
+[627.360,629.240]	ID164	male	like you said of a the- a theorem.
+[629.670,630.860]	ID164	male	a theorem.
+[631.410,633.830]	ID164	male	want first off that's a horrible word.
+[633.990,636.140]	ID164	male	for any Crypto Currency its.
+[636.420,638.060]	ID164	male	peep I can barely pronounce it.
+[638.160,642.050]	ID164	male	and what do you think about other people like oh they put our money in theorem.
+[642.300,645.500]	ID164	male	a theorem sounds like some have a poison you drink and you get.
+[645.660,647.150]	ID164	male	Diarrhea from it so.
+[647.310,648.050]	ID164	male	um.
+[648.210,650.240]	ID164	male	with that point of view what.
+[650.550,654.800]	ID164	male	is there a new scene where in the future that they're gonna have something like stable.
+[655.110,656.584]	ID164	male	building or.
+[656.880,661.430]	ID164	male	kind of institutional you can actually be involved in this for the better one on one with a person.
+[683.544,683.981]	0	none	[SYSTEM]
+[713.246,713.906]	0	none	[SYSTEM]
+[743.027,743.705]	0	none	[SYSTEM]
+[745.440,746.720]	ID164	male	but now let me say this.
+[747.360,748.970]	ID164	male	but ha- how about?
+[749.130,754.820]	ID164	male	if people like me I do not come trust a computer at all I don't trust A I even.
+[754.980,759.978]	ID164	male	that people like you do not trust E I, A I A I will take over.
+[760.110,763.167]	ID164	male	they manipulate the system the computers are working against us.
+[763.260,767.060]	ID164	male	even today you seem mm many manipulations when it comes to computers.
+[767.250,768.080]	ID164	male	so.
+[768.660,773.000]	ID164	male	when I see all of this a bit just comes to like a big fairy tail.
+[773.130,775.700]	ID164	male	it's a big hoopla it's a big cloud cover.
+[776.190,779.720]	ID164	male	even um a sense of maybe even the people have.
+[779.940,781.790]	ID164	male	big money as in rom money.
+[781.920,783.950]	ID164	male	as in the dollars or the ram.
+[784.110,787.490]	ID164	male	what are we have you they are controlling this by.
+[787.590,793.010]	ID164	male	this have more people invest rom money into this fake money and we take the rom money than.
+[793.421,796.550]	ID164	male	ah deep on 'em cause isn't this the same thing that happen in bitcoin.
+[796.770,798.740]	ID164	male	many people go in to the bitcoin boom.
+[798.810,800.358]	ID164	male	many few about bitcoin.
+[800.520,805.490]	ID164	male	and they cannot do anything with it at all I remember reading the news about a gentleman.
+[805.680,807.891]	ID164	male	that invested money to his bitcoin.
+[808.008,811.280]	ID164	male	he forgot his password and he get into his money at all.
+[832.714,833.112]	0	none	[SYSTEM]
+[864.600,865.217]	ID164	male	so if.
+[865.500,866.510]	ID164	male	we all better.
+[866.700,870.470]	ID164	male	be better aware this also takes more responsibility on us as well.
+[870.600,874.250]	ID164	male	to take better care of finances our information.
+[874.410,877.700]	ID164	male	our private information I just say our passwords and.
+[877.800,878.510]	ID164	male	anything.
+[878.880,879.620]	ID164	male	um.
+[880.056,885.530]	ID164	male	so do you do you believe that crypto currency is a wave is a future of finances.
+[885.799,889.867]	ID164	male	for the future as a young investor do you think there's something I should.
+[890.070,891.440]	ID164	male	because as different.
+[891.840,892.880]	ID164	male	generations.
+[893.280,895.190]	ID164	male	one person from my generation.
+[895.350,898.161]	ID164	male	we believe in cold hard cash in our hands.
+[898.260,899.000]	ID164	male	cash.
+[899.160,899.900]	ID164	male	talks.
+[900.060,904.520]	ID164	male	you have in your hands it speaks for itself you can see it is tangible it's there.
+[904.800,906.320]	ID164	male	as in cryptocurrency.
+[906.420,910.130]	ID164	male	it's more but just looking at computer screen you're gonna updates.
+[910.320,915.440]	ID164	male	but there's nothing ever tangible the you can hold in your hand when it comes to bitcoin.
+[915.570,917.180]	ID164	male	or a theorem or.
+[917.280,920.270]	ID164	male	whatever potion you wanna call you a cryptocurrency.
+[920.880,926.480]	ID164	male	is there anything like that you see that it will be ah actual tangible.
+[926.820,929.030]	ID164	male	you can feel it touch it in your hand.
+[944.619,945.133]	0	none	[SYSTEM]
+[952.009,952.678]	0	none	[SYSTEM]
+[981.915,982.449]	0	none	[SYSTEM]
+[999.240,999.800]	0	none	[SYSTEM]
+[999.930,1002.440]	ID164	male	so they have so you'd will you telling me.
+[1002.630,1008.680]	ID164	male	the new use a U S B will take place as you can see like a debit card a bank card or credit card.
+[1008.840,1011.849]	ID164	male	so still having a U S B ah a credit card you have a U S.
+[1011.849,1012.172]	0	none	[SYSTEM]
+[1012.500,1015.828]	ID164	male	and ah like you said you go to this offline server.
+[1015.860,1018.378]	ID164	male	A K A an A T M huh.
+[1018.440,1019.240]	ID164	male	and you.
+[1019.310,1022.090]	ID164	male	install it and you get it back so it just like.
+[1022.220,1027.160]	ID164	male	so digital currency is exactly what it means digital currency digital finance.
+[1027.290,1029.170]	ID164	male	so instead of having a tangible.
+[1029.300,1030.790]	ID164	male	you have it digitalized.
+[1030.920,1031.720]	ID164	male	which is.
+[1032.120,1036.940]	ID164	male	pretty pretty much was coming out of our age like you said with things like Alipay and WeChat.
+[1037.340,1038.440]	ID164	male	um we all.
+[1038.660,1040.120]	ID164	male	and Chinese until they use it.
+[1040.250,1041.980]	ID164	male	but some countries like the State.
+[1042.170,1043.630]	ID164	male	and Australia.
+[1043.640,1046.780]	ID164	male	and even England they have not developed or even.
+[1046.820,1047.920]	ID164	male	incorporated.
+[1048.470,1052.210]	ID164	male	this type of digital currency into their financial system.
+[1071.352,1071.895]	0	none	[SYSTEM]
+[1101.210,1101.734]	0	none	[SYSTEM]
+[1104.150,1104.770]	ID164	male	so.
+[1105.170,1106.540]	ID164	male	so if there's a.
+[1107.240,1108.580]	ID164	male	so there's a crash.
+[1108.620,1110.020]	ID164	male	let's say there's a crash.
+[1110.090,1113.230]	ID164	male	they say cryptocurrency takes over the digital currency takes over.
+[1113.420,1114.580]	ID164	male	and there's a crash.
+[1115.280,1118.990]	ID164	male	like the stock market is a sable there's a crashing cryptocurrency.
+[1119.180,1122.740]	ID164	male	would you would it be safe to believe that instead of gold.
+[1122.960,1126.460]	ID164	male	been you know not gold and take gold and silver is are reserved.
+[1126.620,1129.520]	ID164	male	would it be safe to say that tangible money will be the reserve.
+[1129.710,1131.440]	ID164	male	old currency will be the reserved.
+[1131.600,1132.640]	ID164	male	instead of.
+[1132.740,1133.780]	ID164	male	gold and silver.
+[1133.910,1139.150]	ID164	male	or what do you think will be the reserve of cryptocurrency in digital currency it takes off because this is.
+[1139.580,1141.280]	ID164	male	ah very um tsk.
+[1141.920,1143.380]	ID164	male	we got to make sure.
+[1143.990,1148.960]	ID164	male	like I'm just looking at the next step so this next step will take place of the reserve.
+[1160.812,1161.345]	0	none	[SYSTEM]
+[1190.668,1191.211]	0	none	[SYSTEM]
+[1216.680,1218.170]	ID164	male	oh okay so.
+[1219.020,1224.590]	ID164	male	well there's lots of take in um to look at the finances to see how my the future investment.
+[1224.840,1226.300]	ID164	male	so with this.
+[1226.430,1228.310]	ID164	male	all the information I obtained today.
+[1228.740,1232.420]	ID164	male	ah the next step was find a stable website.
+[1232.490,1236.110]	ID164	male	a stable connection with the cryptocurrency at the room.
+[1236.450,1237.610]	ID164	male	I couldn't say that word.
+[1237.710,1240.340]	ID164	male	ah for forsake so they need to change that.
+[1240.441,1240.920]	0	none	[LAUGHTER]
+[1240.920,1243.760]	ID164	male	something much easier like bitcoin was much easier.
+[1244.070,1246.100]	ID164	male	um but I will look more into this.
+[1246.230,1248.350]	ID164	male	and um I appreciate your.
+[1248.660,1249.610]	ID164	male	assessment.
+[1249.920,1250.453]	ID164	male	you're.
+[1250.453,1251.119]	ID164	male	personalism.
+[1251.300,1253.030]	ID164	male	and your insight into this matter.
+[1253.130,1256.390]	ID164	male	they a look for to continuous conversation at another time.
+[1268.640,1270.669]	ID164	male	ah anytime Jay talk to you soon.

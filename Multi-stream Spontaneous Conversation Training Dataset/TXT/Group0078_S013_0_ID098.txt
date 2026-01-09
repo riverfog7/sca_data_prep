@@ -1,0 +1,346 @@
+[2.150,3.220]	ID098	male	pie again.
+[3.830,6.460]	ID098	male	so when was the first time you got into a relationship?
+[11.780,13.420]	ID098	male	you haven't at all?
+[16.340,19.540]	ID098	male	well what's the ideal relationship for you wha- what type of?
+[19.640,21.190]	ID098	male	person are you looking for?
+[33.350,34.060]	ID098	male	yeah.
+[42.830,43.690]	ID098	male	common traits.
+[69.680,70.630]	ID098	male	oh yes.
+[73.310,73.930]	ID098	male	yeah.
+[87.680,88.600]	ID098	male	right so.
+[89.220,90.460]	ID098	male	uh well.
+[91.100,94.930]	ID098	male	ah well which is ah I just meant to say you like the easygoing type.
+[106.700,107.470]	ID098	male	yeah yeah.
+[107.720,108.220]	ID098	male	'kay.
+[111.590,112.390]	ID098	male	that's cool.
+[117.860,120.310]	ID098	male	i- i- ideal yeah well uh personally I.
+[120.680,122.650]	ID098	male	I'd like to meet a book nerd you know.
+[122.900,123.730]	ID098	male	that'd be fun.
+[124.010,126.040]	ID098	male	and then I guess.
+[126.200,130.600]	ID098	male	someone who has common interests as I as I do 'cause you know if you had.
+[130.788,132.820]	ID098	male	if you have you know different interests.
+[133.040,134.470]	ID098	male	it may be difficult to hit it off.
+[134.540,135.040]	ID098	male	you know.
+[135.170,136.120]	ID098	male	um.
+[136.880,137.590]	ID098	male	yeah so.
+[137.630,139.210]	ID098	male	common interest I guess and.
+[139.340,142.150]	ID098	male	just like you said someone who's easy-going you know who's.
+[142.370,143.230]	ID098	male	um.
+[143.510,145.090]	ID098	male	yeah who can make me laugh.
+[145.400,147.100]	ID098	male	that's that's perfectly fine.
+[147.800,148.360]	ID098	male	yeah.
+[148.700,149.560]	ID098	male	um.
+[150.020,150.820]	ID098	male	so.
+[151.820,153.130]	ID098	male	if we're talking about you know.
+[153.170,157.000]	ID098	male	I have a couple of experiences to share you know from from my days in China.
+[157.100,158.170]	ID098	male	if you're interested.
+[159.500,160.510]	ID098	male	yeah so.
+[160.850,161.470]	ID098	male	um.
+[161.930,165.310]	ID098	male	like um at the beginning you know I I was new to this.
+[165.320,165.820]	ID098	male	group.
+[165.830,169.300]	ID098	male	right so uh no one knew me but then this girl sat next to me.
+[169.460,171.880]	ID098	male	ah in one of the classes and then we kind of.
+[171.980,174.790]	ID098	male	started talking and then she was fun and then you know.
+[175.010,176.230]	ID098	male	she was really nice.
+[176.720,179.380]	ID098	male	and then one day she gave me like two pomegranates.
+[180.860,182.110]	ID098	male	yeah yes so.
+[182.600,184.330]	ID098	male	I didn't understand what it meant.
+[184.550,187.120]	ID098	male	so I just took 'em home I just said thank you you know.
+[187.250,190.150]	ID098	male	um and then I I didn't think too much about it.
+[190.340,195.700]	ID098	male	ah and then as time passed by I guess I missed more signs you know I was just an idiot.
+[196.220,197.050]	ID098	male	okay.
+[197.120,199.240]	ID098	male	yeah I was really bad.
+[199.370,201.430]	ID098	male	I missed everything um.
+[201.650,202.930]	ID098	male	and then um.
+[203.090,207.220]	ID098	male	you know when um I forgot I I first got the hint that in.
+[207.320,208.600]	ID098	male	might have been something.
+[208.730,211.330]	ID098	male	it was when I watched um Chungking Express.
+[212.570,213.460]	ID098	male	you know the movie.
+[221.510,224.110]	ID098	male	yeah yeah so Chungking Express by Wong Kar-wai.
+[224.180,225.880]	ID098	male	it's um Hong Kong movie.
+[226.430,227.920]	ID098	male	um stars um.
+[228.290,230.610]	ID098	male	Faye Wong and um.
+[231.350,233.080]	ID098	male	ah wh- what's his name again.
+[233.120,234.190]	ID098	male	Tony.
+[234.800,235.810]	ID098	male	Tony Leung.
+[236.480,237.867]	ID098	male	yeah Tony Leung right right.
+[237.980,239.110]	ID098	male	um so.
+[239.120,240.700]	ID098	male	in one of the scenes you know.
+[240.770,244.630]	ID098	male	uh Faye Wong's character gives Tony's cha- a Tony's character.
+[244.820,247.360]	ID098	male	um I think it was a handful of lychees.
+[247.640,248.920]	ID098	male	and then she had it.
+[249.110,249.610]	ID098	male	what.
+[249.800,251.740]	ID098	male	not a crush but like she liked him.
+[251.900,255.790]	ID098	male	right so she would break into his apartment and stuff like that and and and just mess
+[256.010,257.860]	ID098	male	mess with a mess with his life.
+[258.260,261.910]	ID098	male	so that was the moment when I understood you know the clue.
+[262.220,263.650]	ID098	male	you know the hint kind of.
+[263.930,265.090]	ID098	male	so I felt.
+[265.250,265.800]	ID098	male	like.
+[266.420,269.200]	ID098	male	yes so I felt like a massive idiot for missing that.
+[269.840,274.480]	ID098	male	but yeah so that was one of the experiences okay so so it just um.
+[274.640,279.130]	ID098	male	ah an idyllic thing it was a fleeting you know sort of friendship.
+[279.740,280.510]	ID098	male	you know you.
+[280.760,281.710]	ID098	male	you get the drill.
+[281.900,282.640]	ID098	male	um.
+[283.460,284.020]	ID098	male	hmm?
+[284.180,284.800]	ID098	male	pardon me?
+[287.510,291.400]	ID098	male	yeah nothing came where we just went out a few times and thennothing came of it.
+[291.650,292.870]	ID098	male	'cause you know um.
+[293.450,297.490]	ID098	male	ah I don't start things that easily I like I like the you know um.
+[297.620,298.870]	ID098	male	keep my businesses.
+[299.564,302.520]	ID098	male	ah yeah I'm kind of reserved as a person so you know.
+[302.910,303.680]	ID098	male	um.
+[304.050,304.760]	ID098	male	and then the.
+[305.040,311.660]	ID098	male	yeah the other experience was when I was with this girl and once we it was winter okay in in Beijing.
+[311.700,316.010]	ID098	male	and it was snowing outside we were at a bakery it was late kind of just went out.
+[316.860,318.260]	ID098	male	and then it was snowing and.
+[318.300,320.990]	ID098	male	I don't know but the snow in Beijing was you know.
+[321.090,322.280]	ID098	male	I think thicker.
+[322.470,323.990]	ID098	male	than you know the snowflakes here.
+[324.240,327.320]	ID098	male	yeah it felt like that but uh I'm sure that it was a.
+[327.570,328.280]	ID098	male	um.
+[328.777,330.440]	ID098	male	it was just uh an illusion.
+[330.510,332.303]	ID098	male	uh I I it just sorts of same thickness.
+[332.446,333.470]	ID098	male	yeah but.
+[333.720,341.060]	ID098	male	you know when it was snowing and then iIwas with this girl we were having ice cream and then another girl called you know um the this other girl we um.
+[341.880,346.610]	ID098	male	I guess we met playing music she likes singing and then we participated um.
+[347.490,348.770]	ID098	male	at a student.
+[348.810,352.400]	ID098	male	ah festival we we sang you know two songs on stage that was all.
+[352.680,354.410]	ID098	male	but we are a kind of good friends.
+[354.510,356.240]	ID098	male	and then she invited me to you know.
+[356.310,358.340]	ID098	male	ah go out and um.
+[358.701,361.220]	ID098	male	I don't know the term in it, yeah she invited me to go.
+[361.320,362.660]	ID098	male	watch the snow.
+[362.850,365.030]	ID098	male	we don't do that here right 'cause we we.
+[365.040,366.590]	ID098	male	we have snow like every winter.
+[366.720,370.970]	ID098	male	but she just invited me out of the blue to you know go appreciate the beauty of the snow.
+[371.160,373.070]	ID098	male	and then I said no, I'm with someone else.
+[373.110,376.670]	ID098	male	and then this you know the other girl whom I was having ice cream said.
+[376.950,380.900]	ID098	male	oh my god she invited you to go watch the snow ah she must like you and you know.
+[381.120,384.050]	ID098	male	started saying stuff like that and then I couldn't understand and then.
+[384.690,385.580]	ID098	male	ah you know.
+[386.370,388.160]	ID098	male	I'm an idiot okay so.
+[388.620,392.990]	ID098	male	those were the things that you know happened and then I just couldn't understand any of them.
+[393.960,395.690]	ID098	male	and then there's the other experience.
+[396.240,399.020]	ID098	male	okay this girl who was older that me, we met in a class.
+[399.150,401.600]	ID098	male	um about Beijing opera and then um.
+[401.820,404.510]	ID098	male	what kind of hit it off and then we went out a few times.
+[404.850,406.880]	ID098	male	but then you know um.
+[407.250,410.180]	ID098	male	after the quarantine you know during the quarantine you know we've.
+[410.340,413.120]	ID098	male	kind of stopped talking to each other.
+[413.220,415.070]	ID098	male	I guess that was uh kind of normal.
+[415.110,415.940]	ID098	male	you know 'cause.
+[416.070,418.790]	ID098	male	we weren't in the same uh environment anymore.
+[419.820,420.770]	ID098	male	um.
+[420.840,422.360]	ID098	male	yeah and then.
+[422.430,424.850]	ID098	male	'cause she was older than me, now she's um.
+[424.950,426.530]	ID098	male	she's my group's counselor.
+[426.840,429.110]	ID098	male	like you know she's a master's student and yeah.
+[429.600,430.788]	ID098	male	so.
+[430.890,431.568]	ID098	male	yeah.
+[431.880,433.580]	ID098	male	I guess that's it.
+[434.460,435.350]	ID098	male	can't expect.
+[435.570,437.390]	ID098	male	anything more from that.
+[439.530,440.270]	ID098	male	yes.
+[449.640,450.770]	ID098	male	true stories.
+[464.280,467.090]	ID098	male	yes 'cause there's there's a whole cultural difference.
+[467.250,471.890]	ID098	male	in it you know it's difficult for um it was difficult for me to pick them up.
+[472.020,473.420]	ID098	male	I I didn't understand.
+[486.630,487.790]	ID098	male	exactly yeah.
+[501.120,501.710]	ID098	male	yeah.
+[508.620,509.720]	ID098	male	it's explicit.
+[517.860,519.050]	ID098	male	yeah but I don't know which.
+[519.377,520.110]	0	none	[SONANT]
+[520.110,522.110]	ID098	male	I kind of don't know which one I prefer you know.
+[522.450,525.740]	ID098	male	there's um there's a beauty to the uh implicitness.
+[526.290,526.790]	ID098	male	of.
+[527.160,528.800]	ID098	male	the Chinese way of doing things.
+[528.870,529.970]	ID098	male	but here it's like.
+[530.610,532.310]	ID098	male	yeah here's like explicit.
+[532.440,536.120]	ID098	male	you know what about relationships I I I saw a video on TikTok.
+[536.280,541.250]	ID098	male	it was um I don't know if you know the guy the guy um the guy does videos about language.
+[542.280,542.870]	ID098	male	you know.
+[543.420,545.780]	ID098	male	the there's this guy and it in it and he's like mock.
+[546.420,548.450]	ID098	male	and then he's mocking like all these languages.
+[555.990,556.940]	ID098	male	yeah yeah yeah.
+[558.120,559.850]	ID098	male	yeah yeah yeah that guy that guy.
+[560.160,560.720]	ID098	male	um.
+[560.730,563.840]	ID098	male	and then um he said something about french.
+[564.119,566.480]	ID098	male	right so so it was about relationships he said.
+[566.580,567.230]	ID098	male	ah.
+[567.240,572.630]	ID098	male	uh I think it was you know the guy compiling the universal grammar book and then asking french hey french.
+[572.820,575.720]	ID098	male	ah in your language uh why.
+[575.760,576.620]	ID098	male	um.
+[576.865,577.708]	ID098	male	why is there only.
+[577.708,578.207]	0	none	[*]
+[578.207,579.950]	ID098	male	you know for friends and for lovers.
+[580.020,581.900]	ID098	male	and then you know french said.
+[582.060,583.640]	ID098	male	because that's perfect.
+[583.800,586.160]	ID098	male	if you have a crush on your friends.
+[586.320,587.252]	ID098	male	and then you could just say.
+[587.252,587.756]	0	none	[*]
+[587.756,588.609]	ID098	male	and then when.
+[588.660,593.480]	ID098	male	ah depending on the crushes uh yeah and depending on your crush's uh reaction.
+[593.640,596.660]	ID098	male	you can um adapt your response you know if your.
+[596.700,597.530]	ID098	male	crush says.
+[597.600,601.820]	ID098	male	oh but I like you, too and maybe you have a chance, you know but if your crush.
+[601.950,605.750]	ID098	male	says oh what and you could say no no no as a friend as a friend.
+[605.790,609.200]	ID098	male	so so yeah that's kind of the beauty of the french language in English.
+[609.420,611.120]	ID098	male	you know there's I like you and then I love you.
+[614.190,615.350]	ID098	male	so that's kind of genius.
+[625.080,626.635]	ID098	male	well I guess in french we say you know.
+[626.635,627.793]	0	none	[*]
+[627.793,628.860]	ID098	male	you know you you have the.
+[628.860,629.364]	0	none	[*]
+[629.364,629.995]	ID098	male	after it.
+[630.180,632.570]	ID098	male	and then that kind of ah attenuates.
+[632.820,633.530]	ID098	male	um.
+[633.690,634.610]	ID098	male	the conversation.
+[635.520,637.040]	ID098	male	yeah the tone is different.
+[648.390,649.220]	ID098	male	yeah.
+[651.000,653.150]	ID098	male	yeah like we use those words every day.
+[656.580,657.110]	ID098	male	ah.
+[659.100,660.200]	ID098	male	has there any been you know.
+[662.010,663.080]	ID098	male	ah what?
+[664.650,665.390]	ID098	male	friendships.
+[666.780,668.570]	ID098	male	yeah yeah types of relationships.
+[673.320,677.840]	ID098	male	oh uh uh I was just going to ask you um have you ever encountered any signs that you missed?
+[677.940,678.890]	ID098	male	or any hints.
+[679.200,680.000]	ID098	male	like I did.
+[685.059,685.931]	0	none	[SYSTEM]
+[687.803,688.530]	0	none	[SONANT]
+[713.730,714.230]	ID098	male	it.
+[736.050,736.580]	ID098	male	whoa.
+[741.178,743.633]	ID098	male	well I guess here's the thing one day I think.
+[743.633,751.070]	ID098	male	you know when you watch i don't which ever movie that you will watch i guess when you encounter you know that particular scene
+[751.440,752.690]	ID098	male	you you'll have a flashback.
+[752.790,754.430]	ID098	male	I can guarantee it maybe.
+[755.580,756.200]	ID098	male	yeah.
+[758.580,759.860]	ID098	male	yeah yeah maybe.
+[760.430,762.230]	ID098	male	uh so what were you gonna say?
+[769.920,771.830]	ID098	male	sure sure that could be nice.
+[778.830,780.620]	ID098	male	um not really.
+[780.690,781.190]	ID098	male	I've.
+[781.770,783.380]	ID098	male	I've stopped contacting them.
+[783.600,784.190]	ID098	male	I guess.
+[785.370,786.440]	ID098	male	you know 'cause we.
+[786.690,788.450]	ID098	male	wekind of live in different worlds.
+[788.850,789.440]	ID098	male	you know.
+[790.560,791.090]	ID098	male	yeah.
+[792.930,793.850]	ID098	male	um.
+[797.130,802.130]	ID098	male	not a lot of new friends just like two or three good friends the others are just you know in the peripheries.
+[802.560,803.600]	ID098	male	they don't really count.
+[804.750,808.430]	ID098	male	yeah they're they're aquaintances exactly they they can't count as you know friends.
+[817.710,819.110]	ID098	male	yeah yeah I was.
+[819.420,820.340]	ID098	male	it was something.
+[828.300,833.990]	ID098	male	yeah it it was and i- i- it's kind of a bummer really 'cause um you know it.
+[834.540,837.590]	ID098	male	next semester will be my fourth semester online.
+[838.020,840.620]	ID098	male	so I I I get it it's really difficult.
+[841.260,847.700]	ID098	male	but as I also understand you know I I've had the chance to experience that life and it's really fun but.
+[848.580,852.200]	ID098	male	ah! it's just really a bummer you know throughout you don't have the chance to make friends.
+[852.300,856.100]	ID098	male	online it's like impossible like what are you gonna do you're gonna just text.
+[856.140,856.910]	ID098	male	the person.
+[856.980,858.230]	ID098	male	like it doesn't work.
+[858.510,859.010]	ID098	male	you know.
+[878.880,879.560]	ID098	male	oh!
+[918.450,919.080]	ID098	male	yeah.
+[928.680,929.240]	0	none	[*]
+[944.010,945.200]	ID098	male	oh, I see.
+[949.800,954.408]	ID098	male	what will you know what you maybe you could try leaving you know hence I guess.
+[954.570,955.730]	ID098	male	that may work.
+[961.153,966.200]	ID098	male	ah okay not people were taken but like you know if there are people who are not taken you could.
+[966.330,967.910]	ID098	male	you could try maybe yeah.
+[968.640,972.890]	ID098	male	and here's the thing like leave a sign and then you know invite them to go watch a movie.
+[973.590,977.420]	ID098	male	or or like just say oh this is a really good movie you should go watch it and then.
+[977.700,978.770]	ID098	male	when they watch it.
+[978.840,980.030]	ID098	male	I I guess to understand.
+[985.230,987.020]	ID098	male	yeah well that may be an idea.
+[1012.680,1013.630]	0	none	[*]
+[1036.890,1037.540]	ID098	male	music
+[1048.440,1049.030]	0	none	[*]
+[1057.500,1058.600]	ID098	male	a- a- and then you just.
+[1069.260,1070.270]	ID098	male	yeah yeah yeah.
+[1078.020,1078.917]	ID098	male	what?
+[1084.020,1085.150]	ID098	male	oh boy.
+[1105.800,1107.110]	ID098	male	oh that sucks.
+[1115.610,1116.350]	0	none	[*]
+[1116.705,1118.595]	0	none	[SONANT]
+[1132.650,1133.420]	ID098	male	oh that's nice.
+[1144.770,1145.480]	0	none	[*]
+[1147.410,1149.230]	ID098	male	while yeah, about you know.
+[1152.810,1154.257]	ID098	male	yeah maybe.
+[1155.420,1156.880]	ID098	male	it's a gradual process you know.
+[1158.960,1159.460]	0	none	[*]
+[1160.010,1162.520]	ID098	male	so I I had another experience yeah so.
+[1163.580,1165.850]	ID098	male	yeah yes so I could talk about a real quick yeah.
+[1165.950,1167.050]	ID098	male	um so.
+[1167.480,1169.120]	ID098	male	this girl right um.
+[1169.160,1172.501]	ID098	male	I met her in out of all places in a in a good will.
+[1172.501,1173.329]	0	none	[*]
+[1173.990,1175.150]	ID098	male	you know in the south shore.
+[1175.340,1177.700]	ID098	male	yeah, I I go there like every week.
+[1178.040,1181.390]	ID098	male	ah to buy books cause I said I am a book nerd and then.
+[1182.120,1182.710]	ID098	male	well.
+[1182.870,1186.370]	ID098	male	I don't need some cheaper and poor but I like go into you know.
+[1186.514,1187.342]	0	none	[LAUGHTER]
+[1187.342,1189.610]	ID098	male	but i like the goodwill it's 'cause you know.
+[1189.770,1191.240]	0	none	[*]
+[1191.240,1193.300]	ID098	male	like this is the story that I told uh.
+[1194.039,1199.127]	ID098	male	why it's bargain and also you don't choose what you read right it's like the bookstore decides for you.
+[1199.127,1202.914]	ID098	male	like like whatever is available and it's good to just buy it, yeah and you go home and read it.
+[1203.120,1206.125]	ID098	male	and at one time I was you know picking two books and then.
+[1206.270,1213.460]	ID098	male	ah this gorgeous came up to me and said oh you have those books yeah those are really good like and then we just started you know talking and then it was natural.
+[1213.560,1215.980]	ID098	male	and all that and then I found out she was a master's student.
+[1216.110,1217.990]	ID098	male	um um you know.
+[1218.180,1218.770]	ID098	male	planet.
+[1218.933,1219.791]	0	none	[*]
+[1219.791,1222.070]	ID098	male	you know uh originally she was at U D M.
+[1222.260,1225.003]	ID098	male	yeah and then uh she didn't like her major so she changed to.
+[1225.003,1225.717]	0	none	[*]
+[1226.369,1231.134]	ID098	male	so we started talking it was really fun and then we kind of made it a weekly thing.
+[1231.380,1232.450]	ID098	male	right so every.
+[1232.610,1233.620]	ID098	male	ah every.
+[1234.080,1234.820]	0	none	[*]
+[1234.950,1240.640]	ID098	male	yeah yeah every Saturday we just go to the you know the same good will and and we were got it you know to the book section.
+[1240.890,1243.760]	ID098	male	and would spend hours there and then I would go home and all that.
+[1244.546,1246.955]	ID098	male	and then we started exchanging books.
+[1246.955,1253.300]	ID098	male	and it was kind of fun but then I thought she wasn't a kind of person that was into you know um apart from the fact that she like book she was kind of.
+[1253.820,1256.528]	ID098	male	I I won't say annoying but um sh-
+[1256.970,1261.430]	ID098	male	I realized that she won't be yeah I I I realized that she wouldn't be the kind of person that.
+[1261.500,1262.960]	ID098	male	I'd appreciate you know spending.
+[1263.060,1264.340]	ID098	male	more time with cause.
+[1264.830,1266.080]	ID098	male	um well.
+[1266.240,1268.450]	ID098	male	first of all she was kind of picky about what.
+[1268.520,1271.030]	ID098	male	ah, she ate right so and.
+[1271.220,1274.030]	ID098	male	yeah we we also went to a grocery store.
+[1274.220,1276.790]	ID098	male	and then whenever I pick something I bet you would say.
+[1276.950,1282.320]	ID098	male	oh that's not healthy at all and then oh this is not healthy at all and like you know chief speaking you know that.
+[1282.320,1283.870]	ID098	male	I have nothing against vegans but.
+[1284.330,1285.130]	ID098	male	you know.
+[1285.200,1288.190]	ID098	male	um, it kinds of its kind of a bummer.
+[1288.830,1291.940]	ID098	male	yeah, the restrictiveness right of the bad it is it's kind of a bummer.
+[1291.940,1294.314]	ID098	male	and in literature wise she would be.
+[1295.040,1296.980]	ID098	male	picky as well you know for some books.
+[1297.110,1299.860]	ID098	male	you know books are always pure and all that.
+[1299.960,1304.300]	ID098	male	um, there are some graphic scenes in you know many of them and and it's not always.
+[1304.370,1306.130]	ID098	male	you know morally sound.
+[1306.200,1307.120]	ID098	male	and you know.
+[1307.460,1308.470]	ID098	male	you got what I'm saying?
+[1308.630,1309.430]	ID098	male	and then she would.
+[1309.560,1313.570]	ID098	male	just be like no no I'm not gonna read those types o- of books you know 'cause they have ah.
+[1313.700,1317.080]	ID098	male	a negative portrayal of woman and I'd be like what.
+[1317.270,1318.460]	ID098	male	like just you know.
+[1319.070,1320.530]	ID098	male	so so that's kinda weird.
+[1321.080,1323.200]	ID098	male	yeah, so I guess now it's.
+[1323.780,1325.630]	ID098	male	yeah, that's a bummer but she was.
+[1325.760,1327.670]	ID098	male	a genuine book nerd I'd say.
+[1328.100,1329.327]	ID098	male	a book worm sorry.
+[1329.327,1329.889]	0	none	[*]
+[1330.170,1330.670]	0	none	[*]
+[1331.840,1334.000]	0	none	[LAUGHTER]
+[1335.060,1335.680]	0	none	[SONANT]
+[1336.260,1337.600]	ID098	male	a book ah alright.
+[1338.000,1338.740]	ID098	male	all right.
+[1344.150,1346.180]	ID098	male	alright, I'll take the next topic.
+[1347.660,1348.190]	ID098	male	bye.

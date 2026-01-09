@@ -1,0 +1,17 @@
+CHANNEL	UTTRANS_ID	SPEAKER_ID-1	TOPIC
+C0	Group0006_S001_0_ID164.wav	ID164	Finance and Commerce
+C0	Group0006_S001_0_ID165.wav	ID165	Finance and Commerce
+C0	Group0030_S004_0_ID024.wav	ID024	Consumption
+C0	Group0030_S004_0_ID029.wav	ID029	Consumption
+C0	Group0046_S009_0_ID023.wav	ID023	Human Science
+C0	Group0046_S009_0_ID026.wav	ID026	Human Science
+C0	Group0078_S004_0_ID098.wav	ID098	Consumption
+C0	Group0078_S005_0_ID098.wav	ID098	Entertainment
+C0	Group0078_S009_0_ID098.wav	ID098	Human Science
+C0	Group0078_S013_0_ID098.wav	ID098	Relationships
+C0	Group0078_S015_0_ID098.wav	ID098	Career
+C0	Group0078_S004_0_ID099.wav	ID099	Consumption
+C0	Group0078_S005_0_ID099.wav	ID099	Entertainment
+C0	Group0078_S009_0_ID099.wav	ID099	Human Science
+C0	Group0078_S013_0_ID099.wav	ID099	Relationships
+C0	Group0078_S015_0_ID099.wav	ID099	Career
