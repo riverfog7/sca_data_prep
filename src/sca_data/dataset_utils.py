@@ -36,6 +36,16 @@ def parse_aligned_script(txt_path:Path) -> list[dict]:
         return []
 
 
+    IGNORE_TAGS = {
+        "[*]",       # 판독 불가
+        "[NPS]",     # 제3자 목소리
+        "[PII]",     # 개인정보 (이름 등)
+        "[SONANT]",  # 기침, 헛기침 등 생리적 소음
+        "[MUSIC]",   # 음악/흥얼거림
+        "[SYSTEM]",  # 기계음
+        "[ENS]"      # 환경 소음
+    }
+
     with open(txt_path, 'r', encoding='utf-8') as f:
         for line in f:
             match = pattern.search(line)
@@ -45,6 +55,13 @@ def parse_aligned_script(txt_path:Path) -> list[dict]:
                 end_t = float(end)
                 content = content.strip()
                 
+                if content in IGNORE_TAGS:
+                    continue
+                
+                # 2. 혹은 내용이 비어있으면 건너뜀
+                if not content:
+                    continue
+
                 #단어를 쪼갬 (why? 0.16초 후 5초 분량의 텍스트를 예측해야 한다면 지연시간 증가)
                 words = content.split()
                 
@@ -282,14 +299,16 @@ class DuplexTransform:
 def duplex_data(data_dir: Optional[Path] = None, cache_dir: Optional[Path] = Path('./dataset_duplex')) -> Dataset:
     DATASET_URL = "https://huggingface.co/datasets/wjm9765/sca_full_duplex/resolve/main/sca_duplex_cache.tar?download=true" 
 
-    dataset_path = cache_dir  # easy_load의 dataset_path와 동일한 역할
+    dataset_path = cache_dir  
     dataset_path.parent.mkdir(parents=True, exist_ok=True)
     tmp_tar_path = dataset_path.parent / "temp_cache.tar"
-
     if not dataset_path.exists():
-        
-        if DATASET_URL:
-            print(f">>> Downloading dataset from {DATASET_URL}...")
+        if data_dir is not None and data_dir.exists():
+            print(f">>> Creating dataset from raw data at {data_dir}...")
+            dataset = create_duplex_dataset(data_dir)
+            dataset.save_to_disk(str(dataset_path))
+        elif DATASET_URL:
+            print(f">>> Raw data not provided. Downloading dataset from {DATASET_URL}...")
             
             try:
                 with requests.get(DATASET_URL, stream=True) as r:
@@ -310,6 +329,11 @@ def duplex_data(data_dir: Optional[Path] = None, cache_dir: Optional[Path] = Pat
                 print(f">>> Extracting to {dataset_path.parent}...")
                 with tarfile.open(tmp_tar_path, "r") as tar:
                     tar.extractall(path=dataset_path.parent)
+
+                if not dataset_path.exists():
+                    possible_name = dataset_path.parent / "dataset_duplex" # 예시
+                    if possible_name.exists():
+                        shutil.move(str(possible_name), str(dataset_path))
                 
             except Exception as e:
                 print(f"[Error] Download failed: {e}")
@@ -319,11 +343,6 @@ def duplex_data(data_dir: Optional[Path] = None, cache_dir: Optional[Path] = Pat
             finally:
                 if tmp_tar_path.exists():
                     tmp_tar_path.unlink()
-
-        elif data_dir is not None and data_dir.exists():
-            print(f">>> Cache not found. Creating from raw data at {data_dir}...")
-            dataset = create_duplex_dataset(data_dir)
-            dataset.save_to_disk(str(dataset_path))
         
         else:
             raise FileNotFoundError(f"Dataset not found at {dataset_path} and no URL/RawData provided.")
