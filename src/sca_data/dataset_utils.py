@@ -86,38 +86,28 @@ def parse_aligned_script(txt_path:Path) -> list[dict]:
 
 
 def get_sliced_text(chunk_start: float, chunk_end: float, events: list[dict]):
-    """
-    0.16초라는 매우 짧은 청크 시간 동안 말해야 할 텍스트를 배분합니다.
-    비율: 오디오 진행률에 비례하여 단어를 할당 (Time-based Slicing)
-    """
     sliced_text = ""
     is_speech = False
     
     for evt in events:
-        # 1. 오디오 오버랩 체크 (Speech 구간인지)
         overlap_start = max(chunk_start, evt["start"])
         overlap_end = min(chunk_end, evt["end"])
         
         if overlap_end > overlap_start:
             is_speech = True
             
-            # 2. 텍스트 배분 (4토큰/0.16초 비율에 맞춰 단어 Slicing)
             if evt["duration"] > 0 and evt["words"]:
-                # 현재 청크가 전체 대사 구간에서 차지하는 비율 계산
                 rel_start = (overlap_start - evt["start"]) / evt["duration"]
                 rel_end = (overlap_end - evt["start"]) / evt["duration"]
                 
                 n_words = len(evt["words"])
                 
-                # 인덱스 계산 (소수점 처리를 통해 자연스럽게 배분)
                 w_start = int(rel_start * n_words)
                 w_end = int(math.ceil(rel_end * n_words)) 
                 
-                # 인덱스 범위 제한
                 w_start = max(0, w_start)
                 w_end = min(n_words, w_end)
                 
-                # 해당 구간의 단어 추출
                 current_words = evt["words"][w_start:w_end]
                 if current_words:
                     sliced_text = " ".join(current_words)
@@ -132,7 +122,6 @@ def get_sliced_text(chunk_start: float, chunk_end: float, events: list[dict]):
 
 
 def ensure_mono_and_length(audio_chunk: np.ndarray, target_length: int) -> np.ndarray:
-    """Stereo->Mono 변환 및 길이 강제 맞춤 (Pad/Trim)"""
     # 1. Mono 변환 (2채널 이상일 경우 평균)
     if audio_chunk.ndim > 1:
         audio_chunk = np.mean(audio_chunk, axis=1)
@@ -142,193 +131,345 @@ def ensure_mono_and_length(audio_chunk: np.ndarray, target_length: int) -> np.nd
     if current_len == target_length:
         return audio_chunk.astype(np.float32)
     elif current_len < target_length:
-        # 모자르면 뒤에 0 채우기
+        # 0.16*25000 보다 모자르면 뒤에 0 채우기
         pad_width = target_length - current_len
         return np.pad(audio_chunk, (0, pad_width), mode='constant').astype(np.float32)
     else:
         # 넘치면 자르기
         return audio_chunk[:target_length].astype(np.float32)
 
-        
-class DuplexLoader:
-    """
-    dataset[i]가 호출될 때마다 실행되는 '요리사'입니다.
-    메타데이터(경로, 시작시간)를 받아서 실제 오디오/텍스트 데이터를 가공해 반환합니다.
-    """
-    def __init__(self, sample_rate=16000, chunk_duration=0.16):
-        self.sample_rate = sample_rate
-        self.chunk_duration = chunk_duration
-        self.chunk_samples = int(chunk_duration * sample_rate)
-        # 스크립트는 매번 파싱하면 느리므로 캐싱할 수도 있지만, 
-        # 여기서는 구현 편의상 요청 시 로드합니다 (텍스트 파일은 가벼우므로 OK)
-
-    def __call__(self, batch):
-        # batch는 {key: [list_of_values]} 형태의 딕셔너리입니다.
-        batch_size = len(batch["session_id"])
-        
-        # 결과 담을 컨테이너 (Batch 단위)
-        out_types = []
-        out_waveforms = []
-        out_texts = []
-        out_labels = []
-        
-        for i in range(batch_size):
-            wav_path_u = batch["wav_path_u"][i]
-            wav_path_t = batch["wav_path_t"][i]
-            txt_path_t = batch["txt_path_t"][i]
-            start_sample = batch["start_sample"][i]
-            end_sample = batch["end_sample"][i]
-            
-            # 1. 텍스트 스크립트 로드
-            target_events = parse_aligned_script(Path(txt_path_t))
-            
-            # 2. 오디오 로드 (필요한 부분만 Seek해서 읽음 -> 매우 빠름)
-            with sf.SoundFile(wav_path_u) as f_u, sf.SoundFile(wav_path_t) as f_t:
-                sr = f_u.samplerate
-                
-                f_u.seek(start_sample)
-                f_t.seek(start_sample)
-                
-                curr_len = end_sample - start_sample
-                u_seq_audio = f_u.read(curr_len)
-                t_seq_audio = f_t.read(curr_len)
-                
-                # Padding Logic
-                if len(u_seq_audio) < curr_len:
-                    pad = curr_len - len(u_seq_audio)
-                    if u_seq_audio.ndim > 1:
-                        u_seq_audio = np.pad(u_seq_audio, ((0, pad), (0, 0)))
-                        t_seq_audio = np.pad(t_seq_audio, ((0, pad), (0, 0)))
-                    else:
-                        u_seq_audio = np.pad(u_seq_audio, (0, pad))
-                        t_seq_audio = np.pad(t_seq_audio, (0, pad))
-
-            # 3. 청크 단위 처리 (Zipper)
-            chunk_count = curr_len // self.chunk_samples
-            
-            # 단일 시퀀스(15분)에 대한 리스트
-            seq_types = []
-            seq_waveforms = []
-            seq_texts = []
-            seq_labels = []
-            
-            for c in range(chunk_count):
-                chunk_start_sec = (start_sample / sr) + (c * self.chunk_duration)
-                chunk_end_sec = chunk_start_sec + self.chunk_duration
-                
-                idx_s = c * self.chunk_samples
-                idx_e = idx_s + self.chunk_samples
-                
-                u_chunk = u_seq_audio[idx_s:idx_e]
-                t_chunk = t_seq_audio[idx_s:idx_e]
-                
-                # 안전장치 (Mono & Length)
-                u_chunk = ensure_mono_and_length(u_chunk, self.chunk_samples)
-                t_chunk = ensure_mono_and_length(t_chunk, self.chunk_samples)
-                
-                is_speech, text_slice = get_sliced_text(chunk_start_sec, chunk_end_sec, target_events)
-                
-                # Zipper Construction
-                # A. User Audio
-                seq_types.append("user_audio")
-                seq_waveforms.append(u_chunk)
-                seq_texts.append("")
-                seq_labels.append(-100)
-                
-                # B. Text
-                if text_slice:
-                    seq_types.append("text")
-                    dummy = np.zeros(self.chunk_samples, dtype=np.float32)
-                    seq_waveforms.append(dummy)
-                    seq_texts.append(text_slice)
-                    seq_labels.append(1)
-                
-                # C. Target Audio
-                seq_types.append("target_audio")
-                seq_waveforms.append(t_chunk)
-                seq_texts.append("")
-                seq_labels.append(1)
-            
-            out_types.append(seq_types)
-            out_waveforms.append(seq_waveforms)
-            out_texts.append(seq_texts)
-            out_labels.append(seq_labels)
-            
-        # 원본 배치에 덮어쓰기
-        batch["types"] = out_types
-        batch["waveforms"] = out_waveforms
-        batch["texts"] = out_texts
-        batch["label_mask"] = out_labels
-        
-        return batch
-
-def duplex_data(data_dir: Path, sample_rate: int = 16000) -> Dataset:
-    """
-    1. 메타데이터(경로, 인덱스)만 있는 초경량 데이터셋 생성 (순식간에 완료)
-    2. set_transform을 이용해 데이터 접근 시에만 DuplexLoader 실행
-    """
+def create_duplex_dataset(data_dir: Path) -> DatasetDict:
     wav_dir = data_dir / "WAV"
     txt_dir = data_dir / "TXT"
     
     sessions = {}
-    wav_files = list(wav_dir.glob("*.wav"))
-    
-    for wav_file in wav_files:
+    for wav_file in wav_dir.glob("*.wav"):
         parts = wav_file.stem.split('_')
         if len(parts) < 2: continue
         group_key = "_".join(parts[:-1])
         spk_id = parts[-1]
-        
-        if group_key not in sessions:
-            sessions[group_key] = []
-        sessions[group_key].append({
-            "spk_id": spk_id,
-            "wav_path": str(wav_file),
-            "txt_path": str(txt_dir / f"{wav_file.stem}.txt")
-        })
+        if group_key not in sessions: sessions[group_key] = []
+        sessions[group_key].append({"spk_id": spk_id, "wav_path": wav_file, "txt_path": txt_dir / f"{wav_file.stem}.txt"})
 
-    # 1. 메타데이터 리스트 생성
-    metadata_rows = []
-    
-    for group_key, speakers in sessions.items():
-        if len(speakers) < 2: continue
-        
-        pairs = [(speakers[0], speakers[1]), (speakers[1], speakers[0])]
-        
-        for user_info, target_info in pairs:
-            # 오디오 길이 확인 (한 번만 열어서 확인)
-            with sf.SoundFile(user_info["wav_path"]) as f:
-                max_len = len(f) # 둘이 길이가 같다고 가정하거나, 짧은 쪽 기준 등을 적용
-                sr = f.samplerate
+    # [Storage Generator] to_hf_dataset처럼 "bytes" 키를 가진 딕셔너리로 감싸서 yield
+    def storage_generator():
+        for group_key, speakers in tqdm(sessions.items(), desc="Processing Storage"):
+            if len(speakers) < 2: continue
+            pairs = [(speakers[0], speakers[1]), (speakers[1], speakers[0])]
             
-            samples_per_seq = int(SEQUENCE_DURATION * sr)
-            stride_samples = int(SEQUENCE_STRIDE * sr)
-            start_samples_list = range(0, max_len, stride_samples)
+            for user_info, target_info in pairs:
+                # 오디오 바이트 읽기
+                with open(user_info["wav_path"], "rb") as f: u_bytes = f.read()
+                with open(target_info["wav_path"], "rb") as f: t_bytes = f.read()
+                
+                yield {
+                    "session_id": f"{group_key}_{target_info['spk_id']}",
+                    # ★ 핵심: to_hf_dataset 구조 그대로 따름 {"bytes": ...}
+                    "user_audio": {"bytes": u_bytes},
+                    "target_audio": {"bytes": t_bytes},
+                    "txt_path": str(target_info["txt_path"])
+                }
+
+    # [Train Generator] 메타데이터
+    def train_generator():
+        for group_key, speakers in sessions.items():
+            if len(speakers) < 2: continue
+            pairs = [(speakers[0], speakers[1]), (speakers[1], speakers[0])]
+            for user_info, target_info in pairs:
+                sess_id = f"{group_key}_{target_info['spk_id']}"
+                with sf.SoundFile(user_info["wav_path"]) as f:
+                    max_len = len(f)
+                    sr = f.samplerate
+                samples_per_seq = int(SEQUENCE_DURATION * sr)
+                stride_samples = int(SEQUENCE_STRIDE * sr)
+                for seq_idx, start_sample in enumerate(range(0, max_len, stride_samples)):
+                    end_sample = min(start_sample + samples_per_seq, max_len)
+                    if end_sample <= start_sample: break
+                    yield {
+                        "session_id": sess_id,
+                        "seq_id": seq_idx,
+                        "start_sample": start_sample,
+                        "end_sample": end_sample
+                    }
+
+    # [Features] to_hf_dataset과 동일하게 Audio(decode=False) 사용
+    storage_features = Features({
+        "session_id": Value("string"),
+        "user_audio": Audio(decode=False),   # to_hf_dataset과 동일
+        "target_audio": Audio(decode=False), # to_hf_dataset과 동일
+        "txt_path": Value("string")
+    })
+    
+    train_features = Features({
+        "session_id": Value("string"),
+        "seq_id": Value("int32"),
+        "start_sample": Value("int64"),
+        "end_sample": Value("int64")
+    })
+
+    ds_storage = Dataset.from_generator(storage_generator, features=storage_features)
+    ds_train = Dataset.from_generator(train_generator, features=train_features)
+    
+    return DatasetDict({"storage": ds_storage, "train": ds_train})
+
+# ==============================================================================
+# 3. Loader (Transform)
+# ==============================================================================
+class DuplexTransform:
+    def __init__(self, storage_dataset, sample_rate=16000):
+        self.storage = storage_dataset
+        self.sample_rate = sample_rate
+        self.chunk_samples = int(CHUNK_DURATION * sample_rate)
+        self.id_to_idx = {sid: i for i, sid in enumerate(storage_dataset["session_id"])}
+
+    def __call__(self, batch):
+        batch_size = len(batch["session_id"])
+        out_types, out_waveforms, out_texts, out_labels = [], [], [], []
+        
+        for i in range(batch_size):
+            sess_id = batch["session_id"][i]
+            start = batch["start_sample"][i]
+            end = batch["end_sample"][i]
             
-            for seq_idx, start_sample in enumerate(start_samples_list):
-                end_sample = min(start_sample + samples_per_seq, max_len)
-                if end_sample <= start_sample: break
+            store_idx = self.id_to_idx[sess_id]
+            store_row = self.storage[store_idx]
+            
+            # 읽어올 때도 딕셔너리 구조 고려: store_row["user_audio"]["bytes"]
+            u_bytes = store_row["user_audio"]["bytes"]
+            t_bytes = store_row["target_audio"]["bytes"]
+            
+            with sf.SoundFile(io.BytesIO(u_bytes)) as f:
+                f.seek(start)
+                u_seq = f.read(end - start)
+            with sf.SoundFile(io.BytesIO(t_bytes)) as f:
+                f.seek(start)
+                t_seq = f.read(end - start)
+            
+            # 패딩 및 Zipper 로직 (기존과 동일)
+            curr_len = end - start
+            if len(u_seq) < curr_len:
+                pad = curr_len - len(u_seq)
+                u_seq = np.pad(u_seq, (0, pad)) if u_seq.ndim==1 else np.pad(u_seq, ((0,pad),(0,0)))
+                t_seq = np.pad(t_seq, (0, pad)) if t_seq.ndim==1 else np.pad(t_seq, ((0,pad),(0,0)))
+
+            target_events = parse_aligned_script(Path(store_row["txt_path"]))
+            chunk_count = curr_len // self.chunk_samples
+            
+            seq_types, seq_waves, seq_txts, seq_lbls = [], [], [], []
+            for c in range(chunk_count):
+                idx_s = c * self.chunk_samples
+                idx_e = idx_s + self.chunk_samples
+                u_chunk = ensure_mono_and_length(u_seq[idx_s:idx_e], self.chunk_samples)
+                t_chunk = ensure_mono_and_length(t_seq[idx_s:idx_e], self.chunk_samples)
+                c_start_sec = (start / self.sample_rate) + (c * CHUNK_DURATION)
+                c_end_sec = c_start_sec + CHUNK_DURATION
                 
-                # 메타데이터만 저장! (오디오 데이터 아님)
-                metadata_rows.append({
-                    "session_id": f"{group_key}_{target_info['spk_id']}_seq{seq_idx}",
-                    "wav_path_u": user_info["wav_path"],
-                    "wav_path_t": target_info["wav_path"],
-                    "txt_path_t": target_info["txt_path"],
-                    "start_sample": start_sample,
-                    "end_sample": end_sample
-                })
+                is_speech, text_slice = get_sliced_text(c_start_sec, c_end_sec, target_events)
                 
-    # 2. 경량 Dataset 생성
-    print(f">>> Created Metadata Dataset with {len(metadata_rows)} examples.")
-    print(">>> (Actual audio loading will happen on-the-fly via Transform)")
+                # A. User
+                seq_types.append("user_audio")
+                seq_waves.append(u_chunk)
+                seq_txts.append("")
+                seq_lbls.append(-100)
+                # B. Text
+                if text_slice:
+                    seq_types.append("text")
+                    seq_waves.append(np.zeros(self.chunk_samples, dtype=np.float32))
+                    seq_txts.append(text_slice)
+                    seq_lbls.append(1)
+                # C. Target
+                seq_types.append("target_audio")
+                seq_waves.append(t_chunk)
+                seq_txts.append("")
+                seq_lbls.append(1)
+            
+            out_types.append(seq_types)
+            out_waveforms.append(seq_waves)
+            out_texts.append(seq_txts)
+            out_labels.append(seq_lbls)
+            
+        batch["types"] = out_types
+        batch["waveforms"] = out_waveforms
+        batch["texts"] = out_texts
+        batch["label_mask"] = out_labels
+        return batch
+
+def duplex_data(data_dir: Path, cache_dir: str = "./dataset_cache") -> Dataset:
+    cache_path = Path(cache_dir)
+    if cache_path.exists():
+        print(f">>> Loading dataset from cache: {cache_path}")
+        dataset = load_from_disk(str(cache_path))
+    else:
+        print(f">>> Creating dataset from {data_dir}...")
+        dataset = create_duplex_dataset(data_dir)
+        print(f">>> Saving dataset to cache: {cache_path}")
+        dataset.save_to_disk(str(cache_path))
     
-    ds = Dataset.from_list(metadata_rows)
+    #dataset["train"].set_transform(DuplexTransform(dataset["storage"], sample_rate=SAMPLE_RATE))
+    #return dataset["train"]
+
+# class DuplexLoader:
     
-    # 3. Transform 설정 (이게 Easy_load 방식의 핵심!)
-    ds.set_transform(DuplexLoader(sample_rate=sample_rate, chunk_duration=CHUNK_DURATION))
+#     def __init__(self, sample_rate=16000, chunk_duration=0.16):
+#         self.sample_rate = sample_rate
+#         self.chunk_duration = chunk_duration
+#         self.chunk_samples = int(chunk_duration * sample_rate)
+        
+#     def __call__(self, batch):
+#         batch_size = len(batch["session_id"])
+        
+#         out_types = []
+#         out_waveforms = []
+#         out_texts = []
+#         out_labels = []
+        
+#         for i in range(batch_size):
+#             wav_path_u = batch["wav_path_u"][i]
+#             wav_path_t = batch["wav_path_t"][i]
+#             txt_path_t = batch["txt_path_t"][i]
+#             start_sample = batch["start_sample"][i]
+#             end_sample = batch["end_sample"][i]
+            
+#             # 1. 텍스트 스크립트 로드
+#             target_events = parse_aligned_script(Path(txt_path_t))
+            
+#             with sf.SoundFile(wav_path_u) as f_u, sf.SoundFile(wav_path_t) as f_t:
+#                 #f_u mean user input, f_t mean target (clean) audio
+#                 sr = f_u.samplerate
+                
+#                 f_u.seek(start_sample)
+#                 f_t.seek(start_sample)
+                
+#                 curr_len = end_sample - start_sample
+#                 u_seq_audio = f_u.read(curr_len)
+#                 t_seq_audio = f_t.read(curr_len)
+                
+#                 # Padding Logic
+#                 if len(u_seq_audio) < curr_len:
+#                     pad = curr_len - len(u_seq_audio)
+#                     if u_seq_audio.ndim > 1:
+#                         u_seq_audio = np.pad(u_seq_audio, ((0, pad), (0, 0)))
+#                         t_seq_audio = np.pad(t_seq_audio, ((0, pad), (0, 0)))
+#                     else:
+#                         u_seq_audio = np.pad(u_seq_audio, (0, pad))
+#                         t_seq_audio = np.pad(t_seq_audio, (0, pad))
+
+#             # 3. 청크 단위 처리 (Zipper)
+#             chunk_count = curr_len // self.chunk_samples
+            
+#             # 단일 시퀀스(15분)에 대한 리스트
+#             seq_types = []
+#             seq_waveforms = []
+#             seq_texts = []
+#             seq_labels = []
+            
+#             for c in range(chunk_count):
+#                 chunk_start_sec = (start_sample / sr) + (c * self.chunk_duration)
+#                 chunk_end_sec = chunk_start_sec + self.chunk_duration
+                
+#                 idx_s = c * self.chunk_samples
+#                 idx_e = idx_s + self.chunk_samples
+                
+#                 u_chunk = u_seq_audio[idx_s:idx_e]
+#                 t_chunk = t_seq_audio[idx_s:idx_e]
+                
+#                 u_chunk = ensure_mono_and_length(u_chunk, self.chunk_samples)
+#                 t_chunk = ensure_mono_and_length(t_chunk, self.chunk_samples)
+                
+#                 is_speech, text_slice = get_sliced_text(chunk_start_sec, chunk_end_sec, target_events)
+                
+#                 # Zipper Construction
+#                 # A. User Audio
+#                 seq_types.append("user_audio")
+#                 seq_waveforms.append(u_chunk)
+#                 seq_texts.append("")
+#                 seq_labels.append(-100)
+                
+#                 # B. Text
+#                 if text_slice:
+#                     seq_types.append("text")
+#                     dummy = np.zeros(self.chunk_samples, dtype=np.float32)
+#                     seq_waveforms.append(dummy)
+#                     seq_texts.append(text_slice)
+#                     seq_labels.append(1)
+                
+#                 # C. Target Audio
+#                 seq_types.append("target_audio")
+#                 seq_waveforms.append(t_chunk)
+#                 seq_texts.append("")
+#                 seq_labels.append(1)
+            
+#             out_types.append(seq_types)
+#             out_waveforms.append(seq_waveforms)
+#             out_texts.append(seq_texts)
+#             out_labels.append(seq_labels)
+            
+#         batch["types"] = out_types
+#         batch["waveforms"] = out_waveforms
+#         batch["texts"] = out_texts
+#         batch["label_mask"] = out_labels
+        
+#         return batch
+
+# def duplex_data(data_dir: Path, sample_rate: int = 16000) -> Dataset:
+#     """
+#     easy_load 처럼 호출
+#     """
+#     wav_dir = data_dir / "WAV"
+#     txt_dir = data_dir / "TXT"
     
-    return ds
+#     sessions = {}
+#     wav_files = list(wav_dir.glob("*.wav"))
+    
+#     for wav_file in wav_files:
+#         parts = wav_file.stem.split('_')
+#         if len(parts) < 2: continue
+#         group_key = "_".join(parts[:-1])
+#         spk_id = parts[-1]
+        
+#         if group_key not in sessions:
+#             sessions[group_key] = []
+#         sessions[group_key].append({
+#             "spk_id": spk_id,
+#             "wav_path": str(wav_file),
+#             "txt_path": str(txt_dir / f"{wav_file.stem}.txt")
+#         })
+
+#     # 1. 메타데이터 리스트 생성
+#     metadata_rows = []
+    
+#     for group_key, speakers in sessions.items():
+#         if len(speakers) < 2: continue
+        
+#         pairs = [(speakers[0], speakers[1]), (speakers[1], speakers[0])]
+        
+#         for user_info, target_info in pairs:
+#             with sf.SoundFile(user_info["wav_path"]) as f:
+#                 max_len = len(f) 
+#                 sr = f.samplerate
+            
+#             samples_per_seq = int(SEQUENCE_DURATION * sr)
+#             stride_samples = int(SEQUENCE_STRIDE * sr)
+#             start_samples_list = range(0, max_len, stride_samples)
+            
+#             for seq_idx, start_sample in enumerate(start_samples_list):
+#                 end_sample = min(start_sample + samples_per_seq, max_len)
+#                 if end_sample <= start_sample: break
+                
+#                 metadata_rows.append({
+#                     "session_id": f"{group_key}_{target_info['spk_id']}_seq{seq_idx}",
+#                     "wav_path_u": user_info["wav_path"],
+#                     "wav_path_t": target_info["wav_path"],
+#                     "txt_path_t": target_info["txt_path"],
+#                     "start_sample": start_sample,
+#                     "end_sample": end_sample
+#                 })
+                
+   
+#     ds = Dataset.from_list(metadata_rows)
+#     ds.set_transform(DuplexLoader(sample_rate=sample_rate, chunk_duration=CHUNK_DURATION))
+    
+#     return ds
 
 
 

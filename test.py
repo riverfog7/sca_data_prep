@@ -1,7 +1,6 @@
 import sys
 import os
-# datasets 라이브러리가 충돌 나는 torchcodec 대신 soundfile을 쓰도록 강제함
-sys.modules["torchcodec"] = None
+
 # src 폴더를 파이썬 경로에 추가 (sca_data 패키지를 찾기 위함)
 sys.path.append(os.path.join(os.getcwd(), "src"))
 
@@ -65,7 +64,7 @@ def main():
 
     print(">>> 데이터셋 생성 중... (WAV/TXT 로딩)")
     # sample_rate는 코드상의 기본값(16000) 사용
-    dataset = duplex_data(DATA_DIR, sample_rate=16000)
+    dataset = duplex_data(DATA_DIR)
     
     print(f">>> 데이터셋 로드 완료! 총 시퀀스 개수: {len(dataset)}")
     
@@ -75,6 +74,7 @@ def main():
     
     for i in range(max_idx):
         sample = dataset[i]
+        #print(sample)
         print_sample_details(i, sample)
 
 if __name__ == "__main__":
