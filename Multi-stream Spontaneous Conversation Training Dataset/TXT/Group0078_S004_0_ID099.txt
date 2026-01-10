@@ -1,0 +1,372 @@
+[0.950,1.479]	ID099	female	hello.
+[3.020,6.418]	ID099	female	yes consumption oh I'll let you take the lead on this one.
+[6.418,6.928]	0	none	[LAUGHTER]
+[13.430,14.590]	ID099	female	um.
+[15.350,16.840]	ID099	female	you know ah.
+[18.959,22.630]	ID099	female	I was gonna say, I was gonna say I'm trying to be I'm trying to eat more healthy recently.
+[22.850,27.640]	ID099	female	but then also remember that I have a whole pack of an open like in some ramen waiting for me down stare.
+[28.100,29.350]	ID099	female	but um.
+[30.500,35.050]	ID099	female	but um yeah um you know I'm, I'm gonna try, try to YouTube.
+[35.510,40.330]	ID099	female	so you've been healthier right? that's has been whole year that of the second home and like not moving around much.
+[40.580,41.590]	ID099	female	and um.
+[41.660,46.690]	ID099	female	and so on a summer and ah as the whole, as the whole hot close summer vibe right.
+[47.060,47.980]	ID099	female	but um.
+[48.530,49.720]	ID099	female	yeah um.
+[53.090,56.680]	ID099	female	and you know as long as, as long as like covid going on hot cool summer going on.
+[59.960,60.610]	ID099	female	I mean like.
+[60.800,66.250]	ID099	female	summer of twenty twenty you like that's when it started right like there's no one was flung out most you couldn't be a hot cold summer.
+[66.950,70.510]	ID099	female	I feel like the general consensus is like this summer is hot cold summer and like.
+[70.670,72.310]	ID099	female	um, halfway summer.
+[72.740,74.140]	ID099	female	but yeah um.
+[76.610,77.830]	ID099	female	yeah um.
+[79.790,80.440]	ID099	female	mmm.
+[83.210,84.760]	ID099	female	yeah like um.
+[84.890,87.109]	ID099	female	you know all mean our heart supposed like.
+[87.350,88.180]	ID099	female	um.
+[88.670,90.891]	ID099	female	more, more fruits and vegetables but.
+[90.891,91.590]	0	none	[PII]
+[91.590,94.450]	ID099	female	cut down a bit on the carbs like have like healthier carb.
+[94.760,95.620]	ID099	female	um.
+[95.960,97.300]	ID099	female	you know the whole life the whole.
+[97.340,104.350]	ID099	female	but I, I don't wanna I don't wanna sound like a, like a whole like coconut or anything ,cause I'm definitely not and I don't wanna like feel like really basic things but you know.
+[104.420,105.760]	ID099	female	just switching out um.
+[106.040,106.870]	ID099	female	some.
+[107.150,110.050]	ID099	female	something like whole grain you know like um I have um.
+[110.540,111.700]	ID099	female	I have like um.
+[111.770,112.310]	ID099	female	whole grain.
+[112.310,112.818]	0	none	[*]
+[112.818,114.428]	ID099	female	multi green peanut that kind of thing.
+[114.740,117.910]	ID099	female	um, cut down ah sat down on the.
+[118.190,120.670]	ID099	female	on, on like processed sugar you know.
+[120.770,121.780]	ID099	female	and thus.
+[122.150,125.410]	ID099	female	that those those those kind of hard thing for me 'cause I got a sweet tooth.
+[125.660,126.760]	ID099	female	but um.
+[126.920,129.070]	ID099	female	what's weird as I have a sweet tooth for like drinks.
+[129.229,132.370]	ID099	female	like drinks no matter how sweet it is I can, I can infinite I can like drink it.
+[132.470,137.500]	ID099	female	but when it's like food like will six it's like desserts I like to take like a couple by some like I'm good.
+[137.600,138.910]	ID099	female	you know so um.
+[139.820,143.170]	ID099	female	so but yeah processed sugar that's something ah I've been cutting down on.
+[143.180,143.950]	ID099	female	yes sorry.
+[145.670,146.410]	ID099	female	where is he?
+[152.060,152.680]	ID099	female	mhm.
+[175.670,177.610]	ID099	female	oh like um yeah it's um.
+[178.190,180.760]	ID099	female	yeah yeah, it's, it's all it's apple pie right?
+[180.890,182.710]	ID099	female	we'll technically apple is um.
+[186.230,188.320]	ID099	female	ah apple turnover, apple turnover yeah.
+[190.790,191.350]	ID099	female	yeah.
+[199.760,202.690]	ID099	female	measure up yeah, like as a control for sure, for sure.
+[205.160,206.380]	0	none	[LAUGHTER]
+[223.430,224.200]	ID099	female	is it that.
+[226.400,231.010]	ID099	female	is, is it, is it a, is it a franchise or is it a franchise, or they just one specific store?
+[237.800,241.750]	ID099	female	okay 'cause, 'cause does one does one, does one on in Peru like this one.
+[241.850,242.470]	ID099	female	yeah.
+[243.500,244.390]	ID099	female	um.
+[246.680,247.990]	ID099	female	okay okay.
+[248.210,250.836]	ID099	female	I was like you wouldn't go out as far just for.
+[250.836,251.304]	0	none	[*]
+[251.304,251.799]	ID099	female	couldn't you?
+[251.799,252.226]	0	none	[SONANT]
+[254.690,255.250]	0	none	[SONANT]
+[256.519,258.880]	ID099	female	yeah I mean I I've never been.
+[259.010,262.390]	ID099	female	ah, I've been in it but I've never bought anything but a small pretty good every time I go in.
+[269.270,269.830]	ID099	female	mhm.
+[273.110,274.900]	ID099	female	you know I'll keep that, I'll keep that in line.
+[284.600,285.130]	0	none	[LAUGHTER]
+[307.460,308.070]	ID099	female	mhm.
+[314.190,315.230]	ID099	female	oh my.
+[322.680,327.290]	ID099	female	yeah 'cause it's supposed to be paired with something right so it's very it's very it's very.
+[328.507,328.970]	0	none	[*]
+[332.160,334.490]	ID099	female	it's just always something wow.
+[340.230,341.690]	ID099	female	you said betty bucket right.
+[343.320,344.090]	ID099	female	I think.
+[344.280,350.090]	ID099	female	ah, do do you know after Durham Korea cause I think I watched the video about it it's like ah at some point.
+[361.530,364.700]	ID099	female	that's so funny I I it's so funny like restaurants.
+[365.130,367.460]	ID099	female	like when like restaurants have names that are like.
+[367.890,370.359]	ID099	female	yes, this is the breath like huh my name is.
+[370.359,370.908]	0	none	[*]
+[370.908,374.720]	ID099	female	and I se- uh I saw I sell pastries like fresh pastries you know.
+[396.154,398.690]	ID099	female	yeah I mean I guess it's because a lot of.
+[399.330,400.010]	0	none	[*]
+[400.200,401.630]	ID099	female	I've never seen it but I've heard them.
+[401.730,404.060]	ID099	female	or have you tried are they good as people say?
+[409.290,409.910]	0	none	[*]
+[412.920,414.140]	0	none	[*]
+[414.330,416.420]	ID099	female	oh my god, it's gonna be like Chinese supermarkets.
+[419.940,420.830]	ID099	female	hey.
+[422.550,423.710]	ID099	female	that's insane.
+[431.520,434.540]	ID099	female	um no I can't say that I'm familiar with it.
+[449.610,450.860]	ID099	female	oh that's so cool.
+[455.550,456.560]	ID099	female	yeah well.
+[456.810,457.430]	0	none	[*]
+[462.191,462.704]	0	none	[LAUGHTER]
+[462.704,463.970]	ID099	female	no, I've never heard of it.
+[481.350,483.560]	ID099	female	wha- what kind what kind of soda that it is.
+[484.110,485.300]	ID099	female	is it like fruity?
+[495.810,496.670]	0	none	[*]
+[498.870,499.430]	ID099	female	that's.
+[499.800,501.740]	ID099	female	oh okay, that's interesting.
+[501.840,506.330]	ID099	female	no never heard of this but um if if I ever go to restaurant I I'll definitely give it a look.
+[511.830,512.570]	0	none	[*]
+[515.190,517.940]	ID099	female	but um yeah I'm I'm also surprised that you.
+[518.730,521.641]	ID099	female	you have like so many like ah well like you know like.
+[521.641,522.576]	0	none	[*]
+[522.576,523.907]	ID099	female	like pastries in China 'cause.
+[524.130,526.839]	ID099	female	you know what I think of like Chinese dishes I think it's like you know like the.
+[526.839,527.753]	0	none	[*]
+[527.753,528.984]	ID099	female	Chinatown you know like the.
+[529.170,531.018]	ID099	female	and that's actually bowl the like the.
+[531.018,532.783]	0	none	[*]
+[533.580,534.254]	ID099	female	the.
+[534.254,534.982]	0	none	[*]
+[534.982,536.572]	ID099	female	pork buns and all that you know.
+[537.150,537.770]	0	none	[*]
+[538.980,543.110]	ID099	female	yeah, I feel like uh I feel like agent street food culture is something that.
+[543.690,545.600]	ID099	female	or definitely lacking in Canada.
+[546.750,551.000]	ID099	female	unless like uh uh except for like except for winter like the night market festival.
+[551.220,556.190]	ID099	female	but like those are those are usually solid and so rare right so I never I never even gone to.
+[556.590,557.690]	ID099	female	but like um.
+[558.390,560.630]	ID099	female	yeah like I I keep watching videos of like um.
+[560.880,561.722]	ID099	female	like Korean.
+[561.722,562.643]	ID099	female	Korean speaking
+[563.280,565.700]	ID099	female	and oh my god every time it's it's.
+[565.740,567.046]	ID099	female	ah it looks so good.
+[567.046,567.640]	0	none	[LAUGHTER]
+[569.520,570.380]	ID099	female	I miss.
+[571.830,573.590]	ID099	female	I miss like um.
+[574.260,577.460]	ID099	female	also like um oh and Japan I visited Japan like.
+[577.650,580.370]	ID099	female	a few years ago um with with family.
+[580.560,581.210]	ID099	female	and.
+[581.310,582.170]	0	none	[*]
+[582.480,585.530]	ID099	female	that conve- like I mean you know a convenience store.
+[586.770,590.720]	ID099	female	usually, your that convenience but like Japanese convenient store, I like super like.
+[590.820,593.990]	ID099	female	um, there there are only rentals or.
+[594.300,598.610]	ID099	female	the the sandwiches you can get like it's it's it's literally so convenient and it's so clean.
+[598.740,601.130]	ID099	female	right if you pick up a corner store here in Canada like.
+[601.170,602.420]	0	none	[*]
+[602.820,607.460]	ID099	female	you know if if sometimes if it's shady usually the dirty never will looked.
+[607.560,608.390]	ID099	female	uh you know.
+[608.790,612.380]	ID099	female	it's like it's like or like or or or it's more it's more about.
+[612.540,615.620]	ID099	female	it's more of a gas station than that a convenience store.
+[617.280,622.250]	ID099	female	but like the like the once I went into Japan and on a whole other level and honestly like.
+[623.130,627.560]	ID099	female	just food culture there all an age I feel like it's on a whole other level and that no.
+[637.680,638.390]	ID099	female	mhm.
+[655.020,655.820]	ID099	female	pressure.
+[660.630,661.610]	ID099	female	for for sure.
+[663.300,664.040]	ID099	female	I think.
+[665.430,665.960]	ID099	female	yeah.
+[666.090,667.460]	ID099	female	no no you go ahead go ahead.
+[674.070,674.930]	ID099	female	mhm.
+[675.990,677.660]	ID099	female	I mean I don't think it's the.
+[677.730,680.750]	ID099	female	if the area of the problem like is um.
+[682.440,684.680]	ID099	female	because because like ah.
+[685.080,687.080]	ID099	female	like China - Chinatown like the.
+[687.780,689.360]	ID099	female	you know the corner called like.
+[689.430,692.450]	ID099	female	because 'cause the the the Chinese like, to like food experience.
+[692.700,695.630]	ID099	female	yeah Michelle it's it's more like, Cantonese right?
+[695.790,697.070]	ID099	female	and even then it's like.
+[697.350,698.390]	ID099	female	westernize.
+[698.460,699.590]	ID099	female	Kevin this Lizzie.
+[699.810,700.370]	ID099	female	right.
+[700.650,701.450]	ID099	female	um.
+[702.390,704.450]	ID099	female	but like yeah so classless I was like.
+[704.700,706.040]	ID099	female	positive thought it's like.
+[706.350,709.580]	ID099	female	is there hasn't been a marathon more authentic food right.
+[709.770,710.840]	ID099	female	'cause um.
+[711.300,715.490]	ID099	female	you know like like, let's say um there has been a big um.
+[716.970,719.780]	ID099	female	a popularity for like, more like Korean base.
+[719.790,721.880]	ID099	female	so right because like, because the holy.
+[721.980,726.290]	ID099	female	Korean culture because of current Korean culture employed blowing up like worldwide.
+[726.660,729.140]	ID099	female	um like um in downtown is um.
+[729.930,733.730]	ID099	female	have you heard of the the famous of course of course overthrow?
+[736.260,740.090]	ID099	female	yeah there's um yeah I think it's culture.
+[740.370,743.030]	ID099	female	um it's it's it's awkward corner of the.
+[743.130,744.200]	ID099	female	but um.
+[744.810,747.080]	ID099	female	like I have so many I have press willful.
+[747.300,751.160]	ID099	female	for two week two to three weeks day have found there every day or every two days.
+[751.530,752.540]	ID099	female	it's not like.
+[752.670,753.530]	ID099	female	without fail.
+[753.570,756.620]	ID099	female	yeah and like like I say it's insane 'cause you don't think of like.
+[757.320,759.530]	ID099	female	ah you know you don't think of like um.
+[760.080,763.820]	ID099	female	Chinese like seafood like Chinese stuff like that like.
+[763.830,765.140]	ID099	female	do you get that kind of.
+[765.540,766.250]	ID099	female	um.
+[766.260,768.890]	ID099	female	recognition popularity unless it's like other place like that.
+[772.080,772.760]	ID099	female	mhm.
+[781.170,781.820]	ID099	female	mhm.
+[783.690,784.280]	ID099	female	yeah.
+[787.200,791.000]	ID099	female	I know um does this one shop and Japanese assault like um.
+[791.190,794.780]	ID099	female	it's got it's official balls right it's like it's like they can just mobile.
+[794.820,798.050]	ID099	female	and if they expected such vault and honestly I love that.
+[798.120,802.070]	ID099	female	ah I I love I hate this but I love like fish ball it's so weird.
+[802.350,805.700]	ID099	female	but like that that I really enjoyed it they don't sell it anymore?
+[806.100,809.300]	ID099	female	um no they just so like, sweets but I I remember like.
+[810.000,810.860]	ID099	female	that was like.
+[810.930,813.710]	ID099	female	because I got to like a similar experience.
+[814.230,815.750]	ID099	female	but in my job you know?
+[820.260,820.910]	ID099	female	mhm.
+[825.630,826.370]	ID099	female	mhm.
+[834.810,835.490]	ID099	female	mhm.
+[850.050,851.570]	ID099	female	oh! okay.
+[858.690,861.140]	ID099	female	um no chances are often unable to me.
+[876.600,877.250]	ID099	female	mhm.
+[893.190,894.320]	ID099	female	oh like ah.
+[894.600,898.130]	ID099	female	you know what yeah just speaking of their their.
+[898.290,899.120]	ID099	female	I.
+[900.570,906.800]	ID099	female	I think it's it's it's probably 'cause I haven't eaten yeah but I got a get so hungry for food.
+[906.800,907.580]	0	none	[LAUGHTER]
+[908.910,910.210]	ID099	female	but yeah like um.
+[911.278,912.720]	ID099	female	obviously, um.
+[912.851,914.722]	ID099	female	when online, I have so many views like.
+[915.478,918.452]	ID099	female	cooking videos appearing in my in my mrt.
+[918.704,919.479]	ID099	female	but it's not what you like.
+[920.688,927.151]	ID099	female	you know it's like, they do do ramen or they do steak or they do different rolls or I can mix of a mix of like the three, you know.
+[927.762,930.543]	ID099	female	it doesn't change but every time without fail I clicked it because i'm like.
+[931.052,934.020]	ID099	female	you know i'm down for some steak, ramen, spring rolls, you know.
+[934.194,935.135]	ID099	female	I go to meals like.
+[935.251,936.221]	ID099	female	rice papaer rolls.
+[936.551,937.821]	ID099	female	that sounds so bomb.
+[941.202,941.948]	0	none	[LAUGHTER]
+[944.008,944.811]	ID099	female	um.
+[945.430,946.574]	ID099	female	oh, offer, yeah.
+[954.706,956.840]	ID099	female	same. oh my God. i've.
+[957.406,960.528]	ID099	female	you know like, i'm not i'm not a big stick fan you know, but also like.
+[961.804,964.724]	ID099	female	the thought of like, you know like, just a marbling of that thing, like.
+[964.858,966.842]	ID099	female	if you were like Korean barbec- barbecue.
+[967.014,968.119]	ID099	female	it consumes.
+[968.287,972.432]	ID099	female	but then like grilled on both sides and they just look it up. oh my God! that is like.
+[973.228,974.802]	ID099	female	that is my, um.
+[975.495,976.649]	ID099	female	that is my foodie dream.
+[976.867,979.662]	ID099	female	like every time I see Korean barbecue videos, I just think of that like.
+[979.847,981.141]	ID099	female	marvel marvel need.
+[981.327,982.751]	ID099	female	because it's like a thing.
+[982.932,985.143]	ID099	female	you let a grill a bit and then just eat it all.
+[987.165,988.474]	0	none	[LAUGHTER]
+[989.088,989.831]	ID099	female	um.
+[990.060,990.621]	ID099	female	oh.
+[992.648,993.171]	ID099	female	yeah.
+[993.660,997.311]	ID099	female	um, have you heard and and I think it's near G two, just uh.
+[997.499,999.153]	ID099	female	there's a Korean, 'cause um.
+[999.630,1003.790]	ID099	female	i've always known like than Michelle has like, oh, you can eat Korean barbecue flavors.
+[1004.118,1006.940]	ID099	female	but I didn't know they have like, proper Korean barbecue flavors right 'cause.
+[1007.098,1008.080]	ID099	female	the difference is that like.
+[1008.330,1010.162]	ID099	female	you can expect the quality of needs to be.
+[1010.408,1014.091]	ID099	female	I mean, it's like it's expensive because people pers- person but it.
+[1014.257,1017.082]	ID099	female	you know you can expected to be better quality because not only can eat.
+[1017.697,1018.213]	ID099	female	so.
+[1018.837,1021.221]	ID099	female	there's this Korean barbecue place that I see ever going to.
+[1021.543,1024.065]	ID099	female	um, downtown called, I think it's a Dalgon Gae.
+[1024.759,1025.360]	ID099	female	um.
+[1025.476,1028.360]	ID099	female	ah, my pronunciation is really bad. i'm sure of it.
+[1028.628,1032.052]	ID099	female	but it's like the D A L G O N G A E.
+[1033.950,1034.741]	ID099	female	I never thought.
+[1035.508,1036.591]	ID099	female	yeah yeah, i'd like.
+[1036.920,1037.750]	ID099	female	it looks like.
+[1038.199,1041.722]	ID099	female	I I mean, I don't know what authentic like, ah, after from what I've seen it looks like.
+[1041.877,1043.951]	ID099	female	then, like the most authentic thing we have right.
+[1044.120,1046.433]	ID099	female	and I've been wanting to so for a long but um.
+[1046.588,1049.210]	ID099	female	I keep hearing people say that, it's like very expensive.
+[1049.460,1050.412]	ID099	female	and i'm here.
+[1050.568,1051.713]	ID099	female	broke college student.
+[1052.018,1058.060]	ID099	female	just look it at my wallet, being like maybe another time. when they're less people call me because there are lot of people going to.
+[1058.808,1059.611]	ID099	female	it's um.
+[1060.148,1061.352]	ID099	female	it's the same forum.
+[1062.150,1062.680]	ID099	female	yeah.
+[1063.027,1063.531]	ID099	female	go ahead.
+[1074.988,1075.730]	ID099	female	um.
+[1076.226,1079.814]	ID099	female	yeah, I'm sure. I don't know, I haven't I haven't been to LA and I know a lot of LA pot.
+[1080.018,1080.800]	ID099	female	but I know like.
+[1080.944,1084.397]	ID099	female	LA is really good to a for like, for like properties like.
+[1084.807,1085.441]	ID099	female	um.
+[1085.970,1092.770]	ID099	female	I mean you know, like if the whole LA culture right like, there's different kind of food, it's like diverse and like a lot of different choices.
+[1093.973,1094.535]	0	none	[SONANT]
+[1105.079,1105.680]	0	none	[SONANT]
+[1113.277,1113.849]	ID099	female	mhm.
+[1116.780,1117.310]	ID099	female	yeah.
+[1124.618,1128.711]	ID099	female	yeah, um, yes it's like um, this book and i'm looking at like they're like.
+[1128.840,1130.721]	ID099	female	oh, you know, like restaurant that you should visit.
+[1130.849,1133.450]	ID099	female	and every time it's like it's almost like California, LA.
+[1133.587,1135.640]	ID099	female	sometimes Toronto you know, and I'm like well.
+[1135.834,1138.374]	ID099	female	like, why can't we have any this much shell?
+[1138.560,1140.642]	ID099	female	every time I look at a restaurant that I wanna go to you.
+[1140.959,1142.401]	ID099	female	and it's like, so far away.
+[1145.209,1145.831]	ID099	female	but yeah.
+[1146.270,1146.801]	ID099	female	mm.
+[1147.778,1149.731]	ID099	female	yeah and even then in Toronto, like.
+[1150.170,1156.130]	ID099	female	you know like, yeah Canada if there any like good good fuck is either like V C, like Vancouver, or like Toronto.
+[1156.434,1160.866]	ID099	female	you know and and every city in between it was just like, well, that's the fuck you know.
+[1168.527,1169.132]	ID099	female	yeah.
+[1169.820,1173.332]	ID099	female	but like, there are, there are good like there are good spots but then like.
+[1173.480,1177.531]	ID099	female	either they not alone or either like, you're too alone who don't like.
+[1177.678,1178.481]	ID099	female	the community.
+[1179.126,1180.401]	ID099	female	it's not like, um.
+[1180.807,1182.080]	ID099	female	but you know the Gana Bar?
+[1184.640,1185.714]	ID099	female	of Gana Bar.
+[1185.908,1187.690]	ID099	female	Gana Bar, G A N A
+[1190.909,1191.741]	ID099	female	yeah, um.
+[1192.397,1194.920]	ID099	female	like I'm I'm I'm going to i'm going to visit, um.
+[1195.848,1198.442]	ID099	female	I'm going to go of gana bar for the first time, um.
+[1199.008,1200.401]	ID099	female	this Saturday with friends.
+[1200.998,1201.820]	ID099	female	um.
+[1202.310,1203.050]	ID099	female	but like.
+[1203.600,1207.610]	ID099	female	I hear like you're constantly people there. and I guess people we know too, you know like um.
+[1207.907,1209.372]	ID099	female	um, cau- cause.
+[1209.517,1211.960]	ID099	female	that's kind of people like that's kind of clientele they have.
+[1212.268,1212.863]	ID099	female	um.
+[1213.019,1216.190]	ID099	female	yeah and like, you have to, you have to do reservations because get so full
+[1216.410,1219.030]	ID099	female	and even for reservations, it's just two hours.
+[1219.277,1220.441]	ID099	female	but like, it's um.
+[1221.029,1221.756]	ID099	female	apart that like.
+[1221.931,1222.590]	ID099	female	I mean it's.
+[1223.089,1225.131]	ID099	female	it's more the bar than it is a restaurant.
+[1225.307,1230.710]	ID099	female	they're they're used to be, ah, um, Gana restaurants too, but then they went under during during Covid, I think.
+[1231.815,1237.866]	ID099	female	but yeah, it's still like, I think it's Korean, they sell Korean Soju and they have a lot of foreign drinks and a lot of people go to like drink the Soju.
+[1238.807,1239.552]	ID099	female	um.
+[1240.380,1242.920]	ID099	female	yeah, ah, yeah, another thing like.
+[1245.048,1247.441]	ID099	female	ah, I I mean, I haven't I don't drink Soju.
+[1247.640,1249.373]	ID099	female	and I don't I don't I don't drink.
+[1249.567,1251.930]	ID099	female	actually just period, but um.
+[1252.177,1253.300]	ID099	female	and I've heard that like.
+[1253.698,1254.302]	ID099	female	um.
+[1255.050,1259.832]	ID099	female	like Soju, like Chamisul, like the only have like they, they don't have a lot of variety, right?
+[1260.017,1260.702]	ID099	female	it's um.
+[1261.050,1261.921]	ID099	female	it's it's
+[1262.098,1263.591]	ID099	female	either original flavor.
+[1263.757,1270.512]	ID099	female	or like, they have like a few flavors, and everyone I know who buys this, it has to be someone they know. who go to Toronto to buy it and then bring it back.
+[1270.709,1272.651]	ID099	female	I could so, it so ratchet, right?
+[1272.810,1274.630]	ID099	female	like it's the duchess was like how like.
+[1274.928,1277.092]	ID099	female	Michelle has like, so so little like.
+[1277.357,1279.031]	ID099	female	choices and um um.
+[1279.157,1281.031]	ID099	female	they already, where these kinds of things.
+[1289.610,1290.800]	ID099	female	exactly.
+[1292.640,1295.222]	ID099	female	and especially now like, what the with the downtown like.
+[1295.627,1298.390]	ID099	female	you know have, have you been done on recently? like they started, like.
+[1298.647,1299.433]	ID099	female	he started like.
+[1299.677,1305.761]	ID099	female	the the the whole painting and decorations like, it started decorating dumpling mature as like a big like modern city.
+[1306.080,1307.643]	ID099	female	and yet the food is very much.
+[1307.857,1308.621]	ID099	female	burgers.
+[1308.878,1311.811]	ID099	female	sandwiches, croissants, stakes, you know.
+[1317.348,1320.441]	ID099	female	yeah, there was, there has been repackaging but contents the same.
+[1321.949,1324.431]	ID099	female	except except except instead of, instead of um.
+[1324.598,1325.293]	ID099	female	the streets.
+[1325.625,1329.329]	ID099	female	and so smelling like like a like a P D different sell smelling like pot.
+[1329.780,1332.650]	ID099	female	that is ah, that is one difference I have noticed recently.
+[1342.260,1343.390]	ID099	female	oh my God.
+[1347.974,1350.379]	ID099	female	yeah, and and it's so bad, it's so bad for the.
+[1350.537,1352.221]	ID099	female	for the local businesses of two, because.
+[1352.538,1353.831]	ID099	female	it's it's like the the.
+[1353.990,1355.554]	ID099	female	you know, like, the first summer.
+[1355.709,1358.322]	ID099	female	with Corona and everything it was bad enough and now like.
+[1358.508,1365.710]	ID099	female	you know they're trying to be an advantage but there's so many local streets so that's gonna be like so bad for the business too, like, I know someone who owned a coffee shop, often get in.
+[1365.930,1368.230]	ID099	female	and you're like, they just keep complaining about how like.
+[1368.390,1371.522]	ID099	female	nobody's walking in front of their store anymore, because the the.
+[1371.667,1372.850]	ID099	female	the sidewalks closed.
+[1379.008,1381.022]	ID099	female	yeah, you're not attracting attention exactly.
+[1390.745,1391.356]	ID099	female	mhm.
+[1400.519,1401.042]	ID099	female	yeah.
+[1405.054,1405.626]	ID099	female	mhm.
+[1408.590,1409.090]	ID099	female	oh.
+[1410.750,1412.420]	ID099	female	we hit the twenty-three minutes more.
+[1412.760,1413.260]	0	none	[LAUGHTER]
+[1414.200,1415.362]	ID099	female	okay, yeah.
+[1415.730,1418.243]	ID099	female	ah, it was I started to, of a little this.
+[1418.897,1419.702]	ID099	female	I touch you.

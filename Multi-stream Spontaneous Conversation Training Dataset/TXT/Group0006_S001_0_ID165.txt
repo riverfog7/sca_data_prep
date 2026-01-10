@@ -1,0 +1,238 @@
+[0.732,1.284]	0	none	[SYSTEM]
+[1.760,2.830]	ID165	male	hello, David!
+[3.498,3.978]	ID165	male	ah.
+[6.230,9.400]	ID165	male	I'm pretty good, thanks mate! It's been a while since we've talk.
+[10.253,10.631]	ID165	male	yeah.
+[12.097,12.476]	0	none	[SYSTEM]
+[18.920,22.900]	ID165	male	I'm glad that you've shown an interest in that what ah, what questions do you have?
+[40.460,45.550]	ID165	male	alright so to answer that we kind of need to look at the history of money.
+[45.800,46.810]	ID165	male	because.
+[46.994,47.751]	ID165	male	uhm.
+[47.833,52.390]	ID165	male	you know hundreds of years ago if not, thousands of years ago. We all.
+[52.690,55.690]	ID165	male	try to find ah, a common.
+[55.690,57.100]	ID165	male	unit of.
+[57.260,58.070]	ID165	male	where else.
+[58.520,59.560]	ID165	male	to.
+[59.900,64.569]	ID165	male	ah, as value so before that we just did trade so.
+[64.569,66.328]	ID165	male	I give you three chickens.
+[66.620,69.880]	ID165	male	ah, you give me a woven net.
+[70.470,77.080]	ID165	male	and but that's pretty inefficient so we started saying all right let's find a common.
+[77.390,82.660]	ID165	male	measurement of finance of something, that's, that's worth something that we can.
+[82.820,85.420]	ID165	male	use as an intermediary.
+[85.610,86.380]	ID165	male	trade.
+[86.380,87.760]	ID165	male	ah, you still following me?
+[90.860,91.610]	ID165	male	alright.
+[91.610,92.122]	0	none	[ENS]
+[92.122,92.830]	ID165	male	so, uhm.
+[93.230,95.140]	ID165	male	and this used to be gold.
+[95.510,97.808]	ID165	male	then silver for a while.
+[97.970,104.408]	ID165	male	uhm, then back back to gold, copper a salt was actually the first.
+[104.570,106.098]	ID165	male	intermediary.
+[106.400,107.140]	ID165	male	um.
+[107.270,108.100]	ID165	male	unit.
+[108.140,109.949]	ID165	male	that the that was used.
+[110.210,111.069]	ID165	male	so.
+[111.290,114.880]	ID165	male	uhm, anyways fast forward to today.
+[115.280,116.230]	ID165	male	uhm.
+[116.420,119.559]	ID165	male	these governments focus.
+[119.720,121.540]	ID165	male	their unit of measure.
+[121.730,125.832]	ID165	male	with their main bank their reserve bank.
+[125.832,127.720]	ID165	male	right every, every government.
+[127.720,133.657]	ID165	male	uhm, has their reserve bank and finance. You differently know something about that.
+[138.050,139.839]	ID165	male	alright so.
+[140.240,141.687]	ID165	male	and this bank.
+[141.980,146.080]	ID165	male	used to issue money, used to print money.
+[146.300,153.968]	ID165	male	but then, the amount of money printing should always be equal to the amount of gold or silver.
+[154.190,158.650]	ID165	male	that's uhm, storage in their reserve bank.
+[158.930,159.890]	ID165	male	I think.
+[159.890,164.470]	ID165	male	ah, America had fort Knox you've ever, have you ever heard of word fort Knox?
+[221.201,221.541]	0	none	[SYSTEM]
+[250.925,251.430]	0	none	[SYSTEM]
+[277.490,279.149]	ID165	male	that's a very fair point!
+[279.149,279.818]	0	none	[SONANT]
+[279.818,281.195]	ID165	male	you mentioned that.
+[281.630,283.258]	ID165	male	and the federal reserve.
+[283.610,287.560]	ID165	male	it's just another manipulator of the global.
+[287.720,290.500]	ID165	male	ah, of like the dollar's value.
+[290.690,292.988]	ID165	male	and so, and you mention that.
+[293.160,296.311]	ID165	male	gold is so outdated like, who needs.
+[296.311,300.739]	ID165	male	gold it's not the medieval times and that's exactly why.
+[301.020,305.522]	ID165	male	cryptocurrency as king to fill in this void because.
+[306.150,307.940]	ID165	male	whenever a country.
+[308.280,314.761]	ID165	male	um when they when they're running low on actual physical notes of currency.
+[314.970,317.270]	ID165	male	that's going into circulation.
+[317.640,318.560]	ID165	male	there.
+[318.750,319.820]	ID165	male	ah the.
+[319.980,325.940]	ID165	male	that currency becomes very valuable because it's about supply and demand.
+[326.190,331.310]	ID165	male	so the demand for this specific currency is very very high.
+[331.530,336.170]	ID165	male	but the supply is very low because there is not so many dollars.
+[336.360,338.052]	ID165	male	that's in circulation.
+[338.220,338.930]	ID165	male	that.
+[339.000,345.411]	ID165	male	other countries or big corporations can take billions of of dollars for instance so.
+[345.690,349.711]	ID165	male	what the federal reserve does if they just print more.
+[349.890,351.950]	ID165	male	right and there's nobody that.
+[352.050,355.070]	ID165	male	keeps an eye on them they just have the right.
+[355.320,359.090]	ID165	male	they just have the right you print more of this this currency.
+[359.400,360.211]	ID165	male	now.
+[360.720,362.390]	ID165	male	the danger with that.
+[362.700,364.370]	ID165	male	is that if they print.
+[364.680,366.830]	ID165	male	too much of this currency.
+[367.230,370.100]	ID165	male	and something that happens in the world.
+[370.230,373.040]	ID165	male	well let's say ah let's say the Middle East.
+[373.140,377.600]	ID165	male	the Middle East has been accepting dollars for so long now.
+[377.700,379.610]	ID165	male	and exchange for oil.
+[379.830,382.970]	ID165	male	so America buys their oil using dollars.
+[383.160,383.991]	ID165	male	so.
+[384.180,385.910]	ID165	male	ah Saudi Arabia.
+[386.070,386.990]	ID165	male	has been.
+[387.210,391.670]	ID165	male	a housing and and and keeping a lot of U S dollars
+[394.680,395.210]	0	none	[SYSTEM]
+[395.550,396.350]	ID165	male	so.
+[396.510,398.450]	ID165	male	hm what happened was.
+[399.030,400.550]	ID165	male	that now recently.
+[400.770,405.740]	ID165	male	there's been some conflicts between America and Saudi Arabia.
+[405.900,409.412]	ID165	male	regarding know their military action in the zones.
+[409.770,412.430]	ID165	male	and Saudi Arabia say you know what.
+[412.590,414.350]	ID165	male	we want to boycott.
+[414.540,416.120]	ID165	male	the the U S dollar.
+[416.280,418.261]	ID165	male	and we want to start accepting.
+[418.410,419.930]	ID165	male	the R and B.
+[420.150,421.010]	ID165	male	or.
+[421.110,425.540]	ID165	male	cryptocurrency we want a cryptocurrency that back by oil.
+[425.790,431.690]	ID165	male	so the fear is that all of these dollars that been stockpiled.
+[431.910,435.140]	ID165	male	in Saudi Arabia by these Sheikhs.
+[435.510,437.450]	ID165	male	will come rushing back.
+[437.700,438.950]	ID165	male	into the country.
+[439.500,440.543]	ID165	male	and they'll be.
+[440.670,447.740]	ID165	male	two months to many dollars in circulation so there or more supply and demand.
+[447.870,448.790]	ID165	male	therefore.
+[509.850,510.964]	ID165	male	all right zoom.
+[511.920,513.770]	ID165	male	ah it's very true that.
+[514.140,521.270]	ID165	male	the we are living in the second cryptocurrency boom so to speak there's so many different coins.
+[521.520,528.140]	ID165	male	that that came out to different cryptocurrency ah companies you said made to their own coin.
+[528.300,531.170]	ID165	male	Bitcoin is but one version of this.
+[531.390,534.200]	ID165	male	you can look at bitcoin as being.
+[534.750,537.560]	ID165	male	the the money of the internet.
+[537.750,539.210]	ID165	male	but you can look at.
+[539.310,542.780]	ID165	male	ah another coin that's called a theorem.
+[543.030,545.180]	ID165	male	a theorem is like the bank.
+[545.610,548.000]	ID165	male	and the service provider of the internet.
+[548.250,549.740]	ID165	male	so um.
+[549.750,555.110]	ID165	male	a theorem is the bank or the service provider and bitcoin is the digital currency.
+[555.240,560.330]	ID165	male	there are a lot of other digital currencies is out there a different coins.
+[560.640,562.430]	ID165	male	such as companies.
+[562.500,567.920]	ID165	male	that focus on security internet security and they have a coin.
+[568.080,568.760]	ID165	male	so.
+[569.036,570.500]	ID165	male	the ah the stock market.
+[662.850,665.690]	ID165	male	all right so that's a that's a fair point through.
+[665.983,672.888]	ID165	male	through the finance system that we've been, ah, be- become used to and in- indoctrinated into.
+[673.146,673.999]	ID165	male	is that.
+[674.149,675.988]	ID165	male	you need to remember that.
+[676.046,683.107]	ID165	male	these big banks, such as J P Morgan, and the some of the Rothschild's banks that's been here.
+[683.108,684.970]	ID165	male	for hundreds of years now.
+[685.268,692.994]	ID165	male	before we had technology and computers that could do all of these processing, well, uh, jobs.
+[693.199,700.160]	ID165	male	we had to rely on people. so you can look at the whole banking structure, the different branches.
+[700.470,703.897]	ID165	male	everything from the teller to the manager to the.
+[704.100,709.190]	ID165	male	uhm, teller server all these different positions you can look at.
+[709.190,709.650]	0	none	[SYSTEM]
+[709.650,714.637]	ID165	male	that we're trying to emulate, a a computer mother board.
+[714.810,721.190]	ID165	male	because we didn't have technology, we needed to take people and tell them you're doing one job.
+[721.190,724.832]	ID165	male	you're reporting to this guy and therefore when you.
+[725.125,726.065]	ID165	male	looked at.
+[726.210,732.639]	ID165	male	when you zoom out of this structure, you actually have a computer, you have a real live computer.
+[732.870,735.690]	ID165	male	and, so as technology got better.
+[735.780,743.390]	ID165	male	we actually have the ability that computers can replace all of these tellers and people's jobs because.
+[743.580,745.670]	ID165	male	everything can be automized.
+[745.898,746.401]	0	none	[*]
+[746.401,747.719]	0	none	[SYSTEM]
+[747.719,748.272]	0	none	[NPS]
+[758.196,758.700]	0	none	[SYSTEM]
+[762.655,763.945]	0	none	[SYSTEM]
+[767.509,769.342]	0	none	[NPS]
+[776.591,777.017]	0	none	[SYSTEM]
+[780.294,780.643]	0	none	[SYSTEM]
+[787.990,788.562]	0	none	[SYSTEM]
+[796.908,797.587]	0	none	[SYSTEM]
+[812.880,816.307]	ID165	male	that's so true, that story is like that has happened.
+[816.546,822.241]	ID165	male	uhm, the thing is you there are, security process see set in place.
+[822.498,830.358]	ID165	male	where if you have your crypto currency bank account let's call that you could it's a brokerage account where.
+[830.520,835.682]	ID165	male	all of your coins are safely storage on depending on which.
+[835.770,839.449]	ID165	male	internet bank you use which brokerage you use.
+[839.640,846.080]	ID165	male	they have their own security method sit in place of how you can access your account.
+[846.330,854.060]	ID165	male	in the case of you lose your password, so some of them facial recognition, or you can send them a copy of your I D.
+[854.160,860.149]	ID165	male	or some of them are so secure that if you do not know your password, then.
+[860.149,864.620]	ID165	male	unfortunately, there's no way that you can access this amount of funds.
+[864.840,866.042]	ID165	male	that's as.
+[870.980,871.484]	0	none	[SYSTEM]
+[877.641,880.627]	0	none	[SYSTEM]
+[886.015,886.529]	0	none	[SYSTEM]
+[890.314,895.696]	0	none	[SYSTEM]
+[898.632,900.028]	0	none	[SYSTEM]
+[903.373,908.222]	0	none	[SYSTEM]
+[920.879,921.548]	0	none	[SYSTEM]
+[925.787,927.842]	0	none	[SYSTEM]
+[930.330,937.068]	ID165	male	all right. so that's the that's a fair point, and yes there there is. so I'll give you an example in China.
+[937.187,940.767]	ID165	male	we use Alipay and WeChat pay.
+[940.767,946.220]	ID165	male	so often during the day that we very rarely have physical cash in our hands anymore.
+[946.440,951.680]	ID165	male	but we feel safe because we know, oh it represents real paper that we.
+[951.900,957.473]	ID165	male	would we can hold it in our hands if we wanted to if I had to go to the bank.
+[957.664,965.349]	ID165	male	and take these numbers, in a cloud somewhere they will give me a paper in my hands with some ink on it and then I feel.
+[965.460,968.080]	ID165	male	okay, I'm secured because I have some.
+[968.610,973.331]	ID165	male	paper literally worthless paper with some ink on it that makes me feel.
+[973.418,974.990]	ID165	male	oh I physically have.
+[975.090,976.010]	ID165	male	so with
+[976.080,977.570]	ID165	male	cryptocurrency.
+[977.760,980.330]	ID165	male	you get U S B devices.
+[980.460,983.780]	ID165	male	where you can actually download the code.
+[984.090,986.510]	ID165	male	of your cryptocurrency.
+[986.640,989.630]	ID165	male	onto this secure U S B.
+[989.760,993.758]	ID165	male	so you taking it from an online server, these codes.
+[994.110,996.483]	ID165	male	to an offline storage.
+[996.660,999.890]	ID165	male	place to your U S B which you can walk around with.
+[1000.199,1000.660]	ID165	male	they keep.
+[1026.920,1027.231]	0	none	[SYSTEM]
+[1038.910,1039.181]	0	none	[SYSTEM]
+[1054.290,1055.539]	ID165	male	that's so true!
+[1055.760,1059.219]	ID165	male	they are not yet experimenting the, uhm.
+[1059.228,1062.020]	ID165	male	very few governments are experimenting with.
+[1062.180,1063.970]	ID165	male	ah having their own.
+[1064.040,1071.020]	ID165	male	a local, uhm, when nationally supported cryptocurrency, China is one of them. China has been running.
+[1071.060,1072.760]	ID165	male	experiments on.
+[1072.920,1076.720]	ID165	male	how financial experiments for about three years now.
+[1076.790,1078.130]	ID165	male	about how.
+[1078.170,1082.000]	ID165	male	cryptocurrency would affect China's financial market.
+[1082.100,1086.800]	ID165	male	if they had to have a digital R and B a cryptocurrency.
+[1086.870,1088.030]	ID165	male	R and B.
+[1088.583,1095.050]	ID165	male	uhm, where there is not yet another one globally like a crypt a digital supported.
+[1095.240,1097.749]	ID165	male	U S D or or Euro.
+[1097.880,1100.390]	ID165	male	so they're decently, uhm.
+[1100.610,1103.240]	ID165	male	and they're differently experimenting with this.
+[1103.460,1104.500]	ID165	male	although.
+[1104.540,1105.610]	ID165	male	they are.
+[1105.805,1106.358]	0	none	[SYSTEM]
+[1113.697,1114.264]	0	none	[SYSTEM]
+[1115.391,1116.128]	0	none	[SYSTEM]
+[1116.384,1116.772]	0	none	[SYSTEM]
+[1119.647,1120.006]	0	none	[SYSTEM]
+[1140.159,1140.722]	0	none	[SYSTEM]
+[1142.380,1142.875]	0	none	[SYSTEM]
+[1144.641,1144.980]	0	none	[SYSTEM]
+[1146.464,1146.832]	0	none	[SYSTEM]
+[1150.320,1151.690]	ID165	male	all right so.
+[1151.790,1161.890]	ID165	male	currently, as we established that these old currencies are are really not backed by anything, their back by the stock market and corporations.
+[1162.380,1169.150]	ID165	male	uhm, a-according to the corporations power, so instead of them being the dollar being back by gold.
+[1169.280,1173.080]	ID165	male	the dollar is actually just being backed by the stock market.
+[1173.150,1178.450]	ID165	male	and relies on the stock market's performance but if the stock market crashes.
+[1178.640,1179.440]	ID165	male	then,
+[1179.480,1187.300]	ID165	male	the U S dollar crashes and as such as the trade war that we saw with China that can easily a fake currencies.
+[1187.520,1194.710]	ID165	male	just as that affects the uhm, the the ah the trade markets they are in direct relation towards that.
+[1194.870,1197.890]	ID165	male	the same thing can happen with cryptocurrency.
+[1198.020,1201.940]	ID165	male	because we've just experienced a big crash globally.
+[1202.250,1204.790]	ID165	male	in cryptocurrency because.
+[1205.070,1212.213]	ID165	male	China said, okay we're banning cryptocurrency but they've been saying this for about seven years now.
+[1212.233,1216.700]	ID165	male	but the truth is China is the biggest supporter of cryptocurrency.
+[1257.660,1262.750]	ID165	male	all right man, it's differently another conversation we we should have is a lot of information.
+[1262.970,1266.980]	ID165	male	uhm, and, this is too short of a time to to pass all information but.
+[1267.110,1268.600]	ID165	male	thank you for your call, David.
+[1268.618,1269.248]	0	none	[SYSTEM]
+[1273.350,1273.777]	0	none	[SYSTEM]

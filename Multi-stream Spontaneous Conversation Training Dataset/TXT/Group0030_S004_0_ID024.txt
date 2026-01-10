@@ -1,0 +1,269 @@
+[1.460,2.530]	ID024	female	hello.
+[2.631,4.338]	0	none	[SYSTEM]
+[7.730,8.710]	ID024	female	ah.
+[9.530,13.120]	ID024	female	well, obviously food, clothing and many things like but.
+[15.350,16.030]	ID024	female	well.
+[17.240,19.870]	ID024	female	I mean they gift to us that as account?
+[22.100,26.170]	ID024	female	I mean do you return the clothing your parents buy you at?
+[30.710,31.420]	ID024	female	which.
+[37.940,39.160]	ID024	female	what kind of food.
+[40.220,41.967]	ID024	female	ah.
+[42.140,43.030]	ID024	female	maybe like.
+[43.700,46.630]	ID024	female	barbecue like steak or something, probably.
+[48.744,49.829]	0	none	[*]
+[52.130,52.720]	ID024	female	of.
+[53.270,53.950]	ID024	female	yeah.
+[54.110,54.820]	ID024	female	boba.
+[55.070,58.180]	ID024	female	yeah, there we go, I spend my own money on boba sometimes.
+[68.870,69.730]	0	none	[LAUGHTER]
+[75.890,76.660]	0	none	[*]
+[76.880,80.230]	ID024	female	where have you been are you you were you've been eating them.
+[80.250,81.569]	0	none	[SYSTEM]
+[82.640,83.140]	ID024	female	like.
+[83.300,84.400]	ID024	female	is everything going.
+[85.942,86.660]	0	none	[SYSTEM]
+[90.920,91.990]	ID024	female	oh wow.
+[92.450,93.340]	ID024	female	also them.
+[105.890,109.000]	ID024	female	I mean rampage you have a power generator right?
+[116.000,116.620]	ID024	female	huh.
+[125.750,128.139]	ID024	female	oh, how was that? did you go to the beach?
+[135.830,136.420]	ID024	female	on.
+[139.010,139.900]	ID024	female	looks great.
+[141.020,141.910]	ID024	female	well.
+[142.130,144.010]	ID024	female	hey actually it's been.
+[144.500,146.530]	ID024	female	I haven't been going anywhere but.
+[146.840,149.290]	ID024	female	my parents are planning to go camping.
+[149.330,150.970]	ID024	female	and the end of this month.
+[151.850,155.830]	ID024	female	but I'm probably going to stay home cause I'm really busy with my classes.
+[157.850,160.030]	ID024	female	oh, geometry and things.
+[165.170,166.240]	ID024	female	yes.
+[172.130,177.698]	ID024	female	ah yeah, I used to my parents used to like ah, get me these tutoring classes.
+[178.100,183.730]	ID024	female	it's not, it's different and so weird tutoring system so basically whenever you need help, you can go to them.
+[183.980,186.850]	ID024	female	and they would take a little bit of money from your account, just like that.
+[189.320,192.490]	ID024	female	yeah, after we finished using all the money we kind of just.
+[192.740,193.630]	ID024	female	stopped going.
+[194.090,196.000]	ID024	female	'cause it would it actually didn't help.
+[196.730,197.590]	ID024	female	since it was like.
+[197.990,200.380]	ID024	female	since since COVID came and we kinda' just.
+[201.560,202.540]	ID024	female	they needed it.
+[202.970,203.470]	ID024	female	like.
+[203.510,206.470]	ID024	female	yeah so so I just went in a week and then.
+[207.080,208.630]	ID024	female	I just used all the money.
+[210.530,211.030]	ID024	female	of.
+[211.550,213.110]	ID024	female	yeah, I don't think it was.
+[213.110,214.630]	ID024	female	well spent but.
+[214.630,215.729]	0	none	[SYSTEM]
+[216.590,217.810]	ID024	female	it was okay.
+[218.360,219.100]	ID024	female	ah.
+[219.590,222.910]	ID024	female	it did help me in an essay which was good and that was it.
+[226.040,226.690]	ID024	female	hmm hmm.
+[231.590,232.270]	ID024	female	maybe like.
+[232.340,233.890]	ID024	female	at least once a week.
+[235.610,242.530]	ID024	female	yeah, but usually if it's like a good day when like go out twice and then another time on a weekend or something like that.
+[247.220,248.680]	ID024	female	yeah it.
+[248.750,253.810]	ID024	female	parents enjoy like watching like I'm looking at a view and in the same time.
+[256.459,257.019]	ID024	female	yeah.
+[257.240,259.329]	ID024	female	oh yeah, there is just one time.
+[260.390,263.350]	ID024	female	actually, it was the same time so we went to Oregon.
+[263.420,264.280]	ID024	female	and.
+[265.010,265.930]	ID024	female	my.
+[266.330,273.190]	ID024	female	ah my parents decided to reserve for a very very expensive restaurant that's like.
+[274.070,275.440]	ID024	female	fifty floors.
+[275.870,277.240]	ID024	female	above the ground.
+[278.840,282.760]	ID024	female	and it was really into it was real high I was like super high can like see everything.
+[283.760,284.380]	ID024	female	and.
+[284.510,285.400]	ID024	female	you just have.
+[285.410,287.620]	ID024	female	normal states.
+[288.029,289.056]	0	none	[SYSTEM]
+[289.540,290.761]	0	none	[*]
+[290.761,295.810]	ID024	female	a normal meal I wouldn't call it that good but the bar was really good.
+[295.810,299.740]	ID024	female	the only thing bad about it was it wasn't close to the window you can't really see the.
+[300.050,305.380]	ID024	female	view but are sequel actually it look across the window so we our meal next to the huge windows.
+[307.500,308.000]	0	none	[SONANT]
+[311.940,312.470]	ID024	female	wow!
+[316.080,317.180]	ID024	female	I won't do, anything.
+[336.150,337.040]	ID024	female	what is it?
+[338.400,339.410]	ID024	female	he places it.
+[343.530,344.270]	ID024	female	oh!
+[346.980,348.470]	ID024	female	he got it, it's not arms.
+[351.540,352.220]	ID024	female	yeah.
+[352.830,355.760]	ID024	female	their - their noodles are great, I always eat their chicken.
+[356.280,357.500]	ID024	female	other chicken.
+[357.540,358.310]	ID024	female	flavors.
+[359.190,359.960]	ID024	female	just again.
+[361.140,362.870]	ID024	female	and there's this time, I get.
+[363.180,364.370]	ID024	female	there's just, um.
+[364.410,365.240]	ID024	female	chicken.
+[367.080,367.670]	ID024	female	yeah.
+[367.680,368.463]	ID024	female	and a.
+[368.463,369.461]	ID024	female	okay.
+[370.310,371.330]	ID024	female	picking.
+[371.430,372.590]	ID024	female	who's like?
+[372.810,373.670]	ID024	female	actually.
+[374.250,375.410]	ID024	female	traveling yeah.
+[375.600,377.120]	ID024	female	okay, there's another time.
+[377.550,378.980]	ID024	female	I went to Hawaii.
+[380.400,381.320]	ID024	female	we.
+[381.840,386.390]	ID024	female	of his, this is such a fail of it, we looked up they, 'um.
+[386.490,388.400]	ID024	female	place to go you know?
+[389.490,390.230]	ID024	female	and.
+[390.540,393.800]	ID024	female	like, we we're we passed so many restaurants but.
+[394.110,398.540]	ID024	female	I don't know, I think my parents we're desperate for that one restaurant, so we had to drive like.
+[399.690,401.180]	ID024	female	three - three hours.
+[402.030,404.270]	ID024	female	and turns out they we're closed, I was just.
+[405.840,411.020]	ID024	female	yeah and then the restaurant next to us, served sushi so, we spend our money there and.
+[411.990,415.190]	ID024	female	yeah, the specially treated sushi, maybe we're just hungry.
+[415.230,416.240]	ID024	female	I'm not sure.
+[423.900,430.400]	ID024	female	'um, not really usually like, for special occasions we would go on and get some like, new clothes but.
+[431.340,432.500]	ID024	female	no, not really.
+[432.510,435.290]	ID024	female	like, sometimes like, one - one sir.
+[436.198,438.050]	ID024	female	twice in like a few months?
+[448.560,449.210]	ID024	female	hmm.
+[454.620,455.810]	ID024	female	hmm.
+[455.820,459.380]	ID024	female	no, not really actually can really imagine.
+[461.190,462.770]	ID024	female	well I used too but.
+[463.260,465.080]	ID024	female	and never for a clothes.
+[467.310,468.650]	ID024	female	just like, 'ah.
+[468.960,470.960]	ID024	female	things like, could chill and stuff.
+[471.330,472.070]	ID024	female	probably like.
+[472.920,474.740]	ID024	female	some balls or something?
+[475.950,476.810]	ID024	female	I don't know.
+[477.000,479.030]	ID024	female	I usually just a company my mom.
+[480.180,484.040]	ID024	female	she always goes, and look for like, furniture or something like that.
+[494.940,496.587]	0	none	[LAUGHTER]
+[499.800,500.330]	ID024	female	ah.
+[502.710,504.140]	ID024	female	'ah, yeah.
+[504.840,506.330]	ID024	female	yeah, sometimes.
+[507.720,510.366]	ID024	female	'ah, fluent really just depend link.
+[511.500,513.470]	ID024	female	I've - I've still think about it like.
+[513.540,514.460]	ID024	female	is it really?
+[514.710,515.810]	ID024	female	goods for me.
+[515.940,517.460]	ID024	female	'um, obviously sending.
+[517.710,519.980]	ID024	female	money on games is not good for me but.
+[520.260,521.150]	ID024	female	you know like.
+[522.810,523.670]	ID024	female	um.
+[526.110,528.290]	ID024	female	well I don't know, sometimes I did.
+[528.690,529.790]	ID024	female	like, even if I'm.
+[530.250,532.400]	ID024	female	am, gonna spend it, I think I?
+[532.500,535.490]	ID024	female	since I was like, think about like, do I really need this in game?
+[536.370,537.020]	ID024	female	you know?
+[538.380,539.150]	ID024	female	skins.
+[539.190,542.210]	ID024	female	it's the skins - skins of other me the most.
+[542.550,545.870]	ID024	female	they don't get you any person game, I don't, I know.
+[546.150,547.550]	ID024	female	I never vice in.
+[548.427,549.170]	0	none	[*]
+[549.510,550.370]	ID024	female	besides.
+[551.130,553.070]	ID024	female	'ah, decided skins like.
+[553.590,556.700]	ID024	female	deal season stuff, I would definitely get those.
+[556.950,557.450]	ID024	female	like.
+[557.760,559.760]	ID024	female	the breath of the while, I have the D L C.
+[573.540,574.160]	ID024	female	mm - hmm'
+[576.270,577.070]	ID024	female	totally.
+[577.080,579.200]	ID024	female	I mean, if you enjoy them and?
+[580.440,581.120]	ID024	female	copy board.
+[584.580,585.230]	ID024	female	sure.
+[587.700,588.440]	ID024	female	I mean.
+[588.480,589.460]	ID024	female	yes?
+[590.220,591.080]	0	none	[*]
+[591.210,592.550]	ID024	female	spending money is.
+[593.010,594.410]	ID024	female	when really be a waste?
+[594.510,595.490]	ID024	female	if you?
+[595.680,596.330]	ID024	female	think.
+[596.370,598.160]	ID024	female	if you think, it was worth it?
+[603.870,604.490]	ID024	female	oh!
+[605.430,612.680]	ID024	female	my, 'oh, hey that's funny, my friends always give me a sketchbook even though, I'm not even that good of a good at trying.
+[614.820,616.078]	ID024	female	it ah.
+[616.078,616.643]	0	none	[SYSTEM]
+[620.520,621.290]	ID024	female	sure is.
+[621.290,621.798]	0	none	[SYSTEM]
+[639.390,640.708]	ID024	female	sounds dicey.
+[640.920,642.530]	ID024	female	what is it what is the for it just.
+[643.251,644.209]	0	none	[*]
+[647.290,648.199]	ID024	female	oh.
+[653.020,658.678]	ID024	female	well I mean you could just use the eight hundred page for you know practice and stuff.
+[660.900,662.510]	ID024	female	yeah I say enough.
+[663.030,664.970]	ID024	female	I say that was worth it.
+[665.130,667.309]	ID024	female	sounds interesting I like the title.
+[675.540,676.346]	0	none	[LAUGHTER]
+[679.590,681.388]	ID024	female	oh so they have words on them.
+[685.761,687.368]	ID024	female	oh that's not that bad.
+[688.160,690.268]	ID024	female	didn't count the pages for you right.
+[698.121,701.504]	ID024	female	surely how you've been spending money on games that much.
+[702.990,704.509]	ID024	female	yes it's been awhile.
+[704.820,706.088]	ID024	female	and um.
+[708.480,709.370]	ID024	female	hmm.
+[711.700,715.068]	ID024	female	I think the last time I actually spent Lenny was on mother's day.
+[718.380,719.210]	ID024	female	ah.
+[719.310,722.450]	ID024	female	I didn't borrow lot food ingredients I made dinner for.
+[724.770,725.330]	ID024	female	yeah.
+[726.150,728.479]	ID024	female	and I got a card and everything that was it.
+[728.520,730.670]	ID024	female	oh yeah and new flowers and that was it.
+[730.710,731.210]	ID024	female	yeah.
+[734.498,737.929]	ID024	female	without food, when was the last time you spent money on something.
+[738.300,739.400]	ID024	female	like your own money.
+[743.280,745.070]	ID024	female	is it, awhile.
+[745.350,746.330]	ID024	female	where did you get it?
+[747.990,748.948]	ID024	female	oh.
+[763.350,763.970]	ID024	female	hmm.
+[771.750,772.579]	ID024	female	yeah.
+[781.320,781.940]	ID024	female	oh.
+[782.752,786.178]	ID024	female	yeah sometimes I pick them up myself of sometimes my mom would.
+[786.420,789.750]	ID024	female	get them for me, sometimes I wouldn't go shopping with her.
+[789.793,790.762]	0	none	[SONANT]
+[790.800,792.500]	ID024	female	and then she would like get something.
+[792.540,793.250]	ID024	female	for me.
+[794.370,794.870]	ID024	female	yes.
+[795.558,797.150]	ID024	female	keep it my good stuff.
+[797.190,798.320]	ID024	female	pre-disclosing.
+[798.491,799.190]	ID024	female	sometimes.
+[803.460,806.330]	ID024	female	yeah oh I'm more wearing the honeys and.
+[806.940,808.280]	ID024	female	jeans or sweatpants.
+[810.690,811.298]	ID024	female	yeah.
+[811.500,812.060]	0	none	[*]
+[827.550,828.513]	ID024	female	mhm yeah.
+[828.513,829.352]	0	none	[*]
+[839.130,840.140]	ID024	female	oh.
+[845.520,846.140]	ID024	female	hmm.
+[846.604,847.554]	0	none	[ENS]
+[847.620,848.480]	ID024	female	when.
+[848.514,849.562]	0	none	[ENS]
+[849.600,850.310]	ID024	female	I mean it's.
+[850.380,852.080]	ID024	female	I mean it's pretty good yeah.
+[852.180,853.370]	ID024	female	you are to where I got.
+[853.410,854.338]	ID024	female	the way you dress.
+[854.465,855.125]	0	none	[ENS]
+[856.590,857.090]	ID024	female	yeah.
+[857.430,859.640]	ID024	female	and moments been like years doesn't it.
+[860.370,861.590]	ID024	female	worth it.
+[861.863,862.550]	ID024	female	yeah.
+[863.910,865.430]	ID024	female	yeah no.
+[868.150,869.431]	0	none	[ENS]
+[869.431,872.178]	ID024	female	yeah actually we kind of did.
+[873.539,875.330]	ID024	female	who can everywhere and.
+[875.760,876.290]	ID024	female	like.
+[876.480,878.418]	ID024	female	we would always go to like places.
+[882.190,883.278]	ID024	female	oh sorry.
+[883.343,884.438]	0	none	[ENS]
+[884.490,886.220]	ID024	female	topping my phone anyways.
+[886.320,887.960]	ID024	female	yeah this summer.
+[888.070,891.668]	ID024	female	my family was planning on also going to Hawaii and.
+[891.930,895.190]	ID024	female	and we also cue for luck 'cause I was said and also COVID.
+[896.490,900.649]	ID024	female	we were planning on stamp Maui or Honolulu for like a week.
+[900.720,902.660]	ID024	female	last time we were on a cruise.
+[902.760,903.740]	ID024	female	for ah.
+[904.290,908.199]	ID024	female	yeah, the cruise was pretty expensive but it was actually really worth it.
+[909.330,910.160]	ID024	female	I.
+[910.250,913.179]	ID024	female	I was actually surprised that I didn't get seasick.
+[914.520,915.350]	ID024	female	the ship.
+[915.390,922.247]	ID024	female	yeah the ship rocked a lot even though there's like a huge shift it rocked a bunch when we were sleeping at night.
+[923.490,925.130]	ID024	female	the only thing good was.
+[925.290,926.420]	ID024	female	we saw whales.
+[928.410,929.210]	ID024	female	yeah.
+[929.880,931.250]	ID024	female	really worth it, I mean.
+[931.620,934.039]	ID024	female	learned a lot of stuff like how to make them.
+[934.650,935.420]	ID024	female	ah.
+[935.430,938.240]	ID024	female	those things they put around your neck in Hawaii.
+[938.401,940.010]	0	none	[SONANT]
+[941.250,943.220]	ID024	female	yeah yeah the flower.
+[947.100,947.630]	ID024	female	yeah.
+[948.600,949.168]	ID024	female	see.

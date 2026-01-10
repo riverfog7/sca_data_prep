@@ -1,0 +1,241 @@
+[2.690,3.550]	ID098	male	hello hello.
+[11.240,12.220]	ID098	male	technical.
+[30.230,30.820]	ID098	male	yet.
+[32.090,33.250]	ID098	male	oh.
+[33.440,36.040]	ID098	male	now it's not so much at the youth, ah, ah, ah.
+[36.770,37.750]	ID098	male	oh! can you hear me?
+[41.060,45.730]	ID098	male	go at well now it's not so much at the youth, uh, youth wing, ah, before I was.
+[45.890,47.470]	ID098	male	um, uh, you know.
+[47.660,49.240]	ID098	male	yeah, I I was in a mentorship.
+[49.280,51.340]	ID098	male	ah, in you know the, yeah.
+[51.530,53.620]	ID098	male	that the youth wing that the young liberals.
+[53.660,55.390]	ID098	male	the- they call it the numb just you know.
+[55.670,57.370]	ID098	male	irregular field staffer.
+[57.410,58.990]	ID098	male	for what sort of group of party?
+[66.380,68.007]	ID098	male	I I I don't even know.
+[68.045,69.160]	0	none	[LAUGHTER]
+[69.290,72.520]	ID098	male	that that's what's strange about it, um, like, um.
+[72.710,74.710]	ID098	male	policy why would I'm not?
+[75.560,77.650]	ID098	male	that much of a political person you know, um.
+[78.020,78.700]	ID098	male	um.
+[78.890,79.720]	ID098	male	I guess.
+[80.450,81.700]	ID098	male	I guess I'm reasonable you know.
+[81.710,85.930]	ID098	male	I I don't agree particularly with anyone I guess if something is.
+[85.970,88.540]	ID098	male	logical reason why I just, you know, go with it.
+[88.790,91.690]	ID098	male	but, yeah, there's not a brand that I subscribed to but you know.
+[91.820,95.500]	ID098	male	that the liberal party I think, um, is somewhere where I can meet.
+[95.510,97.930]	ID098	male	like-minded people, so I just went with it.
+[98.180,100.540]	ID098	male	we're just, you know kind of a place to meet people.
+[103.250,103.960]	ID098	male	yeah.
+[119.960,120.670]	ID098	male	yeah.
+[128.330,129.940]	ID098	male	who they are, the the?
+[148.340,151.180]	ID098	male	wow! the, yeah, that's next level there.
+[164.120,166.450]	ID098	male	I think I know who you're talking about, yeah.
+[199.430,204.400]	ID098	male	yeah, they get too they get too intense 'cause they take themselves too seriously you know and that's.
+[204.410,205.810]	ID098	male	that that can get unhealthy.
+[208.010,209.380]	ID098	male	a certain extent.
+[212.180,212.680]	ID098	male	yeah.
+[235.130,237.310]	ID098	male	yeah. let's not get it, yeah, well.
+[237.380,238.210]	ID098	male	I I agree.
+[238.310,239.020]	ID098	male	um.
+[239.180,244.540]	ID098	male	and in the things that you know politics, it's really everywhere nowadays and then it's kind of disheartening.
+[244.760,246.010]	ID098	male	because, um.
+[246.770,248.890]	ID098	male	well, let's talk about late-night shows.
+[249.020,249.640]	ID098	male	um.
+[250.040,250.690]	ID098	male	like be.
+[250.850,253.840]	ID098	male	yeah, let's, usually night shows with an example like before.
+[254.360,258.130]	ID098	male	ah, I'm not gonna get it okay for example Johnny Carson that that's okay.
+[258.800,259.870]	ID098	male	sixties reference.
+[260.060,261.250]	ID098	male	but like, um.
+[261.620,263.140]	ID098	male	he was not that political.
+[263.390,267.400]	ID098	male	um, he had his beliefs I'm sure but like his show was just you know.
+[267.500,270.910]	ID098	male	he had genuine talk show in a talking about in a world events.
+[271.400,272.650]	ID098	male	ah, stories.
+[272.810,274.270]	ID098	male	that happen, um.
+[274.670,277.000]	ID098	male	in the U S and then you you know he interviewed people.
+[277.070,279.460]	ID098	male	but nowadays you know like could bear us.
+[279.590,280.990]	ID098	male	you know Seth Meyers.
+[281.210,283.180]	ID098	male	and, ah, John Oliver they're all like.
+[283.700,285.490]	ID098	male	ah, like their political af.
+[285.530,290.890]	ID098	male	affiliations are are so evident and so obvious that sometimes it gets kind of of noxious.
+[291.470,292.060]	ID098	male	you see.
+[302.420,303.120]	ID098	male	yeah, yeah.
+[305.159,305.870]	ID098	male	that's true.
+[324.030,324.830]	ID098	male	yeah that's.
+[325.470,326.540]	ID098	male	does well.
+[347.310,348.260]	ID098	male	yeah right.
+[380.970,381.620]	0	none	[*]
+[382.350,382.880]	0	none	[*]
+[391.590,392.120]	0	none	[*]
+[392.370,393.800]	ID098	male	hey speaking of all that um.
+[395.340,400.280]	ID098	male	ah, I I I just wanted to ask um do you know Bill Maher or or do watch Bill Maher if you know him?
+[405.330,408.800]	ID098	male	like maybe you should give him a try cause like he's like the kind of guy who doesn't.
+[408.930,410.810]	ID098	male	clearly subscribed to a label.
+[411.330,414.020]	ID098	male	he can criticize you know liberals and conservatives alike.
+[414.450,415.610]	ID098	male	so yeah he's kind of.
+[415.920,419.660]	ID098	male	I I would say he's a guy who's like genuine- genuinely.
+[419.760,420.980]	ID098	male	kind of neutral.
+[421.110,421.850]	ID098	male	in this world.
+[421.890,422.900]	ID098	male	but he does has.
+[423.210,426.830]	ID098	male	ah he does have you know his his ideas insistently of course.
+[427.500,428.150]	ID098	male	oh go ahead.
+[435.930,439.026]	ID098	male	ah, he does he does H B O he does a talk show.
+[441.750,443.450]	ID098	male	yeah it's a real time with Bill Maher.
+[447.360,447.860]	0	none	[*]
+[462.750,463.400]	0	none	[*]
+[490.350,490.880]	ID098	male	yes.
+[507.454,510.080]	ID098	male	oh, who's that I I didn't hear the name.
+[513.120,513.980]	0	none	[*]
+[521.940,522.860]	ID098	male	oh okay.
+[541.641,543.062]	0	none	[LAUGHTER]
+[546.510,547.100]	0	none	[*]
+[548.850,549.890]	ID098	male	yeah, I get it.
+[576.240,576.980]	0	none	[*]
+[579.390,579.980]	ID098	male	it is.
+[639.660,640.260]	ID098	male	indeed.
+[658.230,658.730]	ID098	male	right.
+[664.613,665.117]	0	none	[NPS]
+[676.213,676.892]	0	none	[*]
+[693.690,694.213]	0	none	[SONANT]
+[699.701,700.719]	0	none	[NPS]
+[709.470,710.330]	0	none	[*]
+[715.773,716.811]	0	none	[*]
+[724.764,725.685]	0	none	[*]
+[728.790,730.190]	ID098	male	yeah, you you know what.
+[730.680,732.110]	ID098	male	yeah talking about.
+[739.363,740.517]	0	none	[*]
+[742.500,743.000]	0	none	[SONANT]
+[744.360,751.042]	ID098	male	talking about when you were ki- yeah you just yeah it just reminds me you know yeah yeah when I was fifteen you know I I didn't.
+[751.200,757.070]	ID098	male	well, no kid cares about this kind of stuff but I just remember you know it was easier back then he didn't have to care about that.
+[757.650,758.570]	ID098	male	it was kind of cool.
+[759.360,759.920]	0	none	[*]
+[760.057,760.571]	0	none	[*]
+[762.729,763.311]	0	none	[*]
+[771.793,772.452]	0	none	[NPS]
+[773.524,774.096]	0	none	[NPS]
+[779.820,781.554]	ID098	male	yeah of course yeah.
+[786.616,787.285]	0	none	[*]
+[793.680,795.053]	ID098	male	of course yeah.
+[796.800,797.450]	ID098	male	yes.
+[802.745,803.298]	0	none	[*]
+[803.430,805.820]	ID098	male	i- it's a it's it's it's kind of sad.
+[806.040,806.660]	ID098	male	you know.
+[814.770,815.450]	0	none	[NPS]
+[816.337,819.517]	0	none	[*]
+[822.928,823.452]	0	none	[NPS]
+[826.759,827.418]	0	none	[*]
+[831.780,836.780]	ID098	male	yeah yeah it's being radical doesn't really help you know being being fanatical about stuff.
+[837.472,844.160]	ID098	male	um, yeah you know that yeah that's why I stay neutral you know even though I have my own idea so.
+[844.440,845.120]	ID098	male	yeah just.
+[845.468,849.980]	ID098	male	i don't like oh well yeah it just helps to not talk about shows you know.
+[850.230,851.990]	ID098	male	things that people can agree on.
+[852.210,852.710]	ID098	male	at.
+[852.810,853.910]	ID098	male	you know what for for.
+[854.228,862.211]	ID098	male	several like on Youtube channels you know that's the thing I like about the, ah you know they're they're all these reaction channels to like music and stuff like that.
+[863.280,863.780]	ID098	male	right?
+[863.955,870.379]	ID098	male	yeah so so so there are lot of channels do reaction videos to music and then you know music can get kind of political.
+[870.630,874.130]	ID098	male	um and then in a comment sections people would start debate on you know.
+[874.200,876.770]	ID098	male	politics and now all of those.
+[876.870,877.700]	ID098	male	all that jam.
+[877.800,879.980]	ID098	male	but but then um um.
+[880.290,881.960]	ID098	male	ah the the creator.
+[882.030,884.120]	ID098	male	would then put out a video and say.
+[884.190,889.310]	ID098	male	no in this channel we're not going to talk about politics even though some of the musical gonna listen to.
+[889.410,891.050]	ID098	male	is going to be political because.
+[891.180,893.000]	ID098	male	uh music unites people you know.
+[893.130,899.121]	ID098	male	and our politics divide people so yeah so that's the thing that I appreciate about you know.
+[899.430,900.979]	ID098	male	ah these channels.
+[901.200,903.110]	ID098	male	like they try to unite people.
+[903.180,906.380]	ID098	male	you know just listen to kid's music it doesn't have to be political.
+[906.960,907.940]	ID098	male	um yeah.
+[909.330,910.100]	ID098	male	and.
+[911.010,911.780]	ID098	male	yeah go ahead.
+[911.970,912.800]	ID098	male	uh go ahead.
+[913.980,914.900]	ID098	male	yeah so.
+[916.544,917.446]	0	none	[SONANT]
+[922.391,924.611]	0	none	[*]
+[931.448,931.962]	0	none	[*]
+[936.571,937.395]	0	none	[NPS]
+[944.467,945.592]	0	none	[NPS]
+[952.410,953.356]	0	none	[*]
+[954.870,955.510]	0	none	[*]
+[959.927,960.740]	ID098	male	yeah.
+[965.268,971.891]	ID098	male	yeah tha-that's how like it's unfortunate but that's how the democracies and republics can call you know from.
+[972.338,973.130]	ID098	male	I felt.
+[973.379,974.351]	ID098	male	in such a passion.
+[975.312,976.370]	ID098	male	so.
+[976.370,977.476]	0	none	[SONANT]
+[977.476,981.230]	ID098	male	I don't know but it doesn't it doesn't look good you know it doesn't look good.
+[985.140,985.654]	ID098	male	like.
+[1005.360,1005.860]	ID098	male	and.
+[1020.480,1021.100]	ID098	male	yeah.
+[1023.237,1025.161]	ID098	male	keep ah not really who was you.
+[1044.030,1044.680]	0	none	[*]
+[1049.737,1050.830]	ID098	male	oh she's one of them.
+[1051.159,1053.262]	ID098	male	yeah yeah she she's one of those N R A type.
+[1055.160,1055.991]	ID098	male	oh I see.
+[1107.228,1107.752]	ID098	male	right.
+[1116.000,1116.590]	0	none	[*]
+[1147.260,1148.422]	ID098	male	yeah exactly yeah.
+[1148.550,1149.200]	ID098	male	I agree.
+[1154.190,1154.960]	ID098	male	oh boy.
+[1177.350,1178.103]	ID098	male	oh wow.
+[1178.700,1179.260]	0	none	[*]
+[1179.488,1180.220]	ID098	male	I see.
+[1180.629,1181.690]	ID098	male	um.
+[1182.328,1183.252]	ID098	male	yeah so.
+[1184.250,1184.870]	ID098	male	wait.
+[1185.058,1185.762]	ID098	male	ah.
+[1186.937,1188.488]	ID098	male	yeah well, all of those topics.
+[1188.677,1191.543]	ID098	male	with who we're talking about it again yeah ke-kettle ben and before that.
+[1191.868,1192.520]	ID098	male	what was it.
+[1202.297,1206.993]	ID098	male	right right and then there's there's the other thing that I wanted to say that you know even if.
+[1207.140,1207.640]	ID098	male	like.
+[1207.950,1211.711]	ID098	male	you know why I work for the liberal party but uh and then I could maybe.
+[1211.885,1214.060]	ID098	male	go up you know the usher lounge one day.
+[1214.257,1216.214]	ID098	male	and then become you know a campaign managers.
+[1216.950,1220.600]	ID098	male	well at-atleast that's like part of a fun that would be fun you know cause.
+[1221.288,1221.893]	ID098	male	it will be fun.
+[1222.140,1223.150]	ID098	male	but the thing is that
+[1223.416,1227.380]	ID098	male	like nowadays I don't know for others but I wouldn't want to go to that you know that.
+[1227.628,1228.190]	ID098	male	top.
+[1228.346,1229.402]	ID098	male	you know the uppermost.
+[1229.728,1231.921]	ID098	male	extra line of the whole hierarchy because.
+[1232.666,1239.091]	ID098	male	ah you know those who are at the top are those who are the most most exposed to the dangers you know in in in this day and age
+[1239.366,1241.887]	ID098	male	you don't know what could happen no with the the occasion president.
+[1242.480,1245.851]	ID098	male	like ah if you're at the top you can easily you know get.
+[1246.348,1248.170]	ID098	male	you know get disposed of so.
+[1248.660,1251.920]	ID098	male	you are a target so i-i-it's like almost safer to.
+[1252.127,1256.021]	ID098	male	to stay behind to stay no and no one so you know.
+[1256.310,1257.470]	ID098	male	it's it's sad like.
+[1257.667,1259.810]	ID098	male	oth-other courageous so it's made.
+[1260.030,1261.252]	ID098	male	seek to you know.
+[1261.468,1262.241]	ID098	male	um.
+[1262.610,1265.102]	ID098	male	i'll do all the others by speak in the loudest and.
+[1265.517,1267.340]	ID098	male	by doing all of these crazy things.
+[1267.590,1270.451]	ID098	male	but I wouldn't wanna do that 'cause it seems kind of dangerous.
+[1272.660,1273.580]	ID098	male	yeah so.
+[1275.210,1275.770]	ID098	male	go ahead.
+[1290.720,1291.970]	ID098	male	yeah that's kind.
+[1292.368,1292.876]	ID098	male	yeah
+[1302.930,1305.680]	ID098	male	yeah and is it worth it though that's the whole question.
+[1305.887,1307.840]	ID098	male	like are you going actually make a change?
+[1309.828,1310.737]	ID098	male	yeah i-i-it's.
+[1310.946,1311.650]	ID098	male	it depends.
+[1313.107,1313.897]	ID098	male	right.
+[1313.897,1315.130]	0	none	[LAUGHTER]
+[1315.298,1315.820]	ID098	male	so.
+[1316.130,1317.170]	ID098	male	wh-why would you.
+[1317.977,1320.513]	ID098	male	what wait do you want to go into politics just just a quick question.
+[1320.736,1321.910]	ID098	male	would you wanna go into politics?
+[1335.060,1336.421]	0	none	[LAUGHTER]
+[1339.199,1341.170]	ID098	male	what yeah what well I am am were
+[1349.670,1350.200]	ID098	male	yeah.
+[1351.458,1356.542]	ID098	male	I'm more eloquent when it's it gets written down onto paper like I could correct what I'm saying with.
+[1356.776,1357.250]	ID098	male	that's that.
+[1357.380,1358.442]	ID098	male	okay now.
+[1358.647,1360.387]	ID098	male	thank you for your participation.
+[1360.387,1360.915]	0	none	[LAUGHTER]
+[1361.217,1362.050]	ID098	male	okay.
+[1362.510,1363.040]	ID098	male	thanks.
+[1363.972,1364.496]	ID098	male	yeah.

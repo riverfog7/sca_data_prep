@@ -1,0 +1,226 @@
+[5.000,6.400]	ID023	male	oh my goodness.
+[16.100,16.690]	ID023	male	hmm.
+[20.720,21.550]	ID023	male	really know.
+[22.359,23.270]	0	none	[SYSTEM]
+[23.542,24.046]	0	none	[ENS]
+[37.100,39.460]	ID023	male	oh I know which is your type, but I remember.
+[39.530,40.480]	ID023	male	cause she.
+[40.670,41.320]	ID023	male	cause.
+[41.480,43.660]	ID023	male	she was in my world history class.
+[44.000,48.670]	ID023	male	and for some reason uh, Sky enjoyed that class I'm just like con- confused as hell.
+[49.610,50.140]	0	none	[SONANT]
+[50.930,55.382]	ID023	male	but it is it is what it is uh I'm not complain about morbid exercise a point.
+[55.382,55.910]	0	none	[ENS]
+[55.910,56.560]	ID023	male	yeah.
+[57.560,59.710]	ID023	male	the oh yeah the top by A P U
+[60.890,61.480]	ID023	male	wait, what?
+[67.580,70.360]	ID023	male	he only look at my transcript I think It was like a.
+[71.120,73.240]	ID023	male	I think I was like a low beer something like that.
+[74.180,74.890]	ID023	male	maybe.
+[75.980,76.660]	ID023	male	but ah.
+[77.030,81.580]	ID023	male	but I don't think uh, I never was at the risk of failing so that goes all good but like.
+[82.220,83.860]	ID023	male	yeah, had something to do with the finals.
+[85.010,86.380]	ID023	male	the projects were hardest.
+[86.690,88.270]	ID023	male	the projects were annoying.
+[88.460,89.380]	ID023	male	I'll just say that
+[103.130,106.690]	ID023	male	doubt, get us that was my mindset ah throughout high school.
+[107.090,108.640]	ID023	male	if you if you pass it.
+[108.890,113.140]	ID023	male	uh, and you did your and you did your best at a last uh at a final stretch.
+[113.540,114.372]	ID023	male	you have no shame.
+[114.391,114.734]	0	none	[LAUGHTER]
+[115.940,117.520]	ID023	male	did not to be shameful about.
+[117.947,118.694]	0	none	[SYSTEM]
+[123.950,124.720]	ID023	male	oh yeah.
+[135.950,136.540]	ID023	male	huh.
+[146.390,148.150]	ID023	male	oh yeah!
+[148.820,149.530]	ID023	male	yeah!
+[155.420,157.810]	ID023	male	great great great box moving like.
+[158.420,161.650]	ID023	male	no ah, that's like uh my my favorites of all times.
+[166.250,167.200]	0	none	[SYSTEM]
+[174.110,174.640]	ID023	male	hmm.
+[186.170,188.080]	ID023	male	oh yeah! you told me about this.
+[188.240,189.760]	ID023	male	you tell me about this the other day.
+[191.771,192.712]	ID023	male	ha.
+[195.020,195.670]	ID023	male	yeah.
+[195.710,200.800]	ID023	male	well I guess uh, I always upon the like ah anything related to like history were like.
+[200.810,205.000]	ID023	male	human size of the topic. I I've guess has a pound always our power because like.
+[205.550,207.850]	ID023	male	a ball like a under, like a cause.
+[208.250,210.520]	ID023	male	or like test and stuff like that like ah.
+[211.250,214.090]	ID023	male	you just have to memorize or understand stuff and it's like it's.
+[214.340,216.010]	ID023	male	counterpane to do and sometimes.
+[216.350,219.640]	ID023	male	I guess that's why I never, it's like my least favorite subject.
+[220.640,221.770]	ID023	male	I won my revenge.
+[230.630,231.400]	ID023	male	yeah.
+[233.030,233.800]	ID023	male	yeah.
+[233.990,237.580]	ID023	male	yeah you're right about like how we watch a movie the history class but like.
+[237.860,239.410]	ID023	male	there was just something that I just.
+[239.600,241.150]	ID023	male	I never enjoy it about about.
+[241.460,243.910]	ID023	male	and in class general and it history class in general but.
+[244.700,245.710]	ID023	male	that should me but.
+[245.930,246.850]	ID023	male	moving on.
+[249.440,250.060]	ID023	male	hmm.
+[250.130,250.810]	0	none	[SYSTEM]
+[259.880,261.490]	ID023	male	aha! yeah definitely.
+[262.130,267.250]	ID023	male	Calif- in the in the state of California and a country of United States of America.
+[267.920,268.570]	0	none	[SONANT]
+[280.250,280.870]	0	none	[SONANT]
+[282.110,282.760]	0	none	[SYSTEM]
+[284.300,284.950]	ID023	male	sir.
+[287.060,287.590]	0	none	[SYSTEM]
+[302.810,303.630]	ID023	male	I think we are.
+[304.770,307.400]	ID023	male	I think we already talked about that the ah in another.
+[310.050,310.940]	ID023	male	geography.
+[310.940,312.200]	0	none	[SONANT]
+[315.810,316.430]	0	none	[*]
+[317.970,318.620]	0	none	[*]
+[320.100,322.207]	ID023	male	it's one big state surprisingly.
+[323.879,325.459]	0	none	[SYSTEM]
+[332.130,333.200]	ID023	male	yeah that's true.
+[344.760,345.260]	0	none	[*]
+[363.240,365.341]	ID023	male	yeah there is a lot of places of story.
+[365.341,366.776]	0	none	[SONANT]
+[370.830,372.170]	ID023	male	honor on the earth.
+[374.940,375.440]	ID023	male	mm.
+[377.160,380.941]	ID023	male	yeah you can say you traveled all over the world but did you really though?
+[381.930,383.210]	ID023	male	did you really though?
+[390.000,390.650]	ID023	male	mm hmm.
+[394.516,395.224]	0	none	[SONANT]
+[395.758,397.396]	0	none	[SYSTEM]
+[403.366,406.731]	0	none	[SYSTEM]
+[409.323,410.000]	0	none	[SONANT]
+[413.550,415.580]	ID023	male	oh like open fields of stuff like that?
+[419.160,420.650]	ID023	male	hm yeah you're right.
+[421.800,426.770]	ID023	male	well we go well we got a lot of options I guess it's not gonna just take a look at an open field.
+[429.060,431.090]	ID023	male	like an open valley or some like that.
+[431.171,431.594]	0	none	[*]
+[431.594,432.410]	ID023	male	to start there.
+[434.962,436.601]	0	none	[SYSTEM]
+[437.142,439.197]	0	none	[SYSTEM]
+[440.414,441.626]	0	none	[SYSTEM]
+[444.330,445.100]	ID023	male	now you got.
+[445.290,446.910]	ID023	male	ah now now you got me thinking.
+[446.920,447.531]	0	none	[LAUGHTER]
+[450.210,451.790]	ID023	male	like a like a.
+[451.800,455.630]	ID023	male	yeah I really like imagine being what the the magic just making history on accident.
+[474.270,476.120]	ID023	male	oh yeah you mention some like that yeah.
+[477.600,478.460]	ID023	male	well.
+[478.830,481.250]	ID023	male	I mean they they make trail for them right?
+[481.680,482.570]	ID023	male	but like.
+[483.704,484.208]	ID023	male	yeah, but.
+[484.229,484.793]	0	none	[LAUGHTER]
+[484.793,485.762]	ID023	male	it's funny you like a.
+[485.970,488.000]	ID023	male	you look at a hill from a far distance you think.
+[488.610,489.200]	ID023	male	hmm.
+[492.060,492.770]	ID023	male	oh yeah.
+[494.070,494.870]	ID023	male	that was like.
+[495.090,499.160]	ID023	male	it's funny like you see a hill from a like very far distance you think you can climb that easily?
+[499.410,501.830]	ID023	male	then that's when you realize how hard really is.
+[501.870,505.070]	ID023	male	like if you were the theoretically just try to climb the hill just straight up.
+[505.800,509.850]	ID023	male	it's gonna take a that's gonna take a lot of your time is gonna be waste of your time.
+[515.112,516.140]	ID023	male	it's very true.
+[519.720,520.550]	ID023	male	oh yeah.
+[521.737,524.270]	ID023	male	you've, yeah you go on a need to take a day long journey.
+[524.490,525.832]	ID023	male	maybe a two day long.
+[526.920,530.120]	ID023	male	like you're just gonna you go on have to camp in order.
+[530.160,532.250]	ID023	male	you don't have to go camping if you wanna sleep.
+[533.970,534.920]	ID023	male	that's of a thing.
+[536.081,537.177]	0	none	[SYSTEM]
+[537.523,538.260]	0	none	[SYSTEM]
+[538.260,538.820]	ID023	male	hmm.
+[545.121,545.800]	0	none	[*]
+[545.800,546.537]	0	none	[SYSTEM]
+[547.020,549.200]	ID023	male	wait what ah what else is there to talk about?
+[549.210,551.120]	ID023	male	when it comes to human sciences.
+[554.220,555.060]	0	none	[SYSTEM]
+[555.060,555.560]	ID023	male	hmm.
+[561.060,561.860]	ID023	male	yeah.
+[562.152,562.601]	0	none	[*]
+[562.601,565.340]	ID023	male	I was supposed to take like Spanish three junior year but.
+[565.409,567.260]	ID023	male	for some reason I just never happened.
+[570.900,571.430]	ID023	male	yup.
+[571.920,578.270]	ID023	male	ah I again I wandered to about for some reason scheduling me was like nah that ain't go happen for you son.
+[580.863,582.327]	0	none	[SYSTEM]
+[582.720,585.920]	ID023	male	yeah so I wasn't that I wasn't that mad about it.
+[585.920,588.777]	0	none	[SYSTEM]
+[596.719,598.037]	0	none	[SYSTEM]
+[598.470,598.970]	ID023	male	hmm.
+[601.890,602.660]	ID023	male	oh yeah.
+[612.750,615.440]	ID023	male	me too I mean yeah it does.
+[616.055,621.080]	ID023	male	it does feel alone, I remember I was remember one time I felt like how long they gets his only child.
+[621.870,624.470]	ID023	male	I guess on also being a part of a.
+[624.750,626.390]	ID023	male	Filipino culture family.
+[626.790,628.580]	ID023	male	'cause like most of the of the my.
+[628.852,629.764]	0	none	[*]
+[629.851,633.860]	ID023	male	born from the Philippines first like I'm basically like the first of ones who are born America.
+[634.440,636.650]	ID023	male	so like first of all you have to learn English it was like.
+[636.818,637.554]	0	none	[*]
+[637.574,640.370]	ID023	male	whether you put a Tagalog is like basically an option now.
+[641.220,645.290]	ID023	male	so yeah, just you just feel left out sometimes like when they talk and you just.
+[645.630,647.323]	ID023	male	don't know the fuck, they're saying.
+[647.670,652.705]	ID023	male	and like a if your day you just just got the English and you just, sometimes feel like a burden and if you just.
+[652.860,654.560]	ID023	male	you get attacked the person overthink it.
+[655.710,659.417]	ID023	male	like they got to sit down to your level in order for you to fit in or something like that.
+[666.630,667.280]	ID023	male	same.
+[679.800,681.050]	ID023	male	that is very true!
+[681.780,684.761]	ID023	male	I said yeah I need to start listening to that advice, uh.
+[684.960,685.940]	ID023	male	sooner than later.
+[692.010,692.600]	0	none	[SYSTEM]
+[693.869,694.897]	0	none	[SONANT]
+[698.848,700.177]	0	none	[SONANT]
+[700.560,704.240]	ID023	male	unless unless you do not come back for I'll know that's gonna work.
+[704.240,705.570]	0	none	[SONANT]
+[717.270,718.040]	ID023	male	yeah yeah.
+[722.850,723.800]	ID023	male	oh yeah.
+[725.310,725.889]	ID023	male	I mean I.
+[725.959,727.055]	0	none	[*]
+[727.160,731.726]	ID023	male	um I've never met a character that, and my character that but like I can see that happening.
+[732.307,733.083]	0	none	[SONANT]
+[741.030,746.180]	ID023	male	yeah me too that's I think that's right yeah that's why I said I wanna go to the Philippines Sunday and it helps.
+[746.970,747.680]	0	none	[SYSTEM]
+[753.720,754.400]	ID023	male	yeah.
+[754.470,757.640]	ID023	male	often like traditions on my colleagues we do know.
+[759.390,762.140]	ID023	male	yeah there's some stuff I have yet to know that like.
+[765.159,765.973]	0	none	[SYSTEM]
+[770.100,771.350]	0	none	[LAUGHTER]
+[771.930,772.520]	ID023	male	okay.
+[775.050,780.440]	ID023	male	so what happens on the actual valentine's day, he select a girl, ask for the guy out or?
+[783.210,783.980]	ID023	male	okay.
+[784.470,785.300]	ID023	male	oh okay.
+[786.200,788.570]	0	none	[SONANT]
+[793.570,799.160]	ID023	male	so it's, so that the other holidays guys tended to do all that to get all that stuff.
+[801.630,802.610]	ID023	male	yeah that's a.
+[803.910,805.879]	ID023	male	I guess at such, colleague quality.
+[806.160,809.159]	ID023	male	but I, when I, I ain't got touch in much into that.
+[810.210,811.970]	0	none	[LAUGHTER]
+[814.470,815.480]	0	none	[LAUGHTER]
+[815.480,816.600]	0	none	[SONANT]
+[827.760,828.800]	ID023	male	yeah, you're right.
+[840.930,841.610]	0	none	[SONANT]
+[842.167,842.990]	ID023	male	yeah you're right.
+[842.990,844.140]	0	none	[SONANT]
+[844.140,849.380]	ID023	male	yeah it's not I'm just starting to realize we're talking about languages cultures stuff we haven't seen yet.
+[849.930,851.750]	ID023	male	it really makes you realize how.
+[852.150,853.640]	ID023	male	big of a world the.
+[853.890,855.020]	ID023	male	planet Earth is.
+[859.350,859.940]	ID023	male	yeah.
+[859.940,860.610]	0	none	[SONANT]
+[860.610,861.920]	ID023	male	if I.
+[863.865,864.480]	0	none	[SONANT]
+[864.480,865.940]	ID023	male	you're serious about that.
+[876.000,877.160]	ID023	male	oh, hmm.
+[877.160,878.382]	0	none	[SONANT]
+[879.510,880.400]	ID023	male	now on.
+[880.400,882.002]	0	none	[SONANT]
+[882.002,883.850]	ID023	male	now I'm inspired to go to Italy.
+[893.430,894.020]	0	none	[SONANT]
+[898.320,899.828]	0	none	[SYSTEM]
+[899.900,900.646]	0	none	[SONANT]
+[901.732,902.760]	0	none	[SYSTEM]
+[903.668,904.522]	0	none	[SYSTEM]
+[907.980,908.840]	ID023	male	way out.
+[910.644,911.933]	0	none	[SYSTEM]
+[912.244,913.882]	0	none	[SYSTEM]
+[918.840,919.400]	0	none	[SONANT]
+[919.950,920.767]	ID023	male	gonna go get it.
+[920.767,921.401]	0	none	[SONANT]
+[923.250,924.290]	ID023	male	way out.

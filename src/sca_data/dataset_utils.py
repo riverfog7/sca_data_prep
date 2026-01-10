@@ -14,19 +14,63 @@ from datasets import Features, Value, Audio, Sequence
 from tqdm import tqdm
 import re 
 import math
+import torch, torchaudio
+from pydantic import BaseModel
+
 
 from .constants import DEFAULT_SYSTEM_PROMPT, DEFAULT_INSTRUCTION_PROMPT
 from .models.events import ComedianEvent, BaseEvent, AudienceEvent, EnvironmentEvent, ComedySession
 from .utils import clean_audio_bytes, check_and_resample_audio, extract_speaker_embedding, SPEAKER_EMBEDDING_DIM
 
 
-# 설정: 0.16초 청크
-CHUNK_DURATION = 0.16  
-# 시퀀스 길이: 15분 (900초)
-SEQUENCE_DURATION = 900 
-#슬라이딩 윈도우 간격 3분
-SEQUENCE_STRIDE = 180  
-SAMPLE_RATE = 16000
+# 설정: 12.5 기준 4토큰
+CHUNK_DURATION = 0.32  
+SAMPLE_RATE_USER = 16000
+SAMPLE_RATE_TARGET = 24000
+
+class Audio(BaseModel):
+    waveform: np.ndarray 
+    sampling_rate: int 
+    class Config:
+        arbitrary_types_allowed = True #what is this?
+
+class BaseSequenceBlock(BaseModel):
+    type: Literal["user_audio", "target_text"]
+    audio: Optional[Audio] = None
+    text: Optional[str] = None
+    class Config:
+        arbitrary_types_allowed = True
+
+class DatasetRow(BaseModel):
+    input: list[BaseSequenceBlock] # [User, Text, User, Text ...] 형태
+    target_audio: np.ndarray       # 예측해야 할 Target Audio (24k)
+    class Config:
+        arbitrary_types_allowed = True
+
+def preprocess_dataset_to_24k(data_dir: Path):
+    src_dir = data_dir / "WAV"
+    dst_dir = data_dir / "WAV_24"
+    dst_dir.mkdir(parents=True, exist_ok=True)
+
+    files = list(src_dir.glob("*.wav"))
+    print(f">>> Pre-processing {len(files)} files to 24kHz...")
+
+    for wav_path in tqdm(files, desc="Resampling"):
+        # 1. Load Original (Likely 16k)
+        waveform, sr = torchaudio.load(wav_path)
+        
+        # 2. Resample to 24k
+        if sr != SAMPLE_RATE_TARGET: # 24000
+            resampler = torchaudio.transforms.Resample(orig_freq=sr, new_freq=SAMPLE_RATE_TARGET)
+            waveform_24k = resampler(waveform)
+        else:
+            waveform_24k = waveform
+
+        # 3. Save to WAV_24 (Same filename)
+        save_path = dst_dir / wav_path.name
+        torchaudio.save(save_path, waveform_24k, SAMPLE_RATE_TARGET)
+    
+    print(f">>> Completed! 24kHz files saved in {dst_dir}")
 
 def parse_aligned_script(txt_path:Path) -> list[dict]:
     events=[]
@@ -224,84 +268,176 @@ def create_duplex_dataset(data_dir: Path) -> DatasetDict:
     return DatasetDict({"storage": ds_storage, "train": ds_train})
 
 class DuplexTransform:
-    def __init__(self, storage_dataset, sample_rate=16000):
-        self.storage = storage_dataset
-        self.sample_rate = sample_rate
-        self.chunk_samples = int(CHUNK_DURATION * sample_rate)
+    def __init__(self, storage_dataset):
+        self.storage = storage_dataset 
         self.id_to_idx = {sid: i for i, sid in enumerate(storage_dataset["session_id"])}
-
-    def __call__(self, batch):
-        batch_size = len(batch["session_id"])
-        out_types, out_waveforms, out_texts, out_labels = [], [], [], []
         
-        for i in range(batch_size):
-            sess_id = batch["session_id"][i]
-            start = batch["start_sample"][i]
-            end = batch["end_sample"][i]
+
+        self.chunk_samples_user = int(CHUNK_DURATION * SAMPLE_RATE_USER)    # 16000 * 0.32 = 5120
+        self.chunk_samples_target = int(CHUNK_DURATION * SAMPLE_RATE_TARGET) # 24000 * 0.32 = 7680
+    
+    def __call__(self, batch):
+        out_dataset_rows = [] 
+        
+        batch_ids = batch["session_id"]
+        batch_starts = batch["start_sample"]
+        batch_ends = batch["end_sample"]
+
+        for i in range(len(batch_ids)):
+            sess_id = batch_ids[i]
+            start_idx = batch_starts[i] 
+            end_idx = batch_ends[i]     
             
             store_idx = self.id_to_idx[sess_id]
             store_row = self.storage[store_idx]
             
             u_bytes = store_row["user_audio"]["bytes"]
             t_bytes = store_row["target_audio"]["bytes"]
-            
-
             target_events = json.loads(store_row["events_json"])
 
-
             with sf.SoundFile(io.BytesIO(u_bytes)) as f:
-                f.seek(start)
-                u_seq = f.read(end - start)
+                f.seek(start_idx)
+                u_seq = f.read(end_idx - start_idx, dtype='float32') # shape: (N, ) or (N, C)
+            
             with sf.SoundFile(io.BytesIO(t_bytes)) as f:
-                f.seek(start)
-                t_seq = f.read(end - start)
-            
-            curr_len = end - start
-            if len(u_seq) < curr_len:
-                pad = curr_len - len(u_seq)
-                u_seq = np.pad(u_seq, (0, pad)) if u_seq.ndim==1 else np.pad(u_seq, ((0,pad),(0,0)))
-                t_seq = np.pad(t_seq, (0, pad)) if t_seq.ndim==1 else np.pad(t_seq, ((0,pad),(0,0)))
+                f.seek(start_idx)
+                t_seq_16k = f.read(end_idx - start_idx, dtype='float32')
 
-            chunk_count = curr_len // self.chunk_samples
+            curr_len = end_idx - start_idx
+            if len(u_seq) < curr_len:
+                u_seq = np.pad(u_seq, (0, curr_len - len(u_seq)))
+            if len(t_seq_16k) < curr_len:
+                t_seq_16k = np.pad(t_seq_16k, (0, curr_len - len(t_seq_16k)))
+
+
+
+
+            t_tensor = torch.from_numpy(t_seq_16k).unsqueeze(0) # (1, Time)
+            # Resample (16000 -> 24000)
+            resampler = torchaudio.transforms.Resample(orig_freq=SAMPLE_RATE_USER, new_freq=SAMPLE_RATE_TARGET)
+            t_tensor_24k = resampler(t_tensor)            
+            # Tensor -> Numpy (t_seq 준비 완료)
+            t_seq = t_tensor_24k.squeeze(0).numpy()
+
+            #16k 기준으로 저장된 오디오를 24k 기준 인덱스로 계산
+            ratio = SAMPLE_RATE_TARGET / SAMPLE_RATE_USER
+            start_target = int(start_idx * ratio)
+            end_target = int(end_idx * ratio)
+
+            u_seq = u_full[start_idx:end_idx]
+            t_seq = t_full[start_target:end_target]
+
             
-            seq_types, seq_waves, seq_txts, seq_lbls = [], [], [], []
-            for c in range(chunk_count):
-                idx_s = c * self.chunk_samples
-                idx_e = idx_s + self.chunk_samples
-                u_chunk = ensure_mono_and_length(u_seq[idx_s:idx_e], self.chunk_samples)
-                t_chunk = ensure_mono_and_length(t_seq[idx_s:idx_e], self.chunk_samples)
-                c_start_sec = (start / self.sample_rate) + (c * CHUNK_DURATION)
+
+            num_chunks = len(u_seq) // self.chunk_samples_user
+            sequence_input_blocks: list[BaseSequenceBlock] = []
+
+            for c in range(num_chunks):
+                c_start_sec = (start_idx / SAMPLE_RATE_USER) + (c * CHUNK_DURATION)
                 c_end_sec = c_start_sec + CHUNK_DURATION
                 
-                is_speech, text_slice = get_sliced_text(c_start_sec, c_end_sec, target_events)
+                idx_s_u = c * self.chunk_samples_user
+                idx_e_u = idx_s_u + self.chunk_samples_user
+                u_chunk = ensure_mono_and_length(u_seq[idx_s_u:idx_e_u], self.chunk_samples_user)
                 
-                # A. User
-                seq_types.append("user_audio")
-                seq_waves.append(u_chunk)
-                seq_txts.append("")
-                seq_lbls.append(-100)
-                # B. Text
-                if text_slice:
-                    seq_types.append("text")
-                    seq_waves.append(np.zeros(self.chunk_samples, dtype=np.float32))
-                    seq_txts.append(text_slice)
-                    seq_lbls.append(1)
-                # C. Target
-                seq_types.append("target_audio")
-                seq_waves.append(t_chunk)
-                seq_txts.append("")
-                seq_lbls.append(1)
+                sequence_input_blocks.append(BaseSequenceBlock(
+                    type="user_audio",
+                    audio=Audio(waveform=u_chunk, sampling_rate=SAMPLE_RATE_USER),
+                    text=None
+                ))
+                
+                
+                is_speech, text_slice = get_sliced_text(c_start_sec, c_end_sec, target_events)
+                final_text = text_slice if (is_speech and text_slice) else ""
+                
+                sequence_input_blocks.append(BaseSequenceBlock(
+                    type="target_text",
+                    audio=None,
+                    text=final_text
+                ))
+
+            target_audio_final = ensure_mono_and_length(t_seq, len(t_seq))
             
-            out_types.append(seq_types)
-            out_waveforms.append(seq_waves)
-            out_texts.append(seq_txts)
-            out_labels.append(seq_lbls)
+            row_obj = DatasetRow(
+                input=sequence_input_blocks, 
+                target_audio=target_audio_final
+            )
             
-        batch["types"] = out_types
-        batch["waveforms"] = out_waveforms
-        batch["texts"] = out_texts
-        batch["label_mask"] = out_labels
-        return batch
+            out_dataset_rows.append(row_obj)
+
+        return {"dataset_row_obj": out_dataset_rows}
+    # def __call__(self, batch):
+    #     batch_size = len(batch["session_id"])
+    #     out_types, out_waveforms, out_texts, out_labels = [], [], [], []
+        
+    #     for i in range(batch_size):
+    #         sess_id = batch["session_id"][i]
+    #         start = batch["start_sample"][i]
+    #         end = batch["end_sample"][i]
+            
+    #         store_idx = self.id_to_idx[sess_id]
+    #         store_row = self.storage[store_idx]
+            
+    #         u_bytes = store_row["user_audio"]["bytes"]
+    #         t_bytes = store_row["target_audio"]["bytes"]
+            
+
+    #         target_events = json.loads(store_row["events_json"])
+
+
+    #         with sf.SoundFile(io.BytesIO(u_bytes)) as f:
+    #             f.seek(start)
+    #             u_seq = f.read(end - start)
+    #         with sf.SoundFile(io.BytesIO(t_bytes)) as f:
+    #             f.seek(start)
+    #             t_seq = f.read(end - start)
+            
+    #         curr_len = end - start
+    #         if len(u_seq) < curr_len:
+    #             pad = curr_len - len(u_seq)
+    #             u_seq = np.pad(u_seq, (0, pad)) if u_seq.ndim==1 else np.pad(u_seq, ((0,pad),(0,0)))
+    #             t_seq = np.pad(t_seq, (0, pad)) if t_seq.ndim==1 else np.pad(t_seq, ((0,pad),(0,0)))
+
+    #         chunk_count = curr_len // self.chunk_samples
+            
+    #         seq_types, seq_waves, seq_txts, seq_lbls = [], [], [], []
+    #         for c in range(chunk_count):
+    #             idx_s = c * self.chunk_samples
+    #             idx_e = idx_s + self.chunk_samples
+    #             u_chunk = ensure_mono_and_length(u_seq[idx_s:idx_e], self.chunk_samples)
+    #             t_chunk = ensure_mono_and_length(t_seq[idx_s:idx_e], self.chunk_samples)
+    #             c_start_sec = (start / self.sample_rate) + (c * CHUNK_DURATION)
+    #             c_end_sec = c_start_sec + CHUNK_DURATION
+                
+    #             is_speech, text_slice = get_sliced_text(c_start_sec, c_end_sec, target_events)
+                
+    #             # A. User
+    #             seq_types.append("user_audio")
+    #             seq_waves.append(u_chunk)
+    #             seq_txts.append("")
+    #             seq_lbls.append(-100)
+    #             # B. Text
+    #             if text_slice:
+    #                 seq_types.append("text")
+    #                 seq_waves.append(np.zeros(self.chunk_samples, dtype=np.float32))
+    #                 seq_txts.append(text_slice)
+    #                 seq_lbls.append(1)
+    #             # C. Target
+    #             seq_types.append("target_audio")
+    #             seq_waves.append(t_chunk)
+    #             seq_txts.append("")
+    #             seq_lbls.append(1)
+            
+    #         out_types.append(seq_types)
+    #         out_waveforms.append(seq_waves)
+    #         out_texts.append(seq_txts)
+    #         out_labels.append(seq_lbls)
+            
+    #     batch["types"] = out_types
+    #     batch["waveforms"] = out_waveforms
+    #     batch["texts"] = out_texts
+    #     batch["label_mask"] = out_labels
+    #     return batch
 
 def duplex_data(data_dir: Optional[Path] = None, cache_dir: Optional[Path] = Path('./dataset_duplex')) -> Dataset:
     DATASET_URL = "https://huggingface.co/datasets/wjm9765/sca_full_duplex/resolve/main/sca_duplex_cache.tar?download=true" 
@@ -359,42 +495,9 @@ def duplex_data(data_dir: Optional[Path] = None, cache_dir: Optional[Path] = Pat
     train_ds = dataset["train"]
     
     print(">>> Setting up DuplexTransform...")
-    train_ds.set_transform(DuplexTransform(dataset["storage"], sample_rate=SAMPLE_RATE))
+    train_ds.set_transform(DuplexTransform(dataset["storage"]))
     
     return train_ds
-
-
-# def duplex_data(data_dir: Path=None, cache_dir: str = "./dataset_duplex") -> Dataset:
-#     cache_path = Path(cache_dir)
-
-#     # 1. 캐시가 없으면 다운로드 시도
-#     if not cache_path.exists():
-#         print(f">>> Cache not found at {cache_path}")
-        
-#         # [수정 필요] ★ 여기에 아까 복사한 Hugging Face 다운로드 링크를 넣으세요! ★
-#         CACHE_URL = "https://huggingface.co/datasets/YOUR_ID/REPO_NAME/resolve/main/sca_duplex_cache.tar"
-        
-#         try:
-#             # data_dir이 제공되지 않았으면 다운로드 모드로 진입
-#             download_and_extract(CACHE_URL, cache_path)
-#         except Exception as e:
-#             print(f">>> Auto-download failed: {e}")
-#             if data_dir is not None and data_dir.exists():
-#                 print(f">>> Trying to create from raw data at {data_dir}...")
-#                 dataset = create_duplex_dataset(data_dir)
-#                 dataset.save_to_disk(str(cache_path))
-#             else:
-#                 raise FileNotFoundError("No cache found and no raw data_dir provided.")
-
-#     # 2. 로드
-#     print(f">>> Loading dataset from cache: {cache_path}")
-#     dataset = load_from_disk(str(cache_path))
-    
-#     # 3. Transform 설정
-#     dataset["train"].set_transform(DuplexTransform(dataset["storage"], sample_rate=SAMPLE_RATE))
-    
-#     return dataset["train"]
-
 
 
 def remove_extras(session: ComedySession, remove_events: Tuple[BaseEvent] = (AudienceEvent, EnvironmentEvent)) -> ComedySession:
