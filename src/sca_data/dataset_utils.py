@@ -10,7 +10,7 @@ import numpy as np
 import requests
 import soundfile as sf
 from datasets import DatasetDict, Dataset, load_from_disk
-from datasets import Features, Value, Audio, Sequence
+from datasets import Features, Value, Audio as HFAudio, Sequence
 from tqdm import tqdm
 import re 
 import math
@@ -267,8 +267,8 @@ def create_duplex_dataset(data_dir: Path) -> DatasetDict:
 
     storage_features = Features({
         "session_id": Value("string"),
-        "user_audio": Audio(decode=False), 
-        "target_audio": Audio(decode=False),
+        "user_audio": HFAudio(decode=False), 
+        "target_audio": HFAudio(decode=False),
         "events_json": Value("string") 
     })
     
@@ -632,8 +632,8 @@ def to_hf_dataset(sessions: Iterable[ComedySession], audio_base_path: Path, min_
     
     audio_features = Features({
         "session_id": Value("string"),
-        "audio": Audio(decode=False),       # 원본
-        "clean_audio": Audio(decode=False),  # Clean 버전 추가
+        "audio": HFAudio(decode=False),       # 원본
+        "clean_audio": HFAudio(decode=False),  # Clean 버전 추가
         "speaker_embedding": Sequence(Value("float32"), length=SPEAKER_EMBEDDING_DIM),  # [192] ECAPA-TDNN
     })
 
