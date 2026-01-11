@@ -8,11 +8,11 @@ from tqdm import tqdm
 try:
     from sca_data.dataset_utils import parse_aligned_script, duplex_data
 except ImportError:
-    print("[Error] 'sca_data' 패키지를 찾을 수 없습니다. src 폴더 구조를 확인하세요.")
+    print("[Error] we can't find the 'sca_data' package. Please ensure the 'src' directory is added to PYTHONPATH.")
     sys.exit(1)
 
 DEFAULT_INPUT_DIR = Path("./Multi-stream Spontaneous Conversation Training Dataset")
-DEFAULT_OUTPUT_DIR = Path("../duplex_dataset")
+DEFAULT_OUTPUT_DIR = Path("./duplex_dataset")
 
 def save_parsed_scripts(data_dir: Path, output_dir: Path):
     txt_dir = data_dir / "TXT"
