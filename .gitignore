@@ -741,3 +741,4 @@ dataset/
 dataset_duplex/
 test_output/
 *.tar.*
+Multi-stream Spontaneous Conversation Training Dataset/
