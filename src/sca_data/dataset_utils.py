@@ -32,7 +32,7 @@ class Audio(BaseModel):
     waveform: np.ndarray 
     sampling_rate: int 
     class Config:
-        arbitrary_types_allowed = True #what is this?
+        arbitrary_types_allowed = True 
 
 class BaseSequenceBlock(BaseModel):
     type: Literal["user_audio", "target_text"]
@@ -103,7 +103,6 @@ def parse_aligned_script(txt_path:Path) -> list[dict]:
                 if content in IGNORE_TAGS:
                     continue
                 
-                # 2. 혹은 내용이 비어있으면 건너뜀
                 if not content:
                     continue
 
@@ -369,130 +368,73 @@ class DuplexTransform:
             out_dataset_rows.append(row_obj)
             
         return {"dataset_row_obj": out_dataset_rows}
-    # def __call__(self, batch):
-    #     batch_size = len(batch["session_id"])
-    #     out_types, out_waveforms, out_texts, out_labels = [], [], [], []
-        
-    #     for i in range(batch_size):
-    #         sess_id = batch["session_id"][i]
-    #         start = batch["start_sample"][i]
-    #         end = batch["end_sample"][i]
-            
-    #         store_idx = self.id_to_idx[sess_id]
-    #         store_row = self.storage[store_idx]
-            
-    #         u_bytes = store_row["user_audio"]["bytes"]
-    #         t_bytes = store_row["target_audio"]["bytes"]
-            
-
-    #         target_events = json.loads(store_row["events_json"])
-
-
-    #         with sf.SoundFile(io.BytesIO(u_bytes)) as f:
-    #             f.seek(start)
-    #             u_seq = f.read(end - start)
-    #         with sf.SoundFile(io.BytesIO(t_bytes)) as f:
-    #             f.seek(start)
-    #             t_seq = f.read(end - start)
-            
-    #         curr_len = end - start
-    #         if len(u_seq) < curr_len:
-    #             pad = curr_len - len(u_seq)
-    #             u_seq = np.pad(u_seq, (0, pad)) if u_seq.ndim==1 else np.pad(u_seq, ((0,pad),(0,0)))
-    #             t_seq = np.pad(t_seq, (0, pad)) if t_seq.ndim==1 else np.pad(t_seq, ((0,pad),(0,0)))
-
-    #         chunk_count = curr_len // self.chunk_samples
-            
-    #         seq_types, seq_waves, seq_txts, seq_lbls = [], [], [], []
-    #         for c in range(chunk_count):
-    #             idx_s = c * self.chunk_samples
-    #             idx_e = idx_s + self.chunk_samples
-    #             u_chunk = ensure_mono_and_length(u_seq[idx_s:idx_e], self.chunk_samples)
-    #             t_chunk = ensure_mono_and_length(t_seq[idx_s:idx_e], self.chunk_samples)
-    #             c_start_sec = (start / self.sample_rate) + (c * CHUNK_DURATION)
-    #             c_end_sec = c_start_sec + CHUNK_DURATION
-                
-    #             is_speech, text_slice = get_sliced_text(c_start_sec, c_end_sec, target_events)
-                
-    #             # A. User
-    #             seq_types.append("user_audio")
-    #             seq_waves.append(u_chunk)
-    #             seq_txts.append("")
-    #             seq_lbls.append(-100)
-    #             # B. Text
-    #             if text_slice:
-    #                 seq_types.append("text")
-    #                 seq_waves.append(np.zeros(self.chunk_samples, dtype=np.float32))
-    #                 seq_txts.append(text_slice)
-    #                 seq_lbls.append(1)
-    #             # C. Target
-    #             seq_types.append("target_audio")
-    #             seq_waves.append(t_chunk)
-    #             seq_txts.append("")
-    #             seq_lbls.append(1)
-            
-    #         out_types.append(seq_types)
-    #         out_waveforms.append(seq_waves)
-    #         out_texts.append(seq_txts)
-    #         out_labels.append(seq_lbls)
-            
-    #     batch["types"] = out_types
-    #     batch["waveforms"] = out_waveforms
-    #     batch["texts"] = out_texts
-    #     batch["label_mask"] = out_labels
-    #     return batch
-
+   
 def duplex_data(data_dir: Optional[Path] = None, cache_dir: Optional[Path] = Path('./dataset_duplex')) -> Dataset:
-    DATASET_URL = "https://huggingface.co/datasets/wjm9765/sca_full_duplex/resolve/main/sca_duplex_cache.tar?download=true" 
 
     dataset_path = cache_dir  
     dataset_path.parent.mkdir(parents=True, exist_ok=True)
     tmp_tar_path = dataset_path.parent / "temp_cache.tar"
+
+
     if not dataset_path.exists():
         if data_dir is not None and data_dir.exists():
             print(f">>> Creating dataset from raw data at {data_dir}...")
             dataset = create_duplex_dataset(data_dir)
             dataset.save_to_disk(str(dataset_path))
-        elif DATASET_URL:
-            print(f">>> Raw data not provided. Downloading dataset from {DATASET_URL}...")
+        else:
+            print(f">>> Raw data not provided. Fetching config from GitHub for Duplex...")
+            #url_url = "https://raw.githubusercontent.com/riverfog7/sca_data_prep/refs/heads/main/.hf_dataset_url_duplex"
+            #hash_url = "https://raw.githubusercontent.com/riverfog7/sca_data_prep/refs/heads/main/.hf_dataset_md5_duplex"
+            
+            url_url = "https://raw.githubusercontent.com/wjm9765/sca_data_prep/refs/heads/main/.hf_dataset_url_duplex"
+            hash_url = "https://raw.githubusercontent.com/wjm9765/sca_data_prep/refs/heads/main/.hf_dataset_md5_duplex"
             
             try:
-                with requests.get(DATASET_URL, stream=True) as r:
-                    r.raise_for_status()
-                    total_size = int(r.headers.get('content-length', 0))
-                    
-                    with open(tmp_tar_path, "wb") as f, tqdm(
-                            desc="Downloading dataset",
-                            total=total_size,
-                            unit='B',
-                            unit_scale=True,
-                            unit_divisor=1024,
-                    ) as bar:
-                        for chunk in r.iter_content(chunk_size=8192):
-                            f.write(chunk)
-                            bar.update(len(chunk))
+                print(f"Reading URL from {url_url}...")
+                dataset_url = requests.get(url_url).text.strip()
+                
+                print(f"Reading MD5 from {hash_url}...")
+                dataset_md5 = requests.get(hash_url).text.strip()
+                
+                print(f"Target URL: {dataset_url}")
+                
+                hash_func = md5()
+                dl_stream = requests.get(dataset_url, stream=True)
+                dl_stream.raise_for_status()
+                total_size = int(dl_stream.headers.get('content-length', 0))
+
+                with open(tmp_tar_path, "wb") as f, tqdm(
+                        desc="Downloading dataset",
+                        total=total_size,
+                        unit='B',
+                        unit_scale=True,
+                        unit_divisor=1024,
+                ) as bar:
+                    for chunk in dl_stream.iter_content(chunk_size=8192):
+                        f.write(chunk)
+                        hash_func.update(chunk)
+                        bar.update(len(chunk))
+
+                if hash_func.hexdigest() != dataset_md5:
+                    shutil.rmtree(dataset_path, ignore_errors=True)
+                    tmp_tar_path.unlink(missing_ok=True)
+                    raise ValueError(f"Downloaded dataset file is corrupted (MD5 mismatch)\nExpected: {dataset_md5}\nGot: {hash_func.hexdigest()}")
 
                 print(f">>> Extracting to {dataset_path.parent}...")
                 with tarfile.open(tmp_tar_path, "r") as tar:
                     tar.extractall(path=dataset_path.parent)
 
-                if not dataset_path.exists():
-                    possible_name = dataset_path.parent / "dataset_duplex" # 예시
-                    if possible_name.exists():
-                        shutil.move(str(possible_name), str(dataset_path))
                 
             except Exception as e:
                 print(f"[Error] Download failed: {e}")
                 if tmp_tar_path.exists(): tmp_tar_path.unlink()
-                if dataset_path.exists(): shutil.rmtree(dataset_path)
+                if dataset_path.exists(): shutil.rmtree(dataset_path, ignore_errors=True)
                 raise e
             finally:
                 if tmp_tar_path.exists():
                     tmp_tar_path.unlink()
         
-        else:
-            raise FileNotFoundError(f"Dataset not found at {dataset_path} and no URL/RawData provided.")
-
+        
     print(f">>> Loading dataset from disk: {dataset_path}")
     dataset = load_from_disk(str(dataset_path))
     train_ds = dataset["train"]
@@ -624,16 +566,16 @@ def to_hf_dataset(sessions: Iterable[ComedySession], audio_base_path: Path, min_
         "session_id": Value("string"),
         "start_sec": Value("float"),
         "end_sec": Value("float"),
-        "target_start_sec": Value("float"), # 추가됨
-        "target_end_sec": Value("float"),   # 추가됨
+        "target_start_sec": Value("float"), 
+        "target_end_sec": Value("float"),   
         "target_text": Value("string"),
         "event_index": Value("int32"),
     })
     
     audio_features = Features({
         "session_id": Value("string"),
-        "audio": HFAudio(decode=False),       # 원본
-        "clean_audio": HFAudio(decode=False),  # Clean 버전 추가
+        "audio": HFAudio(decode=False),       
+        "clean_audio": HFAudio(decode=False), 
         "speaker_embedding": Sequence(Value("float32"), length=SPEAKER_EMBEDDING_DIM),  # [192] ECAPA-TDNN
     })
 

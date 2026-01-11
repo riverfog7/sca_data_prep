@@ -84,7 +84,7 @@ def main():
     # 1. 데이터셋 로드 (최초 실행 시 Preprocess가 동작할 수 있음)
     # format="duplex"로 설정하여 DuplexTransform이 적용된 데이터셋을 받습니다.
     try:
-        dataset = easy_load(dataset_path=DATA_DIR,format="duplex")
+        dataset = easy_load(format="duplex")
     except Exception as e:
         print(f">>> [오류] 데이터셋 로드 중 에러 발생: {e}")
         return
