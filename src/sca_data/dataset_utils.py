@@ -383,11 +383,11 @@ def duplex_data(data_dir: Optional[Path] = None, cache_dir: Optional[Path] = Pat
             dataset.save_to_disk(str(dataset_path))
         else:
             print(f">>> Raw data not provided. Fetching config from GitHub for Duplex...")
-            #url_url = "https://raw.githubusercontent.com/riverfog7/sca_data_prep/refs/heads/main/.hf_dataset_url_duplex"
-            #hash_url = "https://raw.githubusercontent.com/riverfog7/sca_data_prep/refs/heads/main/.hf_dataset_md5_duplex"
+            url_url = "https://raw.githubusercontent.com/riverfog7/sca_data_prep/refs/heads/main/.hf_dataset_url_duplex"
+            hash_url = "https://raw.githubusercontent.com/riverfog7/sca_data_prep/refs/heads/main/.hf_dataset_md5_duplex"
             
-            url_url = "https://raw.githubusercontent.com/wjm9765/sca_data_prep/refs/heads/main/.hf_dataset_url_duplex"
-            hash_url = "https://raw.githubusercontent.com/wjm9765/sca_data_prep/refs/heads/main/.hf_dataset_md5_duplex"
+            #url_url = "https://raw.githubusercontent.com/wjm9765/sca_data_prep/refs/heads/main/.hf_dataset_url_duplex"
+            #hash_url = "https://raw.githubusercontent.com/wjm9765/sca_data_prep/refs/heads/main/.hf_dataset_md5_duplex"
             
             try:
                 print(f"Reading URL from {url_url}...")
