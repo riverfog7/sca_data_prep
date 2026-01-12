@@ -63,13 +63,13 @@ We constructed this dataset to modify the existing half-duplex model into a full
 **Option A: Generate Script Files Only**
 If you want to extract and verify the script parsing logic (saves as JSON):
 ```bash
-python scripts/convert_dataset.py --mode script --output ./parsed_json
+./scripts/make_dataset_duplex.py --mode script --output ./parsed_json
 ```
 
 **Option B: Build HuggingFace Dataset**
 To convert the raw data into the full HuggingFace dataset structure (Arrow format):
 ```bash
-python scripts/convert_dataset.py --mode dataset
+./scripts/make_dataset_duplex.py --mode dataset
 ```
 ## Result files
 Inference results are available in the following location:
