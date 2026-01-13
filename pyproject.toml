@@ -91,4 +91,6 @@ explicit = true
 [dependency-groups]
 dev = [
     "notebook>=7.5.0",
+    "ruff>=0.14.11",
+    "ty>=0.0.11",
 ]
