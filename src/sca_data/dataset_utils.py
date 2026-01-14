@@ -228,24 +228,25 @@ def create_duplex_dataset(data_dir: Path, model_path: str) -> DatasetDict:
                     "target_audio": {"bytes": t_bytes, "path": None},
                     "events_json": json.dumps(events),
                 }
-
     def train_generator():
+        # [수정됨] 0.32초 단위 슬라이딩 삭제! -> 파일 1개당 1개의 샘플 생성
         for group_key, speakers in sessions.items():
             if len(speakers) < 2: continue
             pairs = [(speakers[0], speakers[1]), (speakers[1], speakers[0])]
             for user_info, target_info in pairs:
                 sess_id = f"{group_key}_{target_info['spk_id']}"
+                
+                # 전체 길이 확인 (메타데이터용)
                 with sf.SoundFile(user_info["wav_path_16k"]) as f:
                     max_len = len(f)
-                    sr = f.samplerate
-                samples_per_step = int(CHUNK_DURATION * sr)
-                for seq_idx, start_sample in enumerate(range(0, max_len, samples_per_step)):
-                    end_sample = min(start_sample + samples_per_step, max_len)
-                    if end_sample - start_sample < samples_per_step: break
-                    yield {
-                        "session_id": sess_id, "seq_id": seq_idx,
-                        "start_sample": start_sample, "end_sample": end_sample,
-                    }
+                
+                # start_sample=0, end_sample=max_len (전체 통으로)
+                yield {
+                    "session_id": sess_id, 
+                    "seq_id": 0,
+                    "start_sample": 0, 
+                    "end_sample": max_len,
+                }
     
     storage_features = Features({
         "session_id": Value("string"), "user_audio": HFAudio(decode=False),
@@ -284,11 +285,10 @@ class DuplexTransform:
     def __call__(self, batch):
         out_dataset_rows = []
         batch_ids = batch["session_id"]
-        batch_starts = batch["start_sample"]
+        # batch_starts = batch["start_sample"] # 이제 무조건 0이므로 안 씀
         
         for i in range(len(batch_ids)):
             sess_id = batch_ids[i]
-            start_idx_16k = batch_starts[i]
             store_idx = self.id_to_idx[sess_id]
             store_row = self.storage[store_idx]
 
@@ -301,121 +301,121 @@ class DuplexTransform:
             except:
                 speaker_embedding = np.zeros(SPEAKER_EMBEDDING_DIM, dtype=np.float32)
 
-            # 1. 시퀀스 및 오디오 리스트 초기화
+            # 1. 시퀀스 초기화 (시스템 프롬프트)
             input_sequence = list(self.system_prompt_ids)
             input_audios_list: list[Audio] = []
             
-            # [Logic] 이벤트별 토큰 인덱스를 추적하기 위한 맵
-            # Key: event_index (in target_events), Value: list of indices in input_sequence
+            # Key: event_index, Value: list of indices in input_sequence
             event_token_map: dict[int, list[int]] = {}
 
             last_matched_event_idx = -1 
             current_token_offset = 0
             
-            if start_idx_16k > 0:
-                with sf.SoundFile(io.BytesIO(u_bytes)) as f:
-                    u_history = f.read(start_idx_16k, dtype="float32")
-                if u_history.ndim > 1: u_history = np.mean(u_history, axis=1)
+            # [수정됨] 파일 전체 로드
+            with sf.SoundFile(io.BytesIO(u_bytes)) as f:
+                u_full = f.read(dtype="float32")
+            if u_full.ndim > 1: u_full = np.mean(u_full, axis=1)
 
-                num_chunks = len(u_history) // self.chunk_samples_user
+            # 전체 길이에 대해 청크 반복
+            num_chunks = len(u_full) // self.chunk_samples_user
+            
+            for c in range(num_chunks):
+                # --- [Step A] User Audio (4 tokens) ---
+                c_start_sec = c * CHUNK_DURATION
+                c_end_sec = c_start_sec + CHUNK_DURATION
+                c_center_sec = (c_start_sec + c_end_sec) / 2
                 
-                for c in range(num_chunks):
-                    # --- [Step A] User Audio ---
-                    c_start_sec = c * CHUNK_DURATION
-                    c_end_sec = c_start_sec + CHUNK_DURATION
-                    c_center_sec = (c_start_sec + c_end_sec) / 2
-                    
-                    idx_s = c * self.chunk_samples_user
-                    idx_e = idx_s + self.chunk_samples_user
-                    u_chunk = ensure_mono_and_length(u_history[idx_s:idx_e], self.chunk_samples_user)
-                    
-                    input_audios_list.append(Audio(waveform=u_chunk, sampling_rate=SAMPLE_RATE_USER))
-                    
-                    # [Modified] -100을 audio_token_ratio(4) 개수만큼 넣음
-                    input_sequence.extend([self.config.audio_placeholder_token] * self.config.audio_token_ratio)
+                idx_s = c * self.chunk_samples_user
+                idx_e = idx_s + self.chunk_samples_user
+                u_chunk = ensure_mono_and_length(u_full[idx_s:idx_e], self.chunk_samples_user)
+                
+                input_audios_list.append(Audio(waveform=u_chunk, sampling_rate=SAMPLE_RATE_USER))
+                input_sequence.extend([self.config.audio_placeholder_token] * self.config.audio_token_ratio)
 
-                    # --- [Step B] Text Streaming Logic ---
-                    matched_event_idx = -1
-                    matched_event = None
-                    for e_idx, evt in enumerate(target_events):
-                        if evt["start"] <= c_center_sec < evt["end"]:
-                            matched_event = evt
-                            matched_event_idx = e_idx
-                            break
+                # --- [Step B] Text/Silence (1 or 2 tokens) ---
+                matched_event_idx = -1
+                matched_event = None
+                for e_idx, evt in enumerate(target_events):
+                    if evt["start"] <= c_center_sec < evt["end"]:
+                        matched_event = evt
+                        matched_event_idx = e_idx
+                        break
+                
+                # 이벤트가 바뀌면 오프셋 리셋
+                if matched_event_idx != last_matched_event_idx:
+                    current_token_offset = 0
+                    last_matched_event_idx = matched_event_idx
+                
+                current_text_ids = []
+                
+                # 1. 매칭된 이벤트(텍스트)가 있는 경우
+                if matched_event and "input_ids" in matched_event:
+                    full_ids = matched_event["input_ids"]
                     
-                    if matched_event_idx != last_matched_event_idx:
-                        current_token_offset = 0
-                        last_matched_event_idx = matched_event_idx
+                    start_idx = current_token_offset
+                    end_idx = start_idx + self.config.text_token_slice_len # 2
+                    sliced = full_ids[start_idx:end_idx]
                     
-                    current_text_ids = []
-                    if matched_event and "input_ids" in matched_event:
-                        full_ids = matched_event["input_ids"]
-                        
-                        start_idx = current_token_offset
-                        end_idx = start_idx + self.config.text_token_slice_len
-                        sliced = full_ids[start_idx:end_idx]
-                        
-                        if len(sliced) == 2:
-                            current_text_ids = sliced
-                        elif len(sliced) == 1:
-                            current_text_ids = [sliced[0], self.pad_token_id]
-                        else:
-                            current_text_ids = [self.pad_token_id, self.pad_token_id]
-                        
-                        current_token_offset += self.config.text_token_slice_len
+                    if len(sliced) == 2:
+                        current_text_ids = sliced
+                    elif len(sliced) == 1:
+                        # 하나 남았으면 그거 + 침묵
+                        current_text_ids = [sliced[0], self.config.silence_token_id]
                     else:
-                        current_text_ids = [self.config.silence_token_id] # silence token add only 1
+                        # 텍스트 다 썼으면 침묵
+                        current_text_ids = [self.config.silence_token_id]
 
-                    start_text_idx = len(input_sequence)
-                    input_sequence.extend(current_text_ids)
-                    text_token_indices = list(range(start_text_idx, len(input_sequence)))
+                    current_token_offset += self.config.text_token_slice_len
+                    
+                    # Target Audio 생성을 위해 인덱스 저장
+                    if matched_event_idx not in event_token_map:
+                        event_token_map[matched_event_idx] = []
+                    
+                    # 현재 추가될 텍스트 토큰들의 위치 인덱스 저장
+                    start_pos = len(input_sequence)
+                    indices = list(range(start_pos, start_pos + len(current_text_ids)))
+                    event_token_map[matched_event_idx].extend(indices)
 
-            #4만 토큰 넘어가면 안됨
-            if len(input_sequence) > self.config.max_token_length:
-                print(f"[Warning] Truncating input sequence from {len(input_sequence)} to {self.config.max_token_length} tokens.")
-                input_sequence = input_sequence[:self.config.max_token_length]
+                # 2. 매칭된 이벤트가 없는 경우 (침묵)
+                else:
+                    # 침묵은 1개만 넣기로 함
+                    current_text_ids = [self.config.silence_token_id]
 
+                input_sequence.extend(current_text_ids)
+                
+                # 4만 토큰 안전장치 (파일 전체를 하다보니 넘을 수도 있음)
+                if len(input_sequence) > self.config.max_token_length:
+                    print(f"[Warning] Truncating sequence at {len(input_sequence)} tokens.")
+                    break
 
-            # Target Audio 처리
+            # --- [Step C] Target Audio Segments 생성 ---
             target_audios_list: list[AudioSeg] = []
             
-            # Target Audio 전체 로드 (24k)
             with sf.SoundFile(io.BytesIO(t_bytes_24k)) as f:
-                # 전체 waveform 로드 (효율성을 위해 필요 시 부분 로드 가능하나, 보통 전체 로드가 편함)
-                # 여기서는 start_idx까지 필요가 아니라, 전체 스크립트를 커버해야 함.
-                # 하지만, 위에서 loop는 start_idx까지만 돌았음 (이전 대화 맥락).
-                # *수정*: dataset 구성상 'start_idx'는 현재 학습할 시퀀스의 시작점이 아니라,
-                # 전체 파일 처리 후 잘라서 쓰는 구조라면 전체를 읽어야 함.
-                # 코드 구조상 `start_idx`는 "이 지점까지의 user history"를 의미.
                 full_target_audio = f.read(dtype="float32")
                 if full_target_audio.ndim > 1:
                     full_target_audio = np.mean(full_target_audio, axis=1)
 
-            # 저장해둔 인덱스 맵을 기반으로 AudioSeg 생성
-            # event_token_map에는 Loop 1에서 처리된(시간 범위 내의) 이벤트만 들어있음.
             for e_idx, indices in sorted(event_token_map.items()):
                 evt = target_events[e_idx]
-                
-                # 스크립트 상의 Start/End로 오디오 자르기
                 t_start_sample = int(evt["start"] * SAMPLE_RATE_TARGET)
                 t_end_sample = int(evt["end"] * SAMPLE_RATE_TARGET)
                 
-                # 범위 체크
                 if t_start_sample < 0: t_start_sample = 0
                 if t_end_sample > len(full_target_audio): t_end_sample = len(full_target_audio)
                 
                 if t_end_sample > t_start_sample:
                     t_chunk = full_target_audio[t_start_sample:t_end_sample]
                 else:
-                    t_chunk = np.zeros(16000, dtype=np.float32) # 예외 처리: 빈 오디오
+                    t_chunk = np.zeros(16000, dtype=np.float32)
 
+                # 텍스트 토큰 위치 정보와 오디오 매핑
                 target_audios_list.append(AudioSeg(
                     text_token_idxs=indices,
                     audio=Audio(waveform=t_chunk, sampling_rate=SAMPLE_RATE_TARGET)
                 ))
 
-        
-
+            # 최종 Row 생성
             row_obj = DatasetRow(
                 input_sequence=input_sequence,
                 target_audios=target_audios_list,
@@ -423,6 +423,7 @@ class DuplexTransform:
                 speaker_embedding=speaker_embedding
             )
             out_dataset_rows.append(row_obj)
+            
         return {"dataset_row_obj": out_dataset_rows}
 
 def duplex_data(
