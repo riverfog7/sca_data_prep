@@ -49,10 +49,6 @@ class DuplexConfig:
     max_token_length: int = 40000       
     model_path: str = "Qwen/Qwen3-Omni-30B-A3B-Instruct"
 
-    system_prompt_text: str = (
-        "You are a useful assistant capable of full-duplex interaction. "
-        "You can listen and speak simultaneously to act as a comedian assistant."
-    )
 
 @dataclass
 class Audio:
