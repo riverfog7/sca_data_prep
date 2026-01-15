@@ -13,14 +13,19 @@ import numpy as np
 from pathlib import Path
 from tqdm import tqdm
 import textwrap
+import soundfile as sf  # 오디오 저장용 (없으면 pip install soundfile)
+from transformers import Qwen3OmniMoeProcessor # 토크나이저 로드용
 DEFAULT_INPUT_DIR = Path("./Multi-stream Spontaneous Conversation Training Dataset")
+DEBUG_OUTPUT_DIR = Path("./test_output") # 복원된 오디오/텍스트 저장 경로
+
+NUM_SAMPLES_TO_CHECK = 100
 
 # [Import]
 try:
     from src.sca_data.dataset_utils import easy_load, DuplexConfig, AudioSeg, Audio
 except ImportError:
     from sca_data.dataset_utils import easy_load, DuplexConfig, AudioSeg, Audio
-NUM_SAMPLES_TO_CHECK = 100  # <--- 여기를 수정하세요! (예: 100개만 확인)
+
 def print_separator(title):
     print(f"\n{'='*60}")
     print(f" {title}")
@@ -29,10 +34,27 @@ def print_separator(title):
 def verify_dataset():
     print_separator("데이터셋 로드 및 검증 시작")
     
+    # -------------------------------------------------------------------------
+    # 0. 토크나이저 로드 (디코딩용)
+    # -------------------------------------------------------------------------
+    print(">>> 토크나이저 로드 중 (Qwen/Qwen3-Omni-30B-A3B-Instruct)...")
     try:
-        ds = easy_load(DEFAULT_INPUT_DIR,format="duplex")
+        processor = Qwen3OmniMoeProcessor.from_pretrained(
+            "Qwen/Qwen3-Omni-30B-A3B-Instruct", 
+            trust_remote_code=True
+        )
+        tokenizer = processor.tokenizer
+    except Exception as e:
+        print(f"⚠️ 토크나이저 로드 실패: {e}\n(텍스트 디코딩 기능이 작동하지 않을 수 있습니다)")
+        tokenizer = None
 
+    # -------------------------------------------------------------------------
+    # 1. 데이터셋 로드
+    # -------------------------------------------------------------------------
+    try:
+        ds = easy_load(DEFAULT_INPUT_DIR, format="duplex")
         total_len = len(ds)
+        
         if NUM_SAMPLES_TO_CHECK is not None and NUM_SAMPLES_TO_CHECK < total_len:
             print(f"✂️  설정에 따라 앞부분 {NUM_SAMPLES_TO_CHECK}개만 잘라서 검증합니다.")
             ds = ds.select(range(NUM_SAMPLES_TO_CHECK))
@@ -40,7 +62,8 @@ def verify_dataset():
     except Exception as e:
         print(f"❌ 데이터셋 로드 실패: {e}")
         return
-# 통계 변수
+
+    # 통계 변수
     stats = {
         "max_seq_len": 0,
         "min_seq_len": 999999,
@@ -54,24 +77,70 @@ def verify_dataset():
 
     # 상수 설정
     AUDIO_TOKEN = -100
-    SILENCE_TOKEN = 151643
+    SILENCE_TOKEN = 151646 # [중요] 생성 코드와 일치시킴
     AUDIO_RATIO = 4
     TEXT_SLICE = 2
     
-    inspected_target_structure = False
+    # 디버그 폴더 생성
+    DEBUG_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+    # -------------------------------------------------------------------------
     # 2. 전체 데이터 순회
+    # -------------------------------------------------------------------------
     for i, sample in enumerate(tqdm(ds, desc="검증 진행 중")):
         
         row = sample["dataset_row_obj"]
-
-        # ---------------------------------------------------------------------
-        # [기능 추가] 토큰 수 카운트 및 통계
-        # ---------------------------------------------------------------------
         seq_len = len(row.input_sequence)
+        
+        # [통계 집계]
         stats["max_seq_len"] = max(stats["max_seq_len"], seq_len)
         stats["min_seq_len"] = min(stats["min_seq_len"], seq_len)
         stats["total_tokens"] += seq_len
+        
+        # =====================================================================
+        # [New Feature] 1. 시스템 프롬프트 & 텍스트 복원 검증 (Sample 0만 상세 출력)
+        # =====================================================================
+        if i == 0 and tokenizer is not None:
+            print_separator(f"[Sample 0] 상세 디코딩 분석")
+            
+            # (1) 시스템 프롬프트 확인
+            try:
+                first_audio_idx = row.input_sequence.index(AUDIO_TOKEN)
+                sys_prompt_ids = row.input_sequence[:first_audio_idx]
+                sys_text = tokenizer.decode(sys_prompt_ids)
+                print(f"🔹 [System Prompt 디코딩 결과]:\n{textwrap.fill(sys_text, width=80)}\n")
+            except ValueError:
+                print("❌ 오디오 토큰(-100)을 찾을 수 없어 시스템 프롬프트를 분리하지 못했습니다.")
+
+            # (2) Target Audio <-> Text 매핑 복원
+            print(f"🔹 [Target Audio & Text 매핑 복원] (총 {len(row.target_audios)}개 세그먼트 중 앞 5개만 출력)")
+            
+            full_reconstructed_text = []
+            
+            for seg_idx, seg in enumerate(row.target_audios):
+                # 인덱스로 실제 토큰 ID 가져오기
+                token_ids = [row.input_sequence[idx] for idx in seg.text_token_idxs]
+                
+                # 디코딩
+                decoded_text = tokenizer.decode(token_ids)
+                full_reconstructed_text.append(decoded_text)
+                
+                # 오디오 정보
+                duration = len(seg.audio.waveform) / seg.audio.sampling_rate
+                
+                # 상위 5개만 로그 출력
+                if seg_idx < 5:
+                    print(f"  Start[{seg.text_token_idxs[0]}] -> Text: \"{decoded_text.strip()}\" | Audio: {duration:.2f}s")
+                    
+                    # (선택) 오디오 파일 저장 - 실제로 들어보고 싶으면 주석 해제
+                    # sf.write(DEBUG_OUTPUT_DIR / f"sample0_seg{seg_idx}_{decoded_text.strip()[:10]}.wav", seg.audio.waveform, 24000)
+
+            print(f"\n🔹 [전체 대화 흐름 복원]:\n{' '.join(full_reconstructed_text)[:200]} ... (중략)")
+            print_separator("구조 검증 계속 진행")
+
+        # =====================================================================
+        # [Existing Checks] 기존 검증 로직 유지
+        # =====================================================================
         
         # 1. 길이 4만 토큰 체크
         if seq_len > 40000:
@@ -93,7 +162,6 @@ def verify_dataset():
             stats["sr_mismatch_count"] += 1
 
         # 5. Speaker Embedding 체크
-        # (최초 1회만 경고 출력, 나머지는 카운트만 함)
         emb = np.array(row.speaker_embedding)
         if np.all(emb == 0):
             stats["zero_embedding_count"] += 1
@@ -105,21 +173,18 @@ def verify_dataset():
             try:
                 first_audio_idx = row.input_sequence.index(AUDIO_TOKEN)
             except ValueError:
-                # 오디오가 없는 경우
                 continue
 
-            # 시스템 프롬프트 확인
             if len(row.input_sequence[:first_audio_idx]) == 0:
                 if stats["structure_error_count"] == 0:
                     print(f"\n❌ [Sample {i}] 시스템 프롬프트 누락")
                 stats["structure_error_count"] += 1
             
-            # 본문 패턴 확인
             body_seq = row.input_sequence[first_audio_idx:]
             cursor = 0
             
             while cursor < len(body_seq):
-                # (A) 오디오 4개 확인
+                # (A) 오디오 4개
                 audio_part = body_seq[cursor : cursor + AUDIO_RATIO]
                 if len(audio_part) < AUDIO_RATIO: break 
 
@@ -131,14 +196,13 @@ def verify_dataset():
                 
                 cursor += AUDIO_RATIO 
 
-                # (B) 텍스트/침묵 확인
+                # (B) 텍스트/침묵
                 if cursor >= len(body_seq): break
                 first_token = body_seq[cursor]
 
                 if first_token == SILENCE_TOKEN:
-                    cursor += 1 # 침묵은 1개
+                    cursor += 1 # 침묵 1개
                 else:
-                    # 텍스트는 2개 (오디오 토큰 끼어있으면 에러)
                     text_part = body_seq[cursor : cursor + TEXT_SLICE]
                     if len(text_part) < TEXT_SLICE: break 
                     if any(t == AUDIO_TOKEN for t in text_part):
@@ -169,13 +233,11 @@ def verify_dataset():
     print(f"3. SR 불일치 샘플 수    : {stats['sr_mismatch_count']} 개")
     print(f"4. 1초 미만 오디오 개수  : {stats['short_target_audio_count']} 개 (참고용)")
     
-    # 임베딩 결과 확인
     emb_status = "✅ 정상"
     if stats['zero_embedding_count'] > 0:
         emb_status = f"❌ 실패 ({stats['zero_embedding_count']} / {len(ds)} 샘플이 0으로 채워짐)"
     print(f"5. Speaker Embedding    : {emb_status}")
 
-    # 최종 판정
     if (stats['over_40k_count'] == 0 and 
         stats['sr_mismatch_count'] == 0 and 
         stats['structure_error_count'] == 0):

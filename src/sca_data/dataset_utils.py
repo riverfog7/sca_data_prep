@@ -184,6 +184,7 @@ def ensure_mono_and_length(audio_chunk: np.ndarray, target_length: int) -> np.nd
         # 넘치면 자르기
         return audio_chunk[:target_length].astype(np.float32)
 
+
 def create_duplex_dataset(data_dir: Path, model_path: str) -> DatasetDict:
     wav_dir_16k = data_dir / "WAV"
     wav_dir_24k = data_dir / "WAV_24"
@@ -193,7 +194,6 @@ def create_duplex_dataset(data_dir: Path, model_path: str) -> DatasetDict:
         print(">>> WAV_24 folder not found. Running pre-processing first...")
         preprocess_dataset_to_24k(data_dir)
     
-    # [NEW] Tokenizer 로드 (Pre-tokenization용)
     print(f">>> Loading Tokenizer from {model_path} for pre-processing...")
     processor = Qwen3OmniMoeProcessor.from_pretrained(model_path, trust_remote_code=True)
     tokenizer = processor.tokenizer
@@ -212,35 +212,40 @@ def create_duplex_dataset(data_dir: Path, model_path: str) -> DatasetDict:
         })
 
     def storage_generator():
-        for group_key, speakers in tqdm(sessions.items(), desc="Processing Storage"):
+        # [중요] 여기서 시간이 좀 걸리더라도 미리 다 계산합니다.
+        for group_key, speakers in tqdm(sessions.items(), desc="Processing Storage & Embeddings"):
             if len(speakers) < 2: continue
             pairs = [(speakers[0], speakers[1]), (speakers[1], speakers[0])]
             for user_info, target_info in pairs:
                 with open(user_info["wav_path_16k"], "rb") as f: u_bytes = f.read()
                 with open(target_info["wav_path_24k"], "rb") as f: t_bytes = f.read()
                 
-                # [Modified] Tokenizer 전달
                 events = parse_aligned_script(target_info["txt_path"], tokenizer)
                 
+                # [핵심 수정] 기존 extract_speaker_embedding 함수 사용
+                # utils.py에 정의된 대로 bytes를 넘김
+                try:
+                    spk_emb = extract_speaker_embedding(t_bytes, sample_rate=24000)
+                except Exception as e:
+                    print(f"[Warning] Failed to extract embedding for {user_info['wav_path_16k']}: {e}")
+                    spk_emb = np.zeros(SPEAKER_EMBEDDING_DIM, dtype=np.float32)
+
                 yield {
                     "session_id": f"{group_key}_{target_info['spk_id']}",
                     "user_audio": {"bytes": u_bytes, "path": None},
                     "target_audio": {"bytes": t_bytes, "path": None},
                     "events_json": json.dumps(events),
+                    "speaker_embedding": spk_emb, # 저장!
                 }
+
     def train_generator():
-        # [수정됨] 0.32초 단위 슬라이딩 삭제! -> 파일 1개당 1개의 샘플 생성
         for group_key, speakers in sessions.items():
             if len(speakers) < 2: continue
             pairs = [(speakers[0], speakers[1]), (speakers[1], speakers[0])]
             for user_info, target_info in pairs:
                 sess_id = f"{group_key}_{target_info['spk_id']}"
-                
-                # 전체 길이 확인 (메타데이터용)
                 with sf.SoundFile(user_info["wav_path_16k"]) as f:
                     max_len = len(f)
-                
-                # start_sample=0, end_sample=max_len (전체 통으로)
                 yield {
                     "session_id": sess_id, 
                     "seq_id": 0,
@@ -248,14 +253,22 @@ def create_duplex_dataset(data_dir: Path, model_path: str) -> DatasetDict:
                     "end_sample": max_len,
                 }
     
+    # [Feature 수정] speaker_embedding 필드 추가
     storage_features = Features({
-        "session_id": Value("string"), "user_audio": HFAudio(decode=False),
-        "target_audio": HFAudio(decode=False), "events_json": Value("string"),
+        "session_id": Value("string"), 
+        "user_audio": HFAudio(decode=False),
+        "target_audio": HFAudio(decode=False), 
+        "events_json": Value("string"),
+        "speaker_embedding": Sequence(Value("float32"), length=SPEAKER_EMBEDDING_DIM) # 192차원
     })
+    
     train_features = Features({
-        "session_id": Value("string"), "seq_id": Value("int32"),
-        "start_sample": Value("int64"), "end_sample": Value("int64"),
+        "session_id": Value("string"), 
+        "seq_id": Value("int32"),
+        "start_sample": Value("int64"), 
+        "end_sample": Value("int64"),
     })
+    
     ds_storage = Dataset.from_generator(storage_generator, features=storage_features)
     ds_train = Dataset.from_generator(train_generator, features=train_features)
     return DatasetDict({"storage": ds_storage, "train": ds_train})
@@ -295,10 +308,7 @@ class DuplexTransform:
             t_bytes_24k = store_row["target_audio"]["bytes"]
             target_events = json.loads(store_row["events_json"])
 
-            try:
-                speaker_embedding = extract_speaker_embedding(t_bytes_24k, sample_rate=24000)
-            except:
-                speaker_embedding = np.zeros(SPEAKER_EMBEDDING_DIM, dtype=np.float32)
+            speaker_embedding = np.array(store_row["speaker_embedding"], dtype=np.float32)
 
             input_sequence = list(self.system_prompt_ids)
             input_audios_list: list[Audio] = []
